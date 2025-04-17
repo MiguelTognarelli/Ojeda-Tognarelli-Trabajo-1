@@ -192,3 +192,53 @@ sjmisc::descr(proc_data_2022,
       kable_styling(full_width = T) %>% 
       scroll_box(width = "125%")
 ```
+
+## Graficos descriptivo de la variable
+
+```{r, fig.width=10, fig.height=13}
+graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
+                                Integra_barrio,
+                                Identi_gente, 
+                                Parte_barrio,
+                                Satis_seguridad,
+                                Satis_conectividad,
+                                Satis_area_ocio,
+                                Satis_barrio_limp,
+                                Satis_cerca_trab,
+                                Satis_cerca_coleg,
+                                Satis_cerca_comerc,
+                                Satis_cerca_amig_fami,
+                                Satis_tamano_viv,
+                                Satis_calidad_viv,
+                                Frecue_peleas_calle,
+                                Frecue_robo,
+                                Frecue_trafico,
+                                Frecue_ruido_moles,
+                                Frecue_amenzas,
+                                Frecue_vecino_sucio),
+                                 title = "prueba") +
+  theme(legend.position="bottom")
+
+graph2
+
+```
+
+## Grafico de relación entre variable dependiente y algunas variables independientes
+
+```{r, fig.width=14, fig.height=10}
+plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Identi_gente)
+```
+
+```{r, fig.width=14, fig.height=10}
+plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Frecue_trafico)
+
+```
+
+```{r, fig.width= 14, fig.height=10}
+plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_conectividad)
+```
+
+```{r, fig.width=14, fig.height=10}
+plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_tamano_viv)
+
+```
