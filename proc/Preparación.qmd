@@ -7,6 +7,16 @@ editor: visual
 
 # Determinantes residenciales que motivan la decision del cambio de hogar en Chile
 
+La satisfacción residencial se entiende como un componente clave y muy influyentes en como las personas experimentan y valoran su entorno inmediato, esta satisfacción no se construye de forma aislada si no que es en un tramado de elementos físicos-materiales y sociales, “Es un concepto multi dimensional, ya que incluye factores físicos, sociales y vecinales” (Martínez Ibarra & Ibarra Salazar, 2017). 
+
+Cuando hablamos de elementos físicos-materiales que poseen los entornos residenciales, nos referimos a aspectos como la presencia de áreas verde, la conectividad, la limpieza del espacio público, entre otros factores materiales, centrarse únicamente en estas dimensiones no nos permitiría comprender de forma completa la experiencia residencial es por eso que consideramos muy importante tener en cuenta aquellos aspectos sociales como la identificación al barrio, las relaciones con los individuos, la percepción de seguridad, entre otros. La sociología urbana ha señalado como la insatisfacción con el entorno residencial puede reflejar tensiones vinculadas a la exclusión social, la percepción de seguridad o la baja calidad de servicios urbanos (Sabatini,2009) 
+
+El estudiar las determinantes que conllevarían a un cambio de hogar nos demuestra cómo se expresan fenómenos que van más allá de un cambio de hogar, entenderemos como determinantes de satisfacción a partir de los siguientes 4 aspectos planteado por los autores mexicanos a partir de la encuesta de satisfacción residencial: la satisfacción depende de cuatro características: 1) físicas de la construcción, 2) espaciales, funcionales y formales, 3) ambientales, y 4) adaptaciones y transformaciones (Martínez Ibarra & Ibarra Salazar, 2017). La decisión de cambiar de vivienda no es solo un hecho individual, sino que también es una respuesta a ciertas condiciones estructurales que alteran los modos de vida y las rutinas de las personas. Además, es fundamental no dejar de lado el contexto chileno, en donde el acceso a la vivienda se encuentra altamente mercantilizado, estos elevados costos presentan una barrera significativa, sobre todo para el sector de los bajos recursos, que condiciona las posibilidades de elección y movilidad residencial 
+
+El concepto central que se va a investigar es la satisfacción residencial, en donde la entenderemos como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico, se tendrá por objetivo estudiar cómo es que esta satisfacción generada por estas condiciones incide en la decisión de un cambio de hogar. Tal y como señala Hidalgo (2006) la satisfacción residencial no depende únicamente de la calidad objetiva de la vivienda, sino también de factores subjetivos, como la percepción del entorno y el grado de apego o identidad con el lugar 
+
+La hipótesis central que plantearemos es que se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar. esta relación parte del supuesto que el grado que la persona se siente satisfecha tanto en lo físico-material como en lo social, actúan como indicadores claves en la influencia sobre la decisión que tengan las personas a querer cambiarse de hogar. 
+
 ## Preparación
 
 Descargamos los paquetes con los que nos dispondriamos a trabajar:
@@ -107,3 +117,78 @@ save(proc_data_2022, file = "C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognare
 ```
 
 ## Asignamos etiquetas a las variables
+
+```{r}
+proc_data_2022$Barrio_ideal <- set_label(x = proc_data_2022$Barrio_ideal,label = "Grado de acuerdo: Pertinencia barrio")
+
+proc_data_2022$Integra_barrio <- set_label(x = proc_data_2022$Integra_barrio,label = "Grado de acuerdo: Integracion barrio")
+
+proc_data_2022$Identi_gente <- set_label(x = proc_data_2022$Identi_gente,label = "Grado de acuerdo: Identifica con gente del barrio")
+
+proc_data_2022$Parte_barrio <- set_label(x = proc_data_2022$Parte_barrio,label = "Grado de acuerdo: Forma parte del barrio")
+
+proc_data_2022$Cambio_hogar <- set_label(x = proc_data_2022$Cambio_hogar,label = "Tiene planteado cambio de casa u hogar")
+
+proc_data_2022$Satis_seguridad <- set_label(x = proc_data_2022$Satis_seguridad,label = "Grado de satisfaccion: Seguridad del barrio barrio")
+
+
+proc_data_2022$Satis_area_ocio <- set_label(x = proc_data_2022$Satis_area_ocio,label = "Grado de satisfaccion: Cercania a areas verdes o lugares de ocio")
+
+proc_data_2022$Satis_barrio_limp <- set_label(x = proc_data_2022$Satis_barrio_limp,label = "Grado de satisfaccion: Limpieza o belleza del barrio")
+
+proc_data_2022$Satis_cerca_trab <- set_label(x = proc_data_2022$Satis_cerca_trab,label = "Grado de satisfaccion: Cercania al lugar de trabajo o actividad pricipal")
+
+proc_data_2022$Satis_cerca_coleg <- set_label(x = proc_data_2022$Satis_cerca_coleg,label = "Grado de satisfaccion: Proximidad o cercania a colegios de calidad")
+
+proc_data_2022$Satis_cerca_comerc <- set_label(x = proc_data_2022$Satis_cerca_comerc,label = "Grado de satisfaccion: Cercania a lugares de comercio")
+
+proc_data_2022$Satis_cerca_amig_fami <- set_label(x = proc_data_2022$Satis_cerca_amig_fami,label = "Grado de satisfaccion: Cercania con amigos/familiares")
+
+proc_data_2022$Satis_tamano_viv <- set_label(x = proc_data_2022$Satis_tamano_viv,label = "Grado de satisfaccion: Tamano de la vivienda")
+
+proc_data_2022$Satis_calidad_viv <- set_label(x = proc_data_2022$Satis_tamano_viv,label = "Grado de satisfaccion: Calidad de la vivienda")
+
+proc_data_2022$Frecue_peleas_calle <- set_label(x = proc_data_2022$Frecue_peleas_calle,label = "Frecuencia: Rinas o peleas callejeras")
+
+proc_data_2022$Frecue_robo <- set_label(x = proc_data_2022$Frecue_robo,label = "Frecuencia: Robos o asaltos")
+
+proc_data_2022$Frecue_trafico <- set_label(x = proc_data_2022$Frecue_trafico,label = "Frecuencia: Trafico de drogas")
+
+proc_data_2022$Frecue_ruido_moles <- set_label(x = proc_data_2022$Frecue_ruido_moles,label = "Frecuencia: Ruidos molestos")
+
+proc_data_2022$Frecue_amenzas <- set_label(x = proc_data_2022$Frecue_amenzas,label = "Frecuencia: Amenazas de vecinos")
+
+proc_data_2022$Frecue_vecino_sucio <- set_label(x = proc_data_2022$Frecue_vecino_sucio,label = "Frecuencia: problemas con vecinos para botar la basura")
+
+get_label(proc_data_2022$Barrio_ideal)
+get_label(proc_data_2022$Integra_barrio)
+get_label(proc_data_2022$Identi_gente)
+get_label(proc_data_2022$Parte_barrio)
+get_label(proc_data_2022$Cambio_hogar)
+get_label(proc_data_2022$Satis_seguridad)
+get_label(proc_data_2022$Satis_conectividad)
+get_label(proc_data_2022$Satis_area_ocio)
+get_label(proc_data_2022$Satis_barrio_limp)
+get_label(proc_data_2022$Satis_cerca_trab)
+get_label(proc_data_2022$Satis_cerca_coleg)
+get_label(proc_data_2022$Satis_cerca_comerc)
+get_label(proc_data_2022$Satis_cerca_amig_fami)
+get_label(proc_data_2022$Satis_tamano_viv)
+get_label(proc_data_2022$Satis_calidad_viv)
+get_label(proc_data_2022$Frecue_peleas_calle)
+get_label(proc_data_2022$Frecue_robo)
+get_label(proc_data_2022$Frecue_trafico)
+get_label(proc_data_2022$Frecue_ruido_moles)
+get_label(proc_data_2022$Frecue_amenzas)
+get_label(proc_data_2022$Frecue_vecino_sucio)
+```
+
+## Tabla descriptiva de variables: medidas de tendencia central
+
+```{r}
+sjmisc::descr(proc_data_2022,
+      show = c("label","range", "mean", "sd", "NA.prc", "n"))%>% 
+      kable(.,"markdown") %>% 
+      kable_styling(full_width = T) %>% 
+      scroll_box(width = "125%")
+```
