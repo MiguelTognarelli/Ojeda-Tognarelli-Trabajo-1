@@ -277,4 +277,4 @@ graph2
 
 # 4. En sintesis
 
-# 5. Elementos a considerar a futuro 
+# 5. Elementos a considerar a futuro
