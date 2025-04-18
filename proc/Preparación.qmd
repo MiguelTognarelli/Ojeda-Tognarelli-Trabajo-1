@@ -121,7 +121,7 @@ proc_data_2022 <- proc_data_2022 %>% sjlabelled::set_na(., na = c(-999, -888, -7
 
 Con el codigo anterior aquellos valores de -999, -888 y -777 pasaran a ser designados como NA's
 
-#### 2.5.2 Guardamos de la sub-base de datos realizada 
+#### 2.5.2 Guardamos de la sub-base de datos realizada
 
 Esta base de datos pasaria a estar alojada en la carpeta denominada imput
 
@@ -203,15 +203,15 @@ get_label(proc_data_2022$Frecue_vecino_sucio)
 
 # 3. Analisis de tabla y graficos
 
-## 3.1 Analisis de la tabla descriptivo de las medidas de tendencia central de las variables
+## 3.1 Analisis de la tabla descriptivo de las medidas de tendencia central de las variables.
 
 Esta tabla cuenta con los siguientes estadisticos:
 
--   Numero de N's (n), Proporción del numero de N's (NA.prc) y El tipo de variable que serian las variables (label)
+-   
 
--   Medidas de tendencia central tales como la: Media (mean) y el Rango (range) el cual aportaria información referida al valor minimo y maximo
+-   Medidas de tendencia central tales como la: Media (mean) y el Rango (range)\[^1\]1\[^1\]
 
--   Medidas de disperción con la desviación estandar (sd)
+-   Medidas de disperción
 
 ```{r}
 sjmisc::descr(proc_data_2022,
@@ -221,10 +221,18 @@ sjmisc::descr(proc_data_2022,
       scroll_box(width = "125%")
 ```
 
+A partir de los resultados obtenidos podemos interpretar lo siguiente, estos nos demuestran que la mayoría de los encuestados no presentan mayores intenciones a la hora de preguntarles si tienen planeado realizar un cambio de vivienda, obteniendo una media de un 2.93 de una escala de 1 a 4, lo que nos induce a pensar que hay una cierta estabilidad residencial, esta cierta estabilidad se ve  motivada producto del alto sentido de pertenencia, identificación con el barrio y los vecinos teniendo valores en sus medias de 3.63 y 3.73 los cuales actúan como un seguro ante el sentimiento de querer realizar un cambio de vivienda. 
+
+Por otra parte, los niveles de satisfacción con atributos en cuanto al entorno y la vivienda inciden en la percepción individual, los encuestados muestran cierta conformidad a la hora de preguntarles sobre el tamaño y calidad de la vivienda, la cercanía que tienen con amigos, familiares, colegios y conectividad en donde sus valores en la media van desde 3.2 a 3.78 en escalas de 1 a 5, los cuales también le agrega cierto peso al querer mantenerse en su vivienda actual. 
+
+Ahora si abordamos las variables que podrían considerarse dentro del término de problemáticas al interior del barrio, estas no son indicadores del todo negativos variables como la frecuencia de ruidos molestos, amenazas entre vecinos, y problemas con la basuras presentan valores bajos que van desde 1.3 a 2, ahora si nos vamos a las variables que abordan la frecuencia de problemas más extremos como robos, peleas callejeras o el tráfico de drogas muestran valores un poco más altos que los anteriores que van desde un 1.9 hasta un 2.4, siendo este valor más alto el de la frecuencia del tráfico de drogas, esto también se ve reflejado en la variable en la satisfacción del barrio en cuanto a su seguridad en donde su media es de un 3.2  en una escala de 1 a 5, lo cual nos engloba de manera positiva que las personas en su sector se sienten más seguras que inseguras. Estas variables claramente inciden de manera más directa a la percepción que tienen los residentes en cuanto a su entorno debido a que los impacta de forma más fuerte y evidente. 
+
+Como conclusión podemos decir que la mayoría de los encuestados no presentan fuertes incidencias en querer realizar un cambio de vivienda debido a que se sienten bastantes cómodos en cuanto a sentimientos positivos producidos por el barrio como la identificación del barrio y su gente, además también una valoración positiva en las oportunidades entregadas por el sector tanto en su conectividad, la cercanía a áreas verdes, limpieza, cercanía con familia o amigos, los cuales al también tener valores altos cumplen un rol importante, además al tener valores que no son del todo altos en cuanto a variables que entrarían en una categoría exposición al riesgo, le suma a que los individuos no presenten mayores intenciones de querer llevar a cabo un cambio en sus residencias. 
+
 ## 3.2 Analisis descriptivo de los graficos de las variables
 
-```{r, fig.width=14, fig.height=10}
-graph1 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
+```{r, fig.width=10, fig.height=13}
+graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
                                 Integra_barrio,
                                 Identi_gente, 
                                 Parte_barrio,
@@ -237,18 +245,7 @@ graph1 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
                                 Satis_cerca_comerc,
                                 Satis_cerca_amig_fami,
                                 Satis_tamano_viv,
-                                Satis_calidad_viv),
-                                 title = "prueba") +
-  theme(legend.position="bottom")
-
-graph1
-
-```
-
-Como se puede apreciar a apartir del grafico de distribución de las variables
-
-```{r, fig.width=14, fig.height=10}
-graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022,
+                                Satis_calidad_viv,
                                 Frecue_peleas_calle,
                                 Frecue_robo,
                                 Frecue_trafico,
@@ -259,13 +256,14 @@ graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022,
   theme(legend.position="bottom")
 
 graph2
+
 ```
 
 ## 3.3 Analisis descritivo de graficos de relación entre variables
 
-En este punto analizaremos una serie de graficos de relación entre variables (4 graficos es total) que considerarian nuestra variable dependiendiente: de pensamiento de cambiarse de hogar con otras variables que sean representativas de cada uno de los determinantes considerados en la introducción\[^2\]\ el\ criterio\ que\ empleamos\ para\ elegir\ 4\ de\ las\ 20\ variables\ de\ las\ que\ dispone\ la\ base\ de\ datos\ corresponde\ al\ de\ mayor\ semejanza\ con\ el\ determinante\ de\ manera\ aproximada\[^2\]
+En este punto analizaremos una serie de graficos de relación entre variables (4 graficos es total) que considerarian nuestra variable dependiendiente: de pensamiento de cambiarse de hogar con otras variables que sean representativas de cada uno de los determinantes considerados en la introducción\[^2\] el criterio que empleamos para elegir 4 de las 20 variables de las que dispone la base de datos corresponde al de mayor semejanza con el determinante de manera aproximada\[^2\]
 
-#### 3.3.1 Grafico de relación entre las variables: Cambio de hogar y Identificación con la gente del barrio 
+#### 3.3.1 Grafico de relación entre las variables: Cambio de hogar y Identificación con la gente del barrio
 
 ```{r, fig.width=14, fig.height=10}
 plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Identi_gente)
@@ -283,7 +281,7 @@ plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Frecue_trafico)
 plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_conectividad)
 ```
 
-#### 3.3.4 Grafico de relación entre las variables: Cambio de Hogar y Satisfacción con el tamaño de la vivienda 
+#### 3.3.4 Grafico de relación entre las variables: Cambio de Hogar y Satisfacción con el tamaño de la vivienda
 
 ```{r, fig.width=14, fig.height=10}
 plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_tamano_viv)
@@ -292,3 +290,5 @@ plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_tamano_viv)
 ## 4. Conclusiones
 
 ## 5. Elemento a considerar a futuro
+
+\[^1\] prueba \[^1\]
