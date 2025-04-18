@@ -207,11 +207,11 @@ get_label(proc_data_2022$Frecue_vecino_sucio)
 
 Esta tabla cuenta con los siguientes estadisticos:
 
--   
+-   Numero de N's (n), Proporción del numero de N's (NA.prc) y El tipo de variable que serian las variables (label)
 
--   Medidas de tendencia central tales como la: Media (mean) y el Rango (range)\[^1\]1\[^1\]
+-   Medidas de tendencia central tales como la: Media (mean) y el Rango (range) el cual aportaria información referida al valor minimo y maximo
 
--   Medidas de disperción
+-   Medidas de disperción con la desviación estandar (sd)
 
 ```{r}
 sjmisc::descr(proc_data_2022,
@@ -223,8 +223,8 @@ sjmisc::descr(proc_data_2022,
 
 ## 3.2 Analisis descriptivo de los graficos de las variables
 
-```{r, fig.width=10, fig.height=13}
-graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
+```{r, fig.width=14, fig.height=10}
+graph1 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
                                 Integra_barrio,
                                 Identi_gente, 
                                 Parte_barrio,
@@ -237,7 +237,18 @@ graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
                                 Satis_cerca_comerc,
                                 Satis_cerca_amig_fami,
                                 Satis_tamano_viv,
-                                Satis_calidad_viv,
+                                Satis_calidad_viv),
+                                 title = "prueba") +
+  theme(legend.position="bottom")
+
+graph1
+
+```
+
+Como se puede apreciar a apartir del grafico de distribución de las variables
+
+```{r, fig.width=14, fig.height=10}
+graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022,
                                 Frecue_peleas_calle,
                                 Frecue_robo,
                                 Frecue_trafico,
@@ -248,7 +259,6 @@ graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
   theme(legend.position="bottom")
 
 graph2
-
 ```
 
 ## 3.3 Analisis descritivo de graficos de relación entre variables
@@ -282,5 +292,3 @@ plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_tamano_viv)
 ## 4. Conclusiones
 
 ## 5. Elemento a considerar a futuro
-
-\[^1\]\ prueba\ \[^1\]
