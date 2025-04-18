@@ -7,6 +7,8 @@ editor: visual
 
 # Determinantes residenciales que motivan la decision del cambio de hogar en Chile
 
+## 1. Introducción
+
 La satisfacción residencial se entiende como un componente clave y muy influyentes en como las personas experimentan y valoran su entorno inmediato, esta satisfacción no se construye de forma aislada si no que es en un tramado de elementos físicos-materiales y sociales, “Es un concepto multi dimensional, ya que incluye factores físicos, sociales y vecinales” (Martínez Ibarra & Ibarra Salazar, 2017). 
 
 Cuando hablamos de elementos físicos-materiales que poseen los entornos residenciales, nos referimos a aspectos como la presencia de áreas verde, la conectividad, la limpieza del espacio público, entre otros factores materiales, centrarse únicamente en estas dimensiones no nos permitiría comprender de forma completa la experiencia residencial es por eso que consideramos muy importante tener en cuenta aquellos aspectos sociales como la identificación al barrio, las relaciones con los individuos, la percepción de seguridad, entre otros. La sociología urbana ha señalado como la insatisfacción con el entorno residencial puede reflejar tensiones vinculadas a la exclusión social, la percepción de seguridad o la baja calidad de servicios urbanos (Sabatini,2009) 
@@ -15,11 +17,13 @@ El estudiar las determinantes que conllevarían a un cambio de hogar nos demues
 
 El concepto central que se va a investigar es la satisfacción residencial, en donde la entenderemos como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico, se tendrá por objetivo estudiar cómo es que esta satisfacción generada por estas condiciones incide en la decisión de un cambio de hogar. Tal y como señala Hidalgo (2006) la satisfacción residencial no depende únicamente de la calidad objetiva de la vivienda, sino también de factores subjetivos, como la percepción del entorno y el grado de apego o identidad con el lugar 
 
+### 1.1 Hipotesis
+
 La hipótesis central que plantearemos es que se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar. esta relación parte del supuesto que el grado que la persona se siente satisfecha tanto en lo físico-material como en lo social, actúan como indicadores claves en la influencia sobre la decisión que tengan las personas a querer cambiarse de hogar. 
 
-## Preparación
+## 2. Preparación
 
-Descargamos los paquetes con los que nos dispondriamos a trabajar:
+### 2.1. Instalación de paquetes:
 
 ```{r}
 pacman::p_load(sjlabelled,
@@ -35,7 +39,7 @@ pacman::p_load(sjlabelled,
               knitr) 
 ```
 
-## Descargamos nuestra base de datos
+### 2.2 Descarga de la base de datos
 
 Nuestra base de datos con la que nos dispondriamos a trabajar seria la "Encuesta Longitudinal Social de Chile" realizada por el COES (Centro de Estudios de Conflicto y Cohesión social).
 
@@ -45,19 +49,23 @@ Y esta base la descargamos desde internet con el siguiente link:
 load(url("https://dataverse.harvard.edu/api/access/datafile/7245118"))
 ```
 
-Exploramos la base de datos para saber sus dimensiones con el siguiente comando:
+### 2.3 Exploración de la base de datos
+
+Esto lo realizamos con el fin de saber las dimensiones de la base de datos en cuanto a el numero de observaciones que esta tendria y el numero de variables de las que dispondria.
+
+Para aquello aplicamos el siguiente codigo:
 
 ```{r}
 dim(elsoc_long_2016_2022.2) 
 ```
 
-Podemos apresiar que la base de datos cuenta con un total de 18035 observaciones que fueron realizadas desde el año 2016 al año 2022 y un total de 750 variables.
+Podemos apreciar que la base de datos cuenta con un total de 18035 observaciones que fueron realizadas desde el año 2016 al año 2022 y un total de 750 variables.
 
-## Seleccion de variables
+### 2.4 Seleccion de variables
 
 Para seleccionar nuestras variables utilizaremos el comando find_var, este comando nos permitiria localizar variables en la base de datos a partir de una palabra que sea de nuestro interes.
 
-Dichas palabras que utilizaremos seria: varrio y satisfacción.
+Dichas palabras que utilizaremos seria: barrio y satisfacción.
 
 Palabra "Satisfaccion"
 
@@ -73,7 +81,7 @@ find_var(data = elsoc_long_2016_2022.2,"barrio")
 
 A partir de estas palabras podemos seleccionar que variables utilizar y tambien a partir de estas variables tambien podemos hacernos una idea de en que modulo podrian haber variables similares de nuestro interes en caso de querer localizarlas/emplearlas.
 
-## Realizamos una sub-base con nuestras variables de interes
+### 2.5 Creacion de una sub-base con nuestras variables de interes
 
 Algunas de estas variables se obtivieron a partir del uso del comando find:var, las otras fueron buscadas de forma manual el el logro de codigos utilizando de referencia las variables obtenidas por find_var.
 
@@ -103,20 +111,30 @@ proc_data_2022 <- elsoc_long_2016_2022.2 %>% filter(ola=="6") %>%
          )
 ```
 
-Eliminamos los datos perdidos correspondientes a NS/NR (No sabe/No responde) y que estan numeradas como -999, -888 y -777
+#### 2.5.1 Tratamiento de los casos perdidos
+
+Eliminamos los datos perdidos correspondientes a NS/NR (No sabe/No responde) y que estan numeradas como -999, -888 y -777 con el siguiente codigo:
 
 ```{r}
 proc_data_2022 <- proc_data_2022 %>% sjlabelled::set_na(., na = c(-999, -888, -777, -666))
 ```
 
-Guardamos nuestra sub-base de datos obtenida en la carpeta imput
+Con el codigo anterior aquellos valores de -999, -888 y -777 pasaran a ser designados como NA's
+
+#### 2.5.2 Guardamos de la sub-base de datos realizada 
+
+Esta base de datos pasaria a estar alojada en la carpeta denominada imput
 
 ```{r}
 save(proc_data_2022, file = "C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022.RData")
 
 ```
 
-## Asignamos etiquetas a las variables
+## 2.6 Asignación de etiquetas a las variables
+
+asigamos etiquetas a cada una de las variables que disponga la sub-base que hemos realizado, con estas etiquetas asignadas se facilitaria su identificación para futuros ejercicios.
+
+De momento estas etiquetas constarian en su primera parte de una breve descripción de aquello que busca medir y en la segunda parte de una breve descripcion del contenido de la pregunta
 
 ```{r}
 proc_data_2022$Barrio_ideal <- set_label(x = proc_data_2022$Barrio_ideal,label = "Grado de acuerdo: Pertinencia barrio")
@@ -183,7 +201,17 @@ get_label(proc_data_2022$Frecue_amenzas)
 get_label(proc_data_2022$Frecue_vecino_sucio)
 ```
 
-## Tabla descriptiva de variables: medidas de tendencia central
+# 3. Analisis de tabla y graficos
+
+## 3.1 Analisis de la tabla descriptivo de las medidas de tendencia central de las variables
+
+Esta tabla cuenta con los siguientes estadisticos:
+
+-   
+
+-   Medidas de tendencia central tales como la: Media (mean) y el Rango (range)\[^1\]1\[^1\]
+
+-   Medidas de disperción
 
 ```{r}
 sjmisc::descr(proc_data_2022,
@@ -193,7 +221,7 @@ sjmisc::descr(proc_data_2022,
       scroll_box(width = "125%")
 ```
 
-## Graficos descriptivo de la variable
+## 3.2 Analisis descriptivo de los graficos de las variables
 
 ```{r, fig.width=10, fig.height=13}
 graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
@@ -223,22 +251,36 @@ graph2
 
 ```
 
-## Grafico de relación entre variable dependiente y algunas variables independientes
+## 3.3 Analisis descritivo de graficos de relación entre variables
+
+En este punto analizaremos una serie de graficos de relación entre variables (4 graficos es total) que considerarian nuestra variable dependiendiente: de pensamiento de cambiarse de hogar con otras variables que sean representativas de cada uno de los determinantes considerados en la introducción\[^2\]\ el\ criterio\ que\ empleamos\ para\ elegir\ 4\ de\ las\ 20\ variables\ de\ las\ que\ dispone\ la\ base\ de\ datos\ corresponde\ al\ de\ mayor\ semejanza\ con\ el\ determinante\ de\ manera\ aproximada\[^2\]
+
+#### 3.3.1 Grafico de relación entre las variables: Cambio de hogar y Identificación con la gente del barrio 
 
 ```{r, fig.width=14, fig.height=10}
 plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Identi_gente)
 ```
 
+#### 3.3.2 Grafico de relación entre las variables: Cambio de hogar y Frecuencia de trafico en el barrio
+
 ```{r, fig.width=14, fig.height=10}
 plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Frecue_trafico)
-
 ```
+
+#### 3.3.3 Grafico de relación entre las variables: Cambio de hogar y Satisfacción con la conectividad del barrio
 
 ```{r, fig.width= 14, fig.height=10}
 plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_conectividad)
 ```
 
+#### 3.3.4 Grafico de relación entre las variables: Cambio de Hogar y Satisfacción con el tamaño de la vivienda 
+
 ```{r, fig.width=14, fig.height=10}
 plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_tamano_viv)
-
 ```
+
+## 4. Conclusiones
+
+## 5. Elemento a considerar a futuro
+
+\[^1\]\ prueba\ \[^1\]
