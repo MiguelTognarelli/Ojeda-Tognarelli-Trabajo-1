@@ -261,20 +261,42 @@ graph1
 
 ```
 
+A partir del los resultados del primer grafico se puede interpretar lo siguiente:
+
+Las respuestas de los encuestados en lo referente a preguntas que miden el grado de satisfacción residencial o que se relacionan con el grado de acuerdo ante determinadas caracteristicas del barrio, estas se concentran en su mayoria en las categorias de respuestas de "De acuerdo" o "Totalmente de acuerdo" siendo aquellas dos categorias de respuestas las principales solvi contadas excepciones.
+
+Aquellas excepciones serian las preguntas referidas a las de: satisfacción con la proximidad con familiares o amigos cercanos; satisfacción con proximidad a areas de comercio; satisdacción con cercania al luhgar de actividad principal; satisfacción con la belleza o limpieza; satisfacción de areas verdes y de recreación disponibles; la de satisfacción con la conectividad y la satisfacción con seguridad del barrio.
+
+Estas variables pese a seguir presentando a la categoria de "De acuerdo" como la mayoritaria presentan la caracteristica de tener algunas de sus otraas categorias de respuesta con un distribución homogenea o similar (vease por ejemplo la pregunta referida a satisfacción con conectividad) y/o presentan la caracteristica de que otro categoria distinta a "Totalmente de acuerdo" es la segunda mas indicada; vease en: Grado de satisfacción con limpieza o belleza del barrio o Grado de satisfacción con areas verdes o de recreación disponible o por ultimo con el grado de satisfacción con la seguridad. Todas estas variables presentan como la segunda opción mayoritaria la categoria de respuesta de "En desacuerdo".
+
+Aquello se podria interpretar como el hecho de que al igual como se menciono en la interpretación de la tabla que; aquellas variables en las que tienen como segunda opción mayoritaria la categoria de "En desacuerdo" o una distinta de "Totalmente de acuerdo" son mas criticos y le entregan mayor importancia de forma directa a aquellos espectos que otros.
+
+A su vez tambien aquellas categorias que presentan una concentración de sus respuestas en la categoria de "De acuerdo" o "Totalmente de acuerdo" pueden ser variables relevantes de cara al explicar el porque el encuestado no buscaria cambiar de hogar y que este a su vez mantenga su deseo de seguir en dicho hogar.
+
+De forma general tambien se puede interpretar de forma general que la satisfacción en estas categorias/variables no habrian de afectar de forma general el deseo de cambiar de hogar aunque aquello quedaria pendiente de explorarse en mayor profundidad.
+
 ```{r, fig.width=14, fig.height=10}
-graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022,
-                                Frecue_peleas_calle,
-                                Frecue_robo,
-                                Frecue_trafico,
-                                Frecue_ruido_moles,
-                                Frecue_amenzas,
-                                Frecue_vecino_sucio),
-                                 title = "Grafico descriptivo variables de Frecuencia") +
+graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Frecue_peleas_calle,
+                                              Frecue_robo,
+                                              Frecue_trafico,
+                                              Frecue_ruido_moles,
+                                              Frecue_amenzas,
+                                              Frecue_vecino_sucio),
+                                title = "Grafico descriptivo variables de frecuencia") +
   theme(legend.position="bottom")
 
 graph2
+
 ```
 
 # 4. En sintesis
 
 # 5. Elementos a considerar a futuro
+
+Creemos relevante considerar a futuro profundizar en la relación y comportamiento de las variables entre si; para aquello somos concientes de que no podemos tener 20 variables producto a que aquello podria dificultar el analisis o alargar innecesariamente.
+
+Es producto a aquello que elaborariamos una serie de indices u escalas a partir de estas variables con el fin de facilitar nuestro analisis y poder medir y/o relacionar fenomenos o elementos mas complejos con nuestra variable o tema de interes.
+
+Por ejemplo las determinates que consideramos para la investigación de este tema de trabajo (que eran un total de 4) podrian ser presentada a traves o por medio de estos indices u escalas.
+
+Tambien dejamos pediente de considerar a futuro la posibilidad de recodificar nuestra variable dependiente cambio de hogar (la cual cuenta con 4 categorias de respuesta) por un total de 2, o sea volverla una variable dummy para representar de mejor manera aquel fenomeno que nos disponemos a investigar.
