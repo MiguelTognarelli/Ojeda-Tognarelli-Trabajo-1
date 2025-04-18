@@ -207,32 +207,40 @@ get_label(proc_data_2022$Frecue_vecino_sucio)
 
 Esta tabla cuenta con los siguientes estadisticos:
 
--   
+-   Descriptivos generales: La pregunta realizada (label), Numero de N's (n) y la proporción de NA's (NA.proc)
 
--   Medidas de tendencia central tales como la: Media (mean) y el Rango (range)\[^1\]1\[^1\]
+-   Medidas de tendencia central tales como la: Media (mean) y el Rango (range) el cual este ultimo aportaria con los valores minimos y maximos
 
--   Medidas de disperción
+-   Medidas de disperción como: la desviación estandar (sd)
 
 ```{r}
 sjmisc::descr(proc_data_2022,
       show = c("label","range", "mean", "sd", "NA.prc", "n"))%>% 
       kable(.,"markdown") %>% 
       kable_styling(full_width = T) %>% 
-      scroll_box(width = "125%")
+      scroll_box(width = "175%")
 ```
 
-A partir de los resultados obtenidos podemos interpretar lo siguiente, estos nos demuestran que la mayoría de los encuestados no presentan mayores intenciones a la hora de preguntarles si tienen planeado realizar un cambio de vivienda, obteniendo una media de un 2.93 de una escala de 1 a 4, lo que nos induce a pensar que hay una cierta estabilidad residencial, esta cierta estabilidad se ve  motivada producto del alto sentido de pertenencia, identificación con el barrio y los vecinos teniendo valores en sus medias de 3.63 y 3.73 los cuales actúan como un seguro ante el sentimiento de querer realizar un cambio de vivienda. 
+A partir de los resultados obtenidos podemos interpretar lo siguiente:
 
-Por otra parte, los niveles de satisfacción con atributos en cuanto al entorno y la vivienda inciden en la percepción individual, los encuestados muestran cierta conformidad a la hora de preguntarles sobre el tamaño y calidad de la vivienda, la cercanía que tienen con amigos, familiares, colegios y conectividad en donde sus valores en la media van desde 3.2 a 3.78 en escalas de 1 a 5, los cuales también le agrega cierto peso al querer mantenerse en su vivienda actual. 
+La tabla nos muestra que en promedio la mayoría de los encuestados no presentan mayores intenciones de cambiarse de hogar, a la hora de preguntarles se obtuvo una media de un 2.93 de una escala de 1 a 4, la que seria cercana a la alternativa de respuesta 3 ("No, porque estoy bien donde estoy") lo que nos induce a pensar que hay una cierta estabilidad residencial; esta estabilidad podria verse motivada producto de los valores obtenidos en otras respuestas del tipo identitario como: alto sentido de pertenencia, identificación con el barrio y identificación con los vecinos ,teniendo valores en sus medias de 3.729, 3.724 y 3.635 respectivamente, los cuales actúan como un elemento disuasor ante el sentimiento de querer realizar un cambio de vivienda. 
 
-Ahora si abordamos las variables que podrían considerarse dentro del término de problemáticas al interior del barrio, estas no son indicadores del todo negativos variables como la frecuencia de ruidos molestos, amenazas entre vecinos, y problemas con la basuras presentan valores bajos que van desde 1.3 a 2, ahora si nos vamos a las variables que abordan la frecuencia de problemas más extremos como robos, peleas callejeras o el tráfico de drogas muestran valores un poco más altos que los anteriores que van desde un 1.9 hasta un 2.4, siendo este valor más alto el de la frecuencia del tráfico de drogas, esto también se ve reflejado en la variable en la satisfacción del barrio en cuanto a su seguridad en donde su media es de un 3.2  en una escala de 1 a 5, lo cual nos engloba de manera positiva que las personas en su sector se sienten más seguras que inseguras. Estas variables claramente inciden de manera más directa a la percepción que tienen los residentes en cuanto a su entorno debido a que los impacta de forma más fuerte y evidente. 
+Por otra parte, los niveles de satisfacción con atributos en cuanto al entorno y la vivienda inciden ligereamente en la percepción individual, los encuestados muestran cierta conformidad a la hora de preguntarles sobre el tamaño y calidad de la vivienda, la cercanía que tienen con amigos, familiares, colegios y conectividad en donde sus valores van desde la media de 3.2 a 3.78 en escalas de 1 a 5, ubicandose aquellos valores entre las alternativas de respuesta "Ni satisfecho ni insatisfecho" y "Satisfecho" los cuales también le agrega cierto peso al querer mantenerse en su vivienda actual. 
 
-Como conclusión podemos decir que la mayoría de los encuestados no presentan fuertes incidencias en querer realizar un cambio de vivienda debido a que se sienten bastantes cómodos en cuanto a sentimientos positivos producidos por el barrio como la identificación del barrio y su gente, además también una valoración positiva en las oportunidades entregadas por el sector tanto en su conectividad, la cercanía a áreas verdes, limpieza, cercanía con familia o amigos, los cuales al también tener valores altos cumplen un rol importante, además al tener valores que no son del todo altos en cuanto a variables que entrarían en una categoría exposición al riesgo, le suma a que los individuos no presenten mayores intenciones de querer llevar a cabo un cambio en sus residencias. 
+Ahora si abordamos las variables que podrían considerarse dentro del término de la frecuencia de diversas problemáticas al interior del barrio, estas no son indicadores del todo negativos; las variables como la frecuencia de ruidos molestos, amenazas entre vecinos, y problemas con la basuras presentan valores bajos que van desde 1.3 a 2, coincidendo con las alternativas de respuesta de "Nunca" o "Pocas veces".
+
+Ahora si nos vamos a las variables que abordan la frecuencia de problemas más extremos como lo serian robos, peleas callejeras o el tráfico de drogas estas variables muestran valores un poco más altos que los anteriores que van desde un 1.9 hasta un 2.4, siendo este, ek valor más alto el de la frecuencia del tráfico de drogas (2.44), pero aun asi estas respuesta se ubicarian entre las categorias de respuesta de "Nunca" o "Pocas veces"; esto igualmente se ve también reflejado en la variable de la satisfacción del barrio en cuanto a su seguridad en donde su media es de un 3.2  en una escala de 1 a 5 coincidente con la anternativa de respuesta de "Ni satisfecho ni insatisfecho" lo cual nos indica dos elementos:
+
+En primera instancia, aquellos elementos son mas conciderados o percibidos por los encuestado y por ende considerados mas relevantes. Por lo que estas variables claramente inciden de manera más directa con la percepción que tienen los residentes en cuanto a su entorno debido a que los impacta de forma más directa. 
+
+Como conclusión podemos decir que la mayoría de los encuestados no presentan fuertes incidencias en querer realizar un cambio de vivienda debido a que se sienten en promedio cómodos en su hogar, ya sea producto a sentimientos positivos producidos por el barrio en si mismo como lo seria la identificación con el barrio o con su gente; además también una leve valoración positiva en base a la valoración del sector en lo que seria su conectividad, la cercanía a áreas verdes, limpieza, y/o cercanía con familia o amigos, los cuales al también tener valores altos jugarian un rol importante.
+
+Por ultimo pese al tener valores del todo altos en todas las variables en lo referido a lo que podemos denominar como "una categoría exposición al riesgo", se le podria considerar una suma a que los individuos no presenten mayores intenciones de querer llevar a cabo un cambio en sus residencias. 
 
 ## 3.2 Analisis descriptivo de los graficos de las variables
 
-```{r, fig.width=10, fig.height=13}
-graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
+```{r, fig.width=14, fig.height=10}
+graph1 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
                                 Integra_barrio,
                                 Identi_gente, 
                                 Parte_barrio,
@@ -245,50 +253,28 @@ graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
                                 Satis_cerca_comerc,
                                 Satis_cerca_amig_fami,
                                 Satis_tamano_viv,
-                                Satis_calidad_viv,
+                                Satis_calidad_viv),
+                                 title = "Grafico descriptivo variables de satisfacción y grado de acuerdo") +
+  theme(legend.position="bottom")
+
+graph1
+
+```
+
+```{r, fig.width=14, fig.height=10}
+graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022,
                                 Frecue_peleas_calle,
                                 Frecue_robo,
                                 Frecue_trafico,
                                 Frecue_ruido_moles,
                                 Frecue_amenzas,
                                 Frecue_vecino_sucio),
-                                 title = "prueba") +
+                                 title = "Grafico descriptivo variables de Frecuencia") +
   theme(legend.position="bottom")
 
 graph2
-
 ```
 
-## 3.3 Analisis descritivo de graficos de relación entre variables
+# 4. En sintesis
 
-En este punto analizaremos una serie de graficos de relación entre variables (4 graficos es total) que considerarian nuestra variable dependiendiente: de pensamiento de cambiarse de hogar con otras variables que sean representativas de cada uno de los determinantes considerados en la introducción\[^2\] el criterio que empleamos para elegir 4 de las 20 variables de las que dispone la base de datos corresponde al de mayor semejanza con el determinante de manera aproximada\[^2\]
-
-#### 3.3.1 Grafico de relación entre las variables: Cambio de hogar y Identificación con la gente del barrio
-
-```{r, fig.width=14, fig.height=10}
-plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Identi_gente)
-```
-
-#### 3.3.2 Grafico de relación entre las variables: Cambio de hogar y Frecuencia de trafico en el barrio
-
-```{r, fig.width=14, fig.height=10}
-plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Frecue_trafico)
-```
-
-#### 3.3.3 Grafico de relación entre las variables: Cambio de hogar y Satisfacción con la conectividad del barrio
-
-```{r, fig.width= 14, fig.height=10}
-plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_conectividad)
-```
-
-#### 3.3.4 Grafico de relación entre las variables: Cambio de Hogar y Satisfacción con el tamaño de la vivienda
-
-```{r, fig.width=14, fig.height=10}
-plot_grpfrq(proc_data_2022$Cambio_hogar, proc_data_2022$Satis_tamano_viv)
-```
-
-## 4. Conclusiones
-
-## 5. Elemento a considerar a futuro
-
-\[^1\] prueba \[^1\]
+# 5. Elementos a considerar a futuro 
