@@ -7,9 +7,23 @@ editor: visual
 
 # Determinantes residenciales que motivan la decision del cambio de hogar en Chile
 
-## Preparación
+## 1. Introducción
 
-Descargamos los paquetes con los que nos dispondriamos a trabajar:
+La satisfacción residencial se entiende como un componente clave y muy influyentes en como las personas experimentan y valoran su entorno inmediato, esta satisfacción no se construye de forma aislada si no que es en un tramado de elementos físicos-materiales y sociales, “Es un concepto multi dimensional, ya que incluye factores físicos, sociales y vecinales” (Martínez Ibarra & Ibarra Salazar, 2017). 
+
+Cuando hablamos de elementos físicos-materiales que poseen los entornos residenciales, nos referimos a aspectos como la presencia de áreas verde, la conectividad, la limpieza del espacio público, entre otros factores materiales, centrarse únicamente en estas dimensiones no nos permitiría comprender de forma completa la experiencia residencial es por eso que consideramos muy importante tener en cuenta aquellos aspectos sociales como la identificación al barrio, las relaciones con los individuos, la percepción de seguridad, entre otros. La sociología urbana ha señalado como la insatisfacción con el entorno residencial puede reflejar tensiones vinculadas a la exclusión social, la percepción de seguridad o la baja calidad de servicios urbanos (Sabatini,2009) 
+
+El estudiar las determinantes que conllevarían a un cambio de hogar nos demuestra cómo se expresan fenómenos que van más allá de un cambio de hogar, entenderemos como determinantes de satisfacción a partir de los siguientes 4 aspectos planteado por los autores mexicanos a partir de la encuesta de satisfacción residencial: la satisfacción depende de cuatro características: 1) físicas de la construcción, 2) espaciales, funcionales y formales, 3) ambientales, y 4) adaptaciones y transformaciones (Martínez Ibarra & Ibarra Salazar, 2017). La decisión de cambiar de vivienda no es solo un hecho individual, sino que también es una respuesta a ciertas condiciones estructurales que alteran los modos de vida y las rutinas de las personas. Además, es fundamental no dejar de lado el contexto chileno, en donde el acceso a la vivienda se encuentra altamente mercantilizado, estos elevados costos presentan una barrera significativa, sobre todo para el sector de los bajos recursos, que condiciona las posibilidades de elección y movilidad residencial 
+
+El concepto central que se va a investigar es la satisfacción residencial, en donde la entenderemos como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico, se tendrá por objetivo estudiar cómo es que esta satisfacción generada por estas condiciones incide en la decisión de un cambio de hogar. Tal y como señala (Amérigo, *et al*, 2014) la satisfacción residencial no depende únicamente de la calidad objetiva de la vivienda, sino también de factores subjetivos, como la percepción del entorno y el grado de apego o identidad con el lugar 
+
+### 1.1 Hipotesis
+
+La hipótesis central que plantearemos es que se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar. esta relación parte del supuesto que el grado que la persona se siente satisfecha tanto en lo físico-material como en lo social, actúan como indicadores claves en la influencia sobre la decisión que tengan las personas a querer cambiarse de hogar. 
+
+## 2. Preparación
+
+### 2.1. Instalación de paquetes:
 
 ```{r}
 pacman::p_load(sjlabelled,
@@ -25,7 +39,7 @@ pacman::p_load(sjlabelled,
               knitr) 
 ```
 
-## Descargamos nuestra base de datos
+### 2.2 Descarga de la base de datos
 
 Nuestra base de datos con la que nos dispondriamos a trabajar seria la "Encuesta Longitudinal Social de Chile" realizada por el COES (Centro de Estudios de Conflicto y Cohesión social).
 
@@ -35,19 +49,23 @@ Y esta base la descargamos desde internet con el siguiente link:
 load(url("https://dataverse.harvard.edu/api/access/datafile/7245118"))
 ```
 
-Exploramos la base de datos para saber sus dimensiones con el siguiente comando:
+### 2.3 Exploración de la base de datos
+
+Esto lo realizamos con el fin de saber las dimensiones de la base de datos en cuanto a el numero de observaciones que esta tendria y el numero de variables de las que dispondria.
+
+Para aquello aplicamos el siguiente codigo:
 
 ```{r}
 dim(elsoc_long_2016_2022.2) 
 ```
 
-Podemos apresiar que la base de datos cuenta con un total de 18035 observaciones que fueron realizadas desde el año 2016 al año 2022 y un total de 750 variables.
+Podemos apreciar que la base de datos cuenta con un total de 18035 observaciones que fueron realizadas desde el año 2016 al año 2022 y un total de 750 variables.
 
-## Seleccion de variables
+### 2.4 Seleccion de variables
 
 Para seleccionar nuestras variables utilizaremos el comando find_var, este comando nos permitiria localizar variables en la base de datos a partir de una palabra que sea de nuestro interes.
 
-Dichas palabras que utilizaremos seria: varrio y satisfacción.
+Dichas palabras que utilizaremos seria: barrio y satisfacción.
 
 Palabra "Satisfaccion"
 
@@ -63,7 +81,7 @@ find_var(data = elsoc_long_2016_2022.2,"barrio")
 
 A partir de estas palabras podemos seleccionar que variables utilizar y tambien a partir de estas variables tambien podemos hacernos una idea de en que modulo podrian haber variables similares de nuestro interes en caso de querer localizarlas/emplearlas.
 
-## Realizamos una sub-base con nuestras variables de interes 
+### 2.5 Creacion de una sub-base con nuestras variables de interes
 
 Algunas de estas variables se obtivieron a partir del uso del comando find:var, las otras fueron buscadas de forma manual el el logro de codigos utilizando de referencia las variables obtenidas por find_var.
 
@@ -93,17 +111,192 @@ proc_data_2022 <- elsoc_long_2016_2022.2 %>% filter(ola=="6") %>%
          )
 ```
 
-Eliminamos los datos perdidos correspondientes a NS/NR (No sabe/No responde) y que estan numeradas como -999, -888 y -777
+#### 2.5.1 Tratamiento de los casos perdidos
+
+Eliminamos los datos perdidos correspondientes a NS/NR (No sabe/No responde) y que estan numeradas como -999, -888 y -777 con el siguiente codigo:
 
 ```{r}
 proc_data_2022 <- proc_data_2022 %>% sjlabelled::set_na(., na = c(-999, -888, -777, -666))
 ```
 
-Guardamos nuestra sub-base de datos obtenida en la carpeta imput
+Con el codigo anterior aquellos valores de -999, -888 y -777 pasaran a ser designados como NA's
+
+#### 2.5.2 Guardamos de la sub-base de datos realizada
+
+Esta base de datos pasaria a estar alojada en la carpeta denominada imput
 
 ```{r}
 save(proc_data_2022, file = "C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022.RData")
 
 ```
 
-## Asignamos etiquetas a las variables
+## 2.6 Asignación de etiquetas a las variables
+
+asigamos etiquetas a cada una de las variables que disponga la sub-base que hemos realizado, con estas etiquetas asignadas se facilitaria su identificación para futuros ejercicios.
+
+De momento estas etiquetas constarian en su primera parte de una breve descripción de aquello que busca medir y en la segunda parte de una breve descripcion del contenido de la pregunta
+
+```{r}
+proc_data_2022$Barrio_ideal <- set_label(x = proc_data_2022$Barrio_ideal,label = "Grado de acuerdo: Pertinencia barrio")
+
+proc_data_2022$Integra_barrio <- set_label(x = proc_data_2022$Integra_barrio,label = "Grado de acuerdo: Integracion barrio")
+
+proc_data_2022$Identi_gente <- set_label(x = proc_data_2022$Identi_gente,label = "Grado de acuerdo: Identifica con gente del barrio")
+
+proc_data_2022$Parte_barrio <- set_label(x = proc_data_2022$Parte_barrio,label = "Grado de acuerdo: Forma parte del barrio")
+
+proc_data_2022$Cambio_hogar <- set_label(x = proc_data_2022$Cambio_hogar,label = "Tiene planteado cambio de casa u hogar")
+
+proc_data_2022$Satis_seguridad <- set_label(x = proc_data_2022$Satis_seguridad,label = "Grado de satisfaccion: Seguridad del barrio barrio")
+
+
+proc_data_2022$Satis_area_ocio <- set_label(x = proc_data_2022$Satis_area_ocio,label = "Grado de satisfaccion: Cercania a areas verdes o lugares de ocio")
+
+proc_data_2022$Satis_barrio_limp <- set_label(x = proc_data_2022$Satis_barrio_limp,label = "Grado de satisfaccion: Limpieza o belleza del barrio")
+
+proc_data_2022$Satis_cerca_trab <- set_label(x = proc_data_2022$Satis_cerca_trab,label = "Grado de satisfaccion: Cercania al lugar de trabajo o actividad pricipal")
+
+proc_data_2022$Satis_cerca_coleg <- set_label(x = proc_data_2022$Satis_cerca_coleg,label = "Grado de satisfaccion: Proximidad o cercania a colegios de calidad")
+
+proc_data_2022$Satis_cerca_comerc <- set_label(x = proc_data_2022$Satis_cerca_comerc,label = "Grado de satisfaccion: Cercania a lugares de comercio")
+
+proc_data_2022$Satis_cerca_amig_fami <- set_label(x = proc_data_2022$Satis_cerca_amig_fami,label = "Grado de satisfaccion: Cercania con amigos/familiares")
+
+proc_data_2022$Satis_tamano_viv <- set_label(x = proc_data_2022$Satis_tamano_viv,label = "Grado de satisfaccion: Tamano de la vivienda")
+
+proc_data_2022$Satis_calidad_viv <- set_label(x = proc_data_2022$Satis_tamano_viv,label = "Grado de satisfaccion: Calidad de la vivienda")
+
+proc_data_2022$Frecue_peleas_calle <- set_label(x = proc_data_2022$Frecue_peleas_calle,label = "Frecuencia: Rinas o peleas callejeras")
+
+proc_data_2022$Frecue_robo <- set_label(x = proc_data_2022$Frecue_robo,label = "Frecuencia: Robos o asaltos")
+
+proc_data_2022$Frecue_trafico <- set_label(x = proc_data_2022$Frecue_trafico,label = "Frecuencia: Trafico de drogas")
+
+proc_data_2022$Frecue_ruido_moles <- set_label(x = proc_data_2022$Frecue_ruido_moles,label = "Frecuencia: Ruidos molestos")
+
+proc_data_2022$Frecue_amenzas <- set_label(x = proc_data_2022$Frecue_amenzas,label = "Frecuencia: Amenazas de vecinos")
+
+proc_data_2022$Frecue_vecino_sucio <- set_label(x = proc_data_2022$Frecue_vecino_sucio,label = "Frecuencia: problemas con vecinos para botar la basura")
+
+get_label(proc_data_2022$Barrio_ideal)
+get_label(proc_data_2022$Integra_barrio)
+get_label(proc_data_2022$Identi_gente)
+get_label(proc_data_2022$Parte_barrio)
+get_label(proc_data_2022$Cambio_hogar)
+get_label(proc_data_2022$Satis_seguridad)
+get_label(proc_data_2022$Satis_conectividad)
+get_label(proc_data_2022$Satis_area_ocio)
+get_label(proc_data_2022$Satis_barrio_limp)
+get_label(proc_data_2022$Satis_cerca_trab)
+get_label(proc_data_2022$Satis_cerca_coleg)
+get_label(proc_data_2022$Satis_cerca_comerc)
+get_label(proc_data_2022$Satis_cerca_amig_fami)
+get_label(proc_data_2022$Satis_tamano_viv)
+get_label(proc_data_2022$Satis_calidad_viv)
+get_label(proc_data_2022$Frecue_peleas_calle)
+get_label(proc_data_2022$Frecue_robo)
+get_label(proc_data_2022$Frecue_trafico)
+get_label(proc_data_2022$Frecue_ruido_moles)
+get_label(proc_data_2022$Frecue_amenzas)
+get_label(proc_data_2022$Frecue_vecino_sucio)
+```
+
+# 3. Analisis de tabla y graficos
+
+## 3.1 Analisis de la tabla descriptivo de las medidas de tendencia central de las variables.
+
+Esta tabla cuenta con los siguientes estadisticos:
+
+-   Descriptivos generales: La pregunta realizada (label), Numero de N's (n) y la proporción de NA's (NA.proc)
+
+-   Medidas de tendencia central tales como la: Media (mean) y el Rango (range) el cual este ultimo aportaria con los valores minimos y maximos
+
+-   Medidas de disperción como: la desviación estandar (sd)
+
+```{r}
+sjmisc::descr(proc_data_2022,
+      show = c("label","range", "mean", "sd", "NA.prc", "n"))%>% 
+      kable(.,"markdown") %>% 
+      kable_styling(full_width = T) %>% 
+      scroll_box(width = "175%")
+```
+
+A partir de los resultados obtenidos podemos interpretar lo siguiente:
+
+La tabla nos muestra que en promedio la mayoría de los encuestados no presentan mayores intenciones de cambiarse de hogar, a la hora de preguntarles se obtuvo una media de un 2.93 de una escala de 1 a 4, la que seria cercana a la alternativa de respuesta 3 ("No, porque estoy bien donde estoy") lo que nos induce a pensar que hay una cierta estabilidad residencial; esta estabilidad podria verse motivada producto de los valores obtenidos en otras respuestas del tipo identitario como: alto sentido de pertenencia, identificación con el barrio y identificación con los vecinos ,teniendo valores en sus medias de 3.729, 3.724 y 3.635 respectivamente, los cuales actúan como un elemento disuasor ante el sentimiento de querer realizar un cambio de vivienda. 
+
+Por otra parte, los niveles de satisfacción con atributos en cuanto al entorno y la vivienda inciden ligereamente en la percepción individual, los encuestados muestran cierta conformidad a la hora de preguntarles sobre el tamaño y calidad de la vivienda, la cercanía que tienen con amigos, familiares, colegios y conectividad en donde sus valores van desde la media de 3.2 a 3.78 en escalas de 1 a 5, ubicandose aquellos valores entre las alternativas de respuesta "Ni satisfecho ni insatisfecho" y "Satisfecho" los cuales también le agrega cierto peso al querer mantenerse en su vivienda actual. 
+
+Ahora si abordamos las variables que podrían considerarse dentro del término de la frecuencia de diversas problemáticas al interior del barrio, estas no son indicadores del todo negativos; las variables como la frecuencia de ruidos molestos, amenazas entre vecinos, y problemas con la basuras presentan valores bajos que van desde 1.3 a 2, coincidendo con las alternativas de respuesta de "Nunca" o "Pocas veces".
+
+Ahora si nos vamos a las variables que abordan la frecuencia de problemas más extremos como lo serian robos, peleas callejeras o el tráfico de drogas estas variables muestran valores un poco más altos que los anteriores que van desde un 1.9 hasta un 2.4, siendo este, ek valor más alto el de la frecuencia del tráfico de drogas (2.44), pero aun asi estas respuesta se ubicarian entre las categorias de respuesta de "Nunca" o "Pocas veces"; esto igualmente se ve también reflejado en la variable de la satisfacción del barrio en cuanto a su seguridad en donde su media es de un 3.2  en una escala de 1 a 5 coincidente con la anternativa de respuesta de "Ni satisfecho ni insatisfecho" lo cual nos indica dos elementos:
+
+En primera instancia, aquellos elementos son mas conciderados o percibidos por los encuestado y por ende considerados mas relevantes. Por lo que estas variables claramente inciden de manera más directa con la percepción que tienen los residentes en cuanto a su entorno debido a que los impacta de forma más directa. 
+
+Como conclusión podemos decir que la mayoría de los encuestados no presentan fuertes incidencias en querer realizar un cambio de vivienda debido a que se sienten en promedio cómodos en su hogar, ya sea producto a sentimientos positivos producidos por el barrio en si mismo como lo seria la identificación con el barrio o con su gente; además también una leve valoración positiva en base a la valoración del sector en lo que seria su conectividad, la cercanía a áreas verdes, limpieza, y/o cercanía con familia o amigos, los cuales al también tener valores altos jugarian un rol importante.
+
+Por ultimo pese al tener valores del todo altos en todas las variables en lo referido a lo que podemos denominar como "una categoría exposición al riesgo", se le podria considerar una suma a que los individuos no presenten mayores intenciones de querer llevar a cabo un cambio en sus residencias. 
+
+## 3.2 Analisis descriptivo de los graficos de las variables
+
+```{r, fig.width=14, fig.height=10}
+graph1 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
+                                Integra_barrio,
+                                Identi_gente, 
+                                Parte_barrio,
+                                Satis_seguridad,
+                                Satis_conectividad,
+                                Satis_area_ocio,
+                                Satis_barrio_limp,
+                                Satis_cerca_trab,
+                                Satis_cerca_coleg,
+                                Satis_cerca_comerc,
+                                Satis_cerca_amig_fami,
+                                Satis_tamano_viv,
+                                Satis_calidad_viv),
+                                 title = "Grafico descriptivo variables de satisfacción y grado de acuerdo") +
+  theme(legend.position="bottom")
+
+graph1
+
+```
+
+A partir del los resultados del primer grafico se puede interpretar lo siguiente:
+
+Las respuestas de los encuestados en lo referente a preguntas que miden el grado de satisfacción residencial o que se relacionan con el grado de acuerdo ante determinadas caracteristicas del barrio, estas se concentran en su mayoria en las categorias de respuestas de "De acuerdo" o "Totalmente de acuerdo" siendo aquellas dos categorias de respuestas las principales solvi contadas excepciones.
+
+Aquellas excepciones serian las preguntas referidas a las de: satisfacción con la proximidad con familiares o amigos cercanos; satisfacción con proximidad a areas de comercio; satisdacción con cercania al luhgar de actividad principal; satisfacción con la belleza o limpieza; satisfacción de areas verdes y de recreación disponibles; la de satisfacción con la conectividad y la satisfacción con seguridad del barrio.
+
+Estas variables pese a seguir presentando a la categoria de "De acuerdo" como la mayoritaria presentan la caracteristica de tener algunas de sus otraas categorias de respuesta con un distribución homogenea o similar (vease por ejemplo la pregunta referida a satisfacción con conectividad) y/o presentan la caracteristica de que otro categoria distinta a "Totalmente de acuerdo" es la segunda mas indicada; vease en: Grado de satisfacción con limpieza o belleza del barrio o Grado de satisfacción con areas verdes o de recreación disponible o por ultimo con el grado de satisfacción con la seguridad. Todas estas variables presentan como la segunda opción mayoritaria la categoria de respuesta de "En desacuerdo".
+
+Aquello se podria interpretar como el hecho de que al igual como se menciono en la interpretación de la tabla que; aquellas variables en las que tienen como segunda opción mayoritaria la categoria de "En desacuerdo" o una distinta de "Totalmente de acuerdo" son mas criticos y le entregan mayor importancia de forma directa a aquellos espectos que otros.
+
+A su vez tambien aquellas categorias que presentan una concentración de sus respuestas en la categoria de "De acuerdo" o "Totalmente de acuerdo" pueden ser variables relevantes de cara al explicar el porque el encuestado no buscaria cambiar de hogar y que este a su vez mantenga su deseo de seguir en dicho hogar.
+
+De forma general tambien se puede interpretar de forma general que la satisfacción en estas categorias/variables no habrian de afectar de forma general el deseo de cambiar de hogar aunque aquello quedaria pendiente de explorarse en mayor profundidad.
+
+```{r, fig.width=14, fig.height=10}
+graph2 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Frecue_peleas_calle,
+                                              Frecue_robo,
+                                              Frecue_trafico,
+                                              Frecue_ruido_moles,
+                                              Frecue_amenzas,
+                                              Frecue_vecino_sucio),
+                                title = "Grafico descriptivo variables de frecuencia") +
+  theme(legend.position="bottom")
+
+graph2
+
+```
+
+# 4. En sintesis
+
+# 5. Elementos a considerar a futuro
+
+Creemos relevante considerar a futuro profundizar en la relación y comportamiento de las variables entre si; para aquello somos concientes de que no podemos tener 20 variables producto a que aquello podria dificultar el analisis o alargar innecesariamente.
+
+Es producto a aquello que elaborariamos una serie de indices u escalas a partir de estas variables con el fin de facilitar nuestro analisis y poder medir y/o relacionar fenomenos o elementos mas complejos con nuestra variable o tema de interes.
+
+Por ejemplo las determinates que consideramos para la investigación de este tema de trabajo (que eran un total de 4) podrian ser presentada a traves o por medio de estos indices u escalas.
+
+Tambien dejamos pediente de considerar a futuro la posibilidad de recodificar nuestra variable dependiente cambio de hogar (la cual cuenta con 4 categorias de respuesta) por un total de 2, o sea volverla una variable dummy para representar de mejor manera aquel fenomeno que nos disponemos a investigar.

@@ -85,6 +85,8 @@ A partir de estas palabras podemos seleccionar que variables utilizar y tambien 
 
 Algunas de estas variables se obtivieron a partir del uso del comando find:var, las otras fueron buscadas de forma manual el el logro de codigos utilizando de referencia las variables obtenidas por find_var.
 
+Esta sub-base contempla la selección de las observaciones correspondientes a la Ola 6 que seria los datos del año 2022.
+
 ```{r}
 proc_data_2022 <- elsoc_long_2016_2022.2 %>% filter(ola=="6") %>% 
   select(Barrio_ideal=t02_01,
@@ -289,9 +291,17 @@ graph2
 
 ```
 
-# 4. En sintesis
+A partir de los resultados del segundo grafico podemos decir lo siguiente:
 
-# 5. Elementos a considerar a futuro
+Las respuestas de los encuestados respecto a situaciones conflictivas o problemáticas que afectan la convivencia barrial, tales como conflictos con vecinos por basura, amenazas, ruidos molestos, tráfico de drogas, robos riñas, muestran una tendencia general a concentrarse en categorías de respuestas más positivas , especialmente en lo que refiere a basura y amenazas, donde la mayoría de los encuestados no declara haber tenido experiencias negativas con mucha frecuencia, esto nos indica que en estos aspectos no hay una conflictividad mayor.
+
+Sin embargo, si bien no hay porcentajes del todo altos existen ciertas variables que se apartan de la tendencia anterior, estas son las de ruidos molestos, tráfico de drogas, robos y riñas, presentan una distribución más dispersa en sus respuestas, podemos observar con mayor frecuencia categorías que indican experiencias negativas, ya sea ocasionales o incluso ya de forma más reiterada. Si bien en la mayoría de las opciones la mayoría de las respuestas son de la respuesta nunca, hay una presencia significativa de haber experimentado estas situaciones desde algunas veces hasta en casos más extremos que seria que ocurren siempre
+
+Esto podríamos interpretarlo que las personas en estos aspectos específicos como el tráfico de drogas y ruidos molestos, las personas tienden a ser más críticas, lo que podría estar vinculado a una mayor sensibilidad o preocupación frente a estas problemáticas, siguiendo esto estas variables podrían tener un peso más significativo en el deseo de cambia de hogar, ya que implican condiciones de vida que afectan directamente la calidad del entorno.
+
+Por otro lado, aquellas variables que presentan mayor concentración respuestas más positivas como el caso de la basura o amenazas podrían considerarse como factores que refuerzan la permanencia residencial, al no representar un motivo directo de insatisfacción o malestar significativo
+
+# 4. Elementos a considerar a futuro
 
 Creemos relevante considerar a futuro profundizar en la relación y comportamiento de las variables entre si; para aquello somos concientes de que no podemos tener 20 variables producto a que aquello podria dificultar el analisis o alargar innecesariamente.
 
@@ -300,3 +310,13 @@ Es producto a aquello que elaborariamos una serie de indices u escalas a partir 
 Por ejemplo las determinates que consideramos para la investigación de este tema de trabajo (que eran un total de 4) podrian ser presentada a traves o por medio de estos indices u escalas.
 
 Tambien dejamos pediente de considerar a futuro la posibilidad de recodificar nuestra variable dependiente cambio de hogar (la cual cuenta con 4 categorias de respuesta) por un total de 2, o sea volverla una variable dummy para representar de mejor manera aquel fenomeno que nos disponemos a investigar.
+
+# 5. Bibliografia
+
+Producto a una serie de errores que sufrimos con el gestor bibliografico de Zotero, no pudimos incluir la bibliografia segun como estaba indicada en la pauta del trabajo, para dejar registro de la bibliografia que si empleamos dejamos registro de esta en el siguiente apartado:
+
+Amérigo, M., & Aragonés, J. I. (1988). Satisfacción residencial en un barrio remodelado: Predictores físicos y sociales. International Journal of Social Psychology, 3(1), 61–70. <https://doi.org/10.1080/02134748.1988.10821574>
+
+Martínez Ibarra, Alejandra, & Ibarra Salazar, Jorge. (2017). Los determinantes de la satisfacción residencial en México. Estudios demográficos y urbanos, 32(2), 283-313. <https://doi.org/10.24201/edu.v32i2.1635>
+
+Sabatini, F. (2011). La segregación social del espacio en las ciudades de América Latina. <https://doi.org/10.18235/0009848>

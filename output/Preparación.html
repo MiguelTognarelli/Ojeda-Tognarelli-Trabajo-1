@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Benajamin Ojeda y Miguel Tognarelli">
+
+<title>Trabajo 1: Reporte descriptivo en Quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Preparación_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Preparación_files/libs/quarto-html/quarto.js"></script>
+<script src="Preparación_files/libs/quarto-html/popper.min.js"></script>
+<script src="Preparación_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Preparación_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Preparación_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Preparación_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Preparación_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Preparación_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Preparación_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Preparación_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="Preparación_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Trabajo 1: Reporte descriptivo en Quarto</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Benajamin Ojeda y Miguel Tognarelli </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="determinantes-residenciales-que-motivan-la-decision-del-cambio-de-hogar-en-chile" class="level1">
+<h1>Determinantes residenciales que motivan la decision del cambio de hogar en Chile</h1>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">1. Introducción</h2>
+<p>La satisfacción residencial se entiende como un componente clave y muy influyentes en como las personas experimentan y valoran su entorno inmediato, esta satisfacción no se construye de forma aislada si no que es en un tramado de elementos físicos-materiales y sociales, “Es un concepto multi dimensional, ya que incluye factores físicos, sociales y vecinales” (Martínez Ibarra &amp; Ibarra Salazar, 2017).&nbsp;</p>
+<p>Cuando hablamos de elementos físicos-materiales que poseen los entornos residenciales, nos referimos a aspectos como la presencia de áreas verde, la conectividad, la limpieza del espacio público, entre otros factores materiales, centrarse únicamente en estas dimensiones no nos permitiría comprender de forma completa la experiencia residencial es por eso que consideramos muy importante tener en cuenta aquellos aspectos sociales como la identificación al barrio, las relaciones con los individuos, la percepción de seguridad, entre otros. La sociología urbana ha señalado como la insatisfacción con el entorno residencial puede reflejar tensiones vinculadas a la exclusión social, la percepción de seguridad o la baja calidad de servicios urbanos (Sabatini,2009)&nbsp;</p>
+<p>El estudiar&nbsp;las determinantes que conllevarían a un cambio de hogar nos demuestra cómo se expresan fenómenos que van más allá de un cambio de hogar, entenderemos como determinantes de satisfacción&nbsp;a partir de los siguientes 4 aspectos planteado por los autores mexicanos a partir de la encuesta de satisfacción residencial: la satisfacción depende de cuatro características: 1) físicas de la construcción, 2) espaciales, funcionales y formales, 3) ambientales, y 4) adaptaciones y transformaciones (Martínez Ibarra &amp; Ibarra Salazar, 2017). La decisión de cambiar de vivienda no es solo un hecho individual, sino que también es una respuesta a ciertas condiciones estructurales que alteran los modos de vida y las rutinas de las personas.&nbsp;Además, es fundamental no dejar de lado el contexto chileno, en donde el acceso a la vivienda se encuentra altamente mercantilizado, estos elevados costos presentan una barrera significativa, sobre todo para el sector de los bajos recursos, que condiciona las posibilidades de elección y movilidad residencial&nbsp;</p>
+<p>El concepto central que se va a investigar es la satisfacción residencial, en donde la entenderemos como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico, se tendrá por objetivo estudiar cómo es que esta satisfacción generada por estas condiciones&nbsp;incide en la decisión de un cambio de hogar. Tal y como señala (Amérigo, <em>et al</em>, 2014) la satisfacción residencial no depende únicamente de la calidad objetiva de la vivienda, sino también de factores subjetivos, como la percepción del entorno y el grado de apego o identidad con el lugar&nbsp;</p>
+<section id="hipotesis" class="level3">
+<h3 class="anchored" data-anchor-id="hipotesis">1.1 Hipotesis</h3>
+<p>La hipótesis central que plantearemos es que se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar. esta relación parte del supuesto que el grado que la persona se siente satisfecha tanto en lo físico-material como en lo social, actúan como indicadores claves en la influencia sobre la decisión que tengan las personas a querer cambiarse de hogar.&nbsp;</p>
+</section>
+</section>
+<section id="preparación" class="level2">
+<h2 class="anchored" data-anchor-id="preparación">2. Preparación</h2>
+<section id="instalación-de-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="instalación-de-paquetes">2.1. Instalación de paquetes:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(sjlabelled,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>               dplyr,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              stargazer, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>              sjmisc, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>              summarytools, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>              kableExtra, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>              sjPlot,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>              corrplot, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>              sessioninfo, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>              ggplot2,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>              knitr) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="descarga-de-la-base-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="descarga-de-la-base-de-datos">2.2 Descarga de la base de datos</h3>
+<p>Nuestra base de datos con la que nos dispondriamos a trabajar seria la “Encuesta Longitudinal Social de Chile” realizada por el COES (Centro de Estudios de Conflicto y Cohesión social).</p>
+<p>Y esta base la descargamos desde internet con el siguiente link:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://dataverse.harvard.edu/api/access/datafile/7245118"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exploración-de-la-base-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="exploración-de-la-base-de-datos">2.3 Exploración de la base de datos</h3>
+<p>Esto lo realizamos con el fin de saber las dimensiones de la base de datos en cuanto a el numero de observaciones que esta tendria y el numero de variables de las que dispondria.</p>
+<p>Para aquello aplicamos el siguiente codigo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(elsoc_long_2016_2022<span class="fl">.2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18035   750</code></pre>
+</div>
+</div>
+<p>Podemos apreciar que la base de datos cuenta con un total de 18035 observaciones que fueron realizadas desde el año 2016 al año 2022 y un total de 750 variables.</p>
+</section>
+<section id="seleccion-de-variables" class="level3">
+<h3 class="anchored" data-anchor-id="seleccion-de-variables">2.4 Seleccion de variables</h3>
+<p>Para seleccionar nuestras variables utilizaremos el comando find_var, este comando nos permitiria localizar variables en la base de datos a partir de una palabra que sea de nuestro interes.</p>
+<p>Dichas palabras que utilizaremos seria: barrio y satisfacción.</p>
+<p>Palabra “Satisfaccion”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find_var</span>(<span class="at">data =</span> elsoc_long_2016_2022<span class="fl">.2</span>, <span class="st">"satisfaccion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   col.nr var.name
+1     159   t06_01
+2     160   t06_02
+3     161   t06_03
+4     162   t06_04
+5     163   t06_05
+6     164   t06_06
+7     165   t06_07
+8     166   t06_08
+9     167   t07_01
+10    168   t07_02
+11    395   d27_01
+12    397   d27_03
+                                                               var.label
+1                            Grado de satisfaccion: Seguridad del barrio
+2                                    Grado de satisfaccion: Conectividad
+3       Grado de satisfaccion:  Areas verdes y de recreacion disponibles
+4                   Grado de satisfaccion: Limpieza y belleza del barrio
+5      Grado de satisfaccion: Proximidad al lugar de actividad principal
+6         Grado de satisfaccion:  Proximidad a colegios de buena calidad
+7                 Grado de satisfaccion:  Proximidad a areas de comercio
+8  Grado de satisfaccion:  Proximidad con familiares y/o amigos cercanos
+9                         Grado de satisfaccion: Tamannio de la vivienda
+10                         Grado de satisfaccion: Calidad de la vivienda
+11      Grado de acuerdo: Insatisfaccion al compararme con otros como yo
+12   Grado de acuerdo: Insatisfaccion al compararme con clases mas altas</code></pre>
+</div>
+</div>
+<p>Palabra “Barrio”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find_var</span>(<span class="at">data =</span> elsoc_long_2016_2022<span class="fl">.2</span>,<span class="st">"barrio"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   col.nr      var.name
+1      90 r13_barrio_01
+2     100 r13_barrio_02
+3     110 r13_barrio_03
+4     120 r13_barrio_04
+5     130 r13_barrio_05
+6     143        t02_01
+7     144        t02_02
+8     145        t02_03
+9     146        t02_04
+10    147        t03_01
+11    148        t03_02
+12    149        t03_03
+13    150        t03_04
+14    151        t04_01
+15    152        t04_02
+16    155        t04_05
+17    156        t04_06
+18    157        t04_07
+19    159        t06_01
+20    162        t06_04
+21    169           t08
+22    173           t10
+23    176        t11_03
+24    183           t15
+25    184           t16
+26    185           t17
+27    382        d24_02
+28    595        m34_03
+                                                                  var.label
+1                                            Confidente 1: Mismo vecindario
+2                                            Confidente 2: Mismo vecindario
+3                                            Confidente 3: Mismo vecindario
+4                                            Confidente 4: Mismo vecindario
+5                                            Confidente 5: Mismo vecindario
+6                         Grado de acuerdo: Este es el barrio ideal para mi
+7                    Grado de acuerdo: Me siento integrado/a en este barrio
+8               Grado de acuerdo: Me identifico con la gente de este barrio
+9                              Grado de acuerdo: Este barrio es parte de mi
+10                   Grado de acuerdo: En este barrio es facil hacer amigos
+11                    Grado de acuerdo: La gente en este barrio es sociable
+12                     Grado de acuerdo: La gente en este barrio es cordial
+13                Grado de acuerdo: La gente en este barrio es colaboradora
+14              Grado de acuerdo: Me agrada el cambio en aspecto del barrio
+15     Grado de acuerdo:  Encarecimiento de bienes y servicios en el barrio
+16             Grado de acuerdo:  Abandono de vecinos y/o amigos del barrio
+17         Grado de acuerdo:  Llegada de residentes desagradables al barrio
+18 Grado de acuerdo:  Surgimiento de actividades desagradables en el barrio
+19                              Grado de satisfaccion: Seguridad del barrio
+20                     Grado de satisfaccion: Limpieza y belleza del barrio
+21                                      Percepcion de evaluacion del barrio
+22                                       Percepcion de seguridad del barrio
+23           Frecuencia: Amenazas, insultos u ofensas de vecinos del barrio
+24                             Nivel de dannio que ha ocurrido en su barrio
+25         Justificacion de violencia: Personas dannien bienes en su barrio
+26     Justificacion de violencia: Personas dannien bienes en otros barrios
+27 Grado de acuerdo: Poderosos indolentes con problemas graves en mi barrio
+28                                              Tiempo residiendo en barrio</code></pre>
+</div>
+</div>
+<p>A partir de estas palabras podemos seleccionar que variables utilizar y tambien a partir de estas variables tambien podemos hacernos una idea de en que modulo podrian haber variables similares de nuestro interes en caso de querer localizarlas/emplearlas.</p>
+</section>
+<section id="creacion-de-una-sub-base-con-nuestras-variables-de-interes" class="level3">
+<h3 class="anchored" data-anchor-id="creacion-de-una-sub-base-con-nuestras-variables-de-interes">2.5 Creacion de una sub-base con nuestras variables de interes</h3>
+<p>Algunas de estas variables se obtivieron a partir del uso del comando find:var, las otras fueron buscadas de forma manual el el logro de codigos utilizando de referencia las variables obtenidas por find_var.</p>
+<p>Esta sub-base contempla la selección de las observaciones correspondientes a la Ola 6 que seria los datos del año 2022.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>proc_data_2022 <span class="ot">&lt;-</span> elsoc_long_2016_2022<span class="fl">.2</span> <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ola<span class="sc">==</span><span class="st">"6"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">Barrio_ideal=</span>t02_01,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Integra_barrio=</span>t02_02,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">Identi_gente=</span>t02_03, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">Parte_barrio=</span>t02_04,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Cambio_hogar=</span>t05,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_seguridad=</span>t06_01,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_conectividad=</span>t06_02,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_area_ocio=</span>t06_03,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_barrio_limp=</span>t06_04,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_cerca_trab=</span>t06_05,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_cerca_coleg=</span>t06_06,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_cerca_comerc=</span>t06_07,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_cerca_amig_fami=</span>t06_08,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_tamano_viv=</span>t07_01,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">Satis_calidad_viv=</span>t07_02,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">Frecue_peleas_calle=</span>t09_01,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">Frecue_robo=</span>t09_02,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">Frecue_trafico=</span>t09_03,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">Frecue_ruido_moles=</span>t11_01,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">Frecue_amenzas=</span>t11_03,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">Frecue_vecino_sucio=</span>t11_04</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="tratamiento-de-los-casos-perdidos" class="level4">
+<h4 class="anchored" data-anchor-id="tratamiento-de-los-casos-perdidos">2.5.1 Tratamiento de los casos perdidos</h4>
+<p>Eliminamos los datos perdidos correspondientes a NS/NR (No sabe/No responde) y que estan numeradas como -999, -888 y -777 con el siguiente codigo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>proc_data_2022 <span class="ot">&lt;-</span> proc_data_2022 <span class="sc">%&gt;%</span> sjlabelled<span class="sc">::</span><span class="fu">set_na</span>(., <span class="at">na =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">999</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">777</span>, <span class="sc">-</span><span class="dv">666</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Con el codigo anterior aquellos valores de -999, -888 y -777 pasaran a ser designados como NA’s</p>
+</section>
+<section id="guardamos-de-la-sub-base-de-datos-realizada" class="level4">
+<h4 class="anchored" data-anchor-id="guardamos-de-la-sub-base-de-datos-realizada">2.5.2 Guardamos de la sub-base de datos realizada</h4>
+<p>Esta base de datos pasaria a estar alojada en la carpeta denominada imput</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(proc_data_2022, <span class="at">file =</span> <span class="st">"C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="asignación-de-etiquetas-a-las-variables" class="level2">
+<h2 class="anchored" data-anchor-id="asignación-de-etiquetas-a-las-variables">2.6 Asignación de etiquetas a las variables</h2>
+<p>asigamos etiquetas a cada una de las variables que disponga la sub-base que hemos realizado, con estas etiquetas asignadas se facilitaria su identificación para futuros ejercicios.</p>
+<p>De momento estas etiquetas constarian en su primera parte de una breve descripción de aquello que busca medir y en la segunda parte de una breve descripcion del contenido de la pregunta</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Barrio_ideal <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Barrio_ideal,<span class="at">label =</span> <span class="st">"Grado de acuerdo: Pertinencia barrio"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Integra_barrio <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Integra_barrio,<span class="at">label =</span> <span class="st">"Grado de acuerdo: Integracion barrio"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Identi_gente <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Identi_gente,<span class="at">label =</span> <span class="st">"Grado de acuerdo: Identifica con gente del barrio"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Parte_barrio <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Parte_barrio,<span class="at">label =</span> <span class="st">"Grado de acuerdo: Forma parte del barrio"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Cambio_hogar <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Cambio_hogar,<span class="at">label =</span> <span class="st">"Tiene planteado cambio de casa u hogar"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_seguridad <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_seguridad,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Seguridad del barrio barrio"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_area_ocio <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_area_ocio,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Cercania a areas verdes o lugares de ocio"</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_barrio_limp <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_barrio_limp,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Limpieza o belleza del barrio"</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_cerca_trab <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_cerca_trab,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Cercania al lugar de trabajo o actividad pricipal"</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_cerca_coleg <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_cerca_coleg,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Proximidad o cercania a colegios de calidad"</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_cerca_comerc <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_cerca_comerc,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Cercania a lugares de comercio"</span>)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_cerca_amig_fami <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_cerca_amig_fami,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Cercania con amigos/familiares"</span>)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_tamano_viv <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_tamano_viv,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Tamano de la vivienda"</span>)</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Satis_calidad_viv <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Satis_tamano_viv,<span class="at">label =</span> <span class="st">"Grado de satisfaccion: Calidad de la vivienda"</span>)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Frecue_peleas_calle <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Frecue_peleas_calle,<span class="at">label =</span> <span class="st">"Frecuencia: Rinas o peleas callejeras"</span>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Frecue_robo <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Frecue_robo,<span class="at">label =</span> <span class="st">"Frecuencia: Robos o asaltos"</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Frecue_trafico <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Frecue_trafico,<span class="at">label =</span> <span class="st">"Frecuencia: Trafico de drogas"</span>)</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Frecue_ruido_moles <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Frecue_ruido_moles,<span class="at">label =</span> <span class="st">"Frecuencia: Ruidos molestos"</span>)</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Frecue_amenzas <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Frecue_amenzas,<span class="at">label =</span> <span class="st">"Frecuencia: Amenazas de vecinos"</span>)</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>proc_data_2022<span class="sc">$</span>Frecue_vecino_sucio <span class="ot">&lt;-</span> <span class="fu">set_label</span>(<span class="at">x =</span> proc_data_2022<span class="sc">$</span>Frecue_vecino_sucio,<span class="at">label =</span> <span class="st">"Frecuencia: problemas con vecinos para botar la basura"</span>)</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Barrio_ideal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de acuerdo: Pertinencia barrio"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Integra_barrio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de acuerdo: Integracion barrio"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Identi_gente)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de acuerdo: Identifica con gente del barrio"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Parte_barrio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de acuerdo: Forma parte del barrio"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Cambio_hogar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Tiene planteado cambio de casa u hogar"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_seguridad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Seguridad del barrio barrio"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_conectividad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Conectividad"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_area_ocio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Cercania a areas verdes o lugares de ocio"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_barrio_limp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Limpieza o belleza del barrio"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_cerca_trab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Cercania al lugar de trabajo o actividad pricipal"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_cerca_coleg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Proximidad o cercania a colegios de calidad"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_cerca_comerc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Cercania a lugares de comercio"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_cerca_amig_fami)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Cercania con amigos/familiares"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_tamano_viv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Tamano de la vivienda"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Satis_calidad_viv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Grado de satisfaccion: Calidad de la vivienda"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Frecue_peleas_calle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Frecuencia: Rinas o peleas callejeras"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Frecue_robo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Frecuencia: Robos o asaltos"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Frecue_trafico)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Frecuencia: Trafico de drogas"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Frecue_ruido_moles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Frecuencia: Ruidos molestos"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Frecue_amenzas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Frecuencia: Amenazas de vecinos"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_label</span>(proc_data_2022<span class="sc">$</span>Frecue_vecino_sucio)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Frecuencia: problemas con vecinos para botar la basura"</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="analisis-de-tabla-y-graficos" class="level1">
+<h1>3. Analisis de tabla y graficos</h1>
+<section id="analisis-de-la-tabla-descriptivo-de-las-medidas-de-tendencia-central-de-las-variables." class="level2">
+<h2 class="anchored" data-anchor-id="analisis-de-la-tabla-descriptivo-de-las-medidas-de-tendencia-central-de-las-variables.">3.1 Analisis de la tabla descriptivo de las medidas de tendencia central de las variables.</h2>
+<p>Esta tabla cuenta con los siguientes estadisticos:</p>
+<ul>
+<li><p>Descriptivos generales: La pregunta realizada (label), Numero de N’s (n) y la proporción de NA’s (NA.proc)</p></li>
+<li><p>Medidas de tendencia central tales como la: Media (mean) y el Rango (range) el cual este ultimo aportaria con los valores minimos y maximos</p></li>
+<li><p>Medidas de disperción como: la desviación estandar (sd)</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>sjmisc<span class="sc">::</span><span class="fu">descr</span>(proc_data_2022,</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">show =</span> <span class="fu">c</span>(<span class="st">"label"</span>,<span class="st">"range"</span>, <span class="st">"mean"</span>, <span class="st">"sd"</span>, <span class="st">"NA.prc"</span>, <span class="st">"n"</span>))<span class="sc">%&gt;%</span> </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">kable</span>(.,<span class="st">"markdown"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">kable_styling</span>(<span class="at">full_width =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">"175%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:175%; ">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">var</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">label</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">n</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">NA.prc</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Barrio_ideal</td>
+<td style="text-align: left;">Grado de acuerdo: Pertinencia barrio</td>
+<td style="text-align: right;">2572</td>
+<td style="text-align: right;">5.787546</td>
+<td style="text-align: right;">3.680404</td>
+<td style="text-align: right;">0.9708494</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Integra_barrio</td>
+<td style="text-align: left;">Grado de acuerdo: Integracion barrio</td>
+<td style="text-align: right;">2572</td>
+<td style="text-align: right;">5.787546</td>
+<td style="text-align: right;">3.729782</td>
+<td style="text-align: right;">0.9130198</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Identi_gente</td>
+<td style="text-align: left;">Grado de acuerdo: Identifica con gente del barrio</td>
+<td style="text-align: right;">2570</td>
+<td style="text-align: right;">5.860806</td>
+<td style="text-align: right;">3.635798</td>
+<td style="text-align: right;">0.9582785</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Parte_barrio</td>
+<td style="text-align: left;">Grado de acuerdo: Forma parte del barrio</td>
+<td style="text-align: right;">2570</td>
+<td style="text-align: right;">5.860806</td>
+<td style="text-align: right;">3.724903</td>
+<td style="text-align: right;">0.9297024</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Cambio_hogar</td>
+<td style="text-align: left;">Tiene planteado cambio de casa u hogar</td>
+<td style="text-align: right;">2536</td>
+<td style="text-align: right;">7.106227</td>
+<td style="text-align: right;">2.933754</td>
+<td style="text-align: right;">0.8673046</td>
+<td style="text-align: left;">3 (1-4)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">Satis_seguridad</td>
+<td style="text-align: left;">Grado de satisfaccion: Seguridad del barrio barrio</td>
+<td style="text-align: right;">2571</td>
+<td style="text-align: right;">5.824176</td>
+<td style="text-align: right;">3.279658</td>
+<td style="text-align: right;">1.0662721</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">Satis_conectividad</td>
+<td style="text-align: left;">Grado de satisfaccion: Conectividad</td>
+<td style="text-align: right;">2567</td>
+<td style="text-align: right;">5.970696</td>
+<td style="text-align: right;">3.688742</td>
+<td style="text-align: right;">0.9811760</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Satis_area_ocio</td>
+<td style="text-align: left;">Grado de satisfaccion: Cercania a areas verdes o lugares de ocio</td>
+<td style="text-align: right;">2571</td>
+<td style="text-align: right;">5.824176</td>
+<td style="text-align: right;">3.243485</td>
+<td style="text-align: right;">1.1073821</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Satis_barrio_limp</td>
+<td style="text-align: left;">Grado de satisfaccion: Limpieza o belleza del barrio</td>
+<td style="text-align: right;">2571</td>
+<td style="text-align: right;">5.824176</td>
+<td style="text-align: right;">3.253598</td>
+<td style="text-align: right;">1.0502277</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">Satis_cerca_trab</td>
+<td style="text-align: left;">Grado de satisfaccion: Cercania al lugar de trabajo o actividad pricipal</td>
+<td style="text-align: right;">2546</td>
+<td style="text-align: right;">6.739927</td>
+<td style="text-align: right;">3.576983</td>
+<td style="text-align: right;">0.9608058</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Satis_cerca_coleg</td>
+<td style="text-align: left;">Grado de satisfaccion: Proximidad o cercania a colegios de calidad</td>
+<td style="text-align: right;">2554</td>
+<td style="text-align: right;">6.446886</td>
+<td style="text-align: right;">3.742365</td>
+<td style="text-align: right;">0.8798738</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">Satis_cerca_comerc</td>
+<td style="text-align: left;">Grado de satisfaccion: Cercania a lugares de comercio</td>
+<td style="text-align: right;">2570</td>
+<td style="text-align: right;">5.860806</td>
+<td style="text-align: right;">3.767704</td>
+<td style="text-align: right;">0.9024683</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">Satis_cerca_amig_fami</td>
+<td style="text-align: left;">Grado de satisfaccion: Cercania con amigos/familiares</td>
+<td style="text-align: right;">2570</td>
+<td style="text-align: right;">5.860806</td>
+<td style="text-align: right;">3.608560</td>
+<td style="text-align: right;">0.9552485</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">Satis_tamano_viv</td>
+<td style="text-align: left;">Grado de satisfaccion: Tamano de la vivienda</td>
+<td style="text-align: right;">2572</td>
+<td style="text-align: right;">5.787546</td>
+<td style="text-align: right;">3.769051</td>
+<td style="text-align: right;">0.9231068</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Satis_calidad_viv</td>
+<td style="text-align: left;">Grado de satisfaccion: Calidad de la vivienda</td>
+<td style="text-align: right;">2572</td>
+<td style="text-align: right;">5.787546</td>
+<td style="text-align: right;">3.769051</td>
+<td style="text-align: right;">0.9231068</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Frecue_peleas_calle</td>
+<td style="text-align: left;">Frecuencia: Rinas o peleas callejeras</td>
+<td style="text-align: right;">2564</td>
+<td style="text-align: right;">6.080586</td>
+<td style="text-align: right;">1.930577</td>
+<td style="text-align: right;">1.1085527</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Frecue_robo</td>
+<td style="text-align: left;">Frecuencia: Robos o asaltos</td>
+<td style="text-align: right;">2556</td>
+<td style="text-align: right;">6.373626</td>
+<td style="text-align: right;">2.257433</td>
+<td style="text-align: right;">1.1407089</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Frecue_trafico</td>
+<td style="text-align: left;">Frecuencia: Trafico de drogas</td>
+<td style="text-align: right;">2426</td>
+<td style="text-align: right;">11.135531</td>
+<td style="text-align: right;">2.447238</td>
+<td style="text-align: right;">1.4447554</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Frecue_ruido_moles</td>
+<td style="text-align: left;">Frecuencia: Ruidos molestos</td>
+<td style="text-align: right;">2571</td>
+<td style="text-align: right;">5.824176</td>
+<td style="text-align: right;">2.055231</td>
+<td style="text-align: right;">1.1979485</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Frecue_amenzas</td>
+<td style="text-align: left;">Frecuencia: Amenazas de vecinos</td>
+<td style="text-align: right;">2571</td>
+<td style="text-align: right;">5.824176</td>
+<td style="text-align: right;">1.316608</td>
+<td style="text-align: right;">0.7553392</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Frecue_vecino_sucio</td>
+<td style="text-align: left;">Frecuencia: problemas con vecinos para botar la basura</td>
+<td style="text-align: right;">2567</td>
+<td style="text-align: right;">5.970696</td>
+<td style="text-align: right;">1.820413</td>
+<td style="text-align: right;">1.1828553</td>
+<td style="text-align: left;">4 (1-5)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+<p>A partir de los&nbsp;resultados obtenidos podemos interpretar lo siguiente:</p>
+<p>La tabla nos muestra que en promedio la mayoría de los encuestados no presentan mayores intenciones de cambiarse de hogar, a la hora de preguntarles se obtuvo una media de un 2.93 de una escala de 1 a 4, la que seria cercana a la alternativa de respuesta 3 (“No, porque estoy bien donde estoy”) lo que nos induce a pensar que hay una cierta estabilidad residencial;&nbsp;esta estabilidad podria verse motivada producto de los valores obtenidos en otras respuestas del tipo identitario como: alto sentido de pertenencia, identificación con el barrio y identificación con los vecinos ,teniendo valores en sus medias de 3.729, 3.724 y 3.635 respectivamente, los cuales actúan como un elemento disuasor ante el sentimiento de querer realizar un cambio de vivienda.&nbsp;</p>
+<p>Por otra parte, los niveles de satisfacción con atributos en cuanto al entorno y la vivienda inciden ligereamente en la percepción individual, los encuestados muestran cierta conformidad a la hora de preguntarles sobre el tamaño y calidad de la vivienda, la cercanía que tienen con amigos, familiares, colegios y conectividad en donde sus valores van desde la media de 3.2 a 3.78 en escalas de 1 a 5, ubicandose aquellos valores entre las alternativas de respuesta “Ni satisfecho ni insatisfecho” y “Satisfecho” los cuales también le agrega cierto peso al querer mantenerse en su vivienda actual.&nbsp;</p>
+<p>Ahora si abordamos las variables que podrían considerarse dentro del término de la frecuencia de diversas problemáticas al interior del barrio, estas no son indicadores del todo negativos; las variables como la frecuencia de ruidos molestos, amenazas entre vecinos, y problemas con la basuras presentan valores bajos que van desde 1.3 a 2, coincidendo con las alternativas de respuesta de “Nunca” o “Pocas veces”.</p>
+<p>Ahora si nos vamos a las variables que abordan la frecuencia de problemas más extremos como lo serian robos, peleas callejeras o el tráfico de drogas estas variables muestran valores un poco más altos que los anteriores que van desde un 1.9 hasta un 2.4, siendo este, ek valor más alto el de la frecuencia del tráfico de drogas (2.44), pero aun asi estas respuesta se ubicarian entre las categorias de respuesta de “Nunca” o “Pocas veces”; esto igualmente se ve también reflejado en la variable de la satisfacción del barrio en cuanto a su seguridad en donde su media es de un 3.2 &nbsp;en una escala de 1 a 5 coincidente con la anternativa de respuesta de “Ni satisfecho ni insatisfecho” lo cual nos indica dos elementos:</p>
+<p>En primera instancia, aquellos elementos son mas conciderados o percibidos por los encuestado y por ende considerados mas relevantes. Por lo que estas variables claramente inciden de manera más directa con la percepción que tienen los residentes en cuanto a su entorno debido a que los impacta de forma más directa.&nbsp;</p>
+<p>Como conclusión podemos decir que la mayoría de los encuestados no presentan fuertes incidencias en querer realizar un cambio de vivienda debido a que se sienten en promedio cómodos en su hogar, ya sea producto a sentimientos positivos producidos por el barrio en si mismo como lo seria la identificación con el barrio o con su gente; además también una leve valoración positiva en&nbsp;base a la valoración del sector en lo que seria su conectividad, la cercanía a áreas verdes, limpieza, y/o cercanía con familia o amigos, los cuales al también tener valores altos jugarian un rol importante.</p>
+<p>Por ultimo pese al tener valores del todo altos en todas las variables en lo referido a lo que podemos denominar como “una categoría exposición al riesgo”, se le podria considerar una suma a que los individuos no presenten mayores intenciones de querer llevar a cabo un cambio en sus residencias.&nbsp;</p>
+</section>
+<section id="analisis-descriptivo-de-los-graficos-de-las-variables" class="level2">
+<h2 class="anchored" data-anchor-id="analisis-descriptivo-de-los-graficos-de-las-variables">3.2 Analisis descriptivo de los graficos de las variables</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>graph1 <span class="ot">&lt;-</span> sjPlot<span class="sc">::</span><span class="fu">plot_stackfrq</span>(dplyr<span class="sc">::</span><span class="fu">select</span>(proc_data_2022, Barrio_ideal,</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>                                Integra_barrio,</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>                                Identi_gente, </span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>                                Parte_barrio,</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>                                Satis_seguridad,</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>                                Satis_conectividad,</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>                                Satis_area_ocio,</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>                                Satis_barrio_limp,</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>                                Satis_cerca_trab,</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>                                Satis_cerca_coleg,</span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>                                Satis_cerca_comerc,</span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>                                Satis_cerca_amig_fami,</span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>                                Satis_tamano_viv,</span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>                                Satis_calidad_viv),</span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">title =</span> <span class="st">"Grafico descriptivo variables de satisfacción y grado de acuerdo"</span>) <span class="sc">+</span></span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>graph1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Preparación_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A partir del los resultados del primer grafico se puede interpretar lo siguiente:</p>
+<p>Las respuestas de los encuestados en lo referente a preguntas que miden el grado de satisfacción residencial o que se relacionan con el grado de acuerdo ante determinadas caracteristicas del barrio, estas se concentran en su mayoria en las categorias de respuestas de “De acuerdo” o “Totalmente de acuerdo” siendo aquellas dos categorias de respuestas las principales solvi contadas excepciones.</p>
+<p>Aquellas excepciones serian las preguntas referidas a las de: satisfacción con la proximidad con familiares o amigos cercanos; satisfacción con proximidad a areas de comercio; satisdacción con cercania al luhgar de actividad principal; satisfacción con la belleza o limpieza; satisfacción de areas verdes y de recreación disponibles; la de satisfacción con la conectividad y la satisfacción con seguridad del barrio.</p>
+<p>Estas variables pese a seguir presentando a la categoria de “De acuerdo” como la mayoritaria presentan la caracteristica de tener algunas de sus otraas categorias de respuesta con un distribución homogenea o similar (vease por ejemplo la pregunta referida a satisfacción con conectividad) y/o presentan la caracteristica de que otro categoria distinta a “Totalmente de acuerdo” es la segunda mas indicada; vease en: Grado de satisfacción con limpieza o belleza del barrio o Grado de satisfacción con areas verdes o de recreación disponible o por ultimo con el grado de satisfacción con la seguridad. Todas estas variables presentan como la segunda opción mayoritaria la categoria de respuesta de “En desacuerdo”.</p>
+<p>Aquello se podria interpretar como el hecho de que al igual como se menciono en la interpretación de la tabla que; aquellas variables en las que tienen como segunda opción mayoritaria la categoria de “En desacuerdo” o una distinta de “Totalmente de acuerdo” son mas criticos y le entregan mayor importancia de forma directa a aquellos espectos que otros.</p>
+<p>A su vez tambien aquellas categorias que presentan una concentración de sus respuestas en la categoria de “De acuerdo” o “Totalmente de acuerdo” pueden ser variables relevantes de cara al explicar el porque el encuestado no buscaria cambiar de hogar y que este a su vez mantenga su deseo de seguir en dicho hogar.</p>
+<p>De forma general tambien se puede interpretar de forma general que la satisfacción en estas categorias/variables no habrian de afectar de forma general el deseo de cambiar de hogar aunque aquello quedaria pendiente de explorarse en mayor profundidad.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>graph2 <span class="ot">&lt;-</span> sjPlot<span class="sc">::</span><span class="fu">plot_stackfrq</span>(dplyr<span class="sc">::</span><span class="fu">select</span>(proc_data_2022, Frecue_peleas_calle,</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>                                              Frecue_robo,</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>                                              Frecue_trafico,</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>                                              Frecue_ruido_moles,</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>                                              Frecue_amenzas,</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>                                              Frecue_vecino_sucio),</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">title =</span> <span class="st">"Grafico descriptivo variables de frecuencia"</span>) <span class="sc">+</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>graph2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Preparación_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A partir de los resultados del segundo grafico podemos decir lo siguiente:</p>
+<p>Las respuestas de los encuestados respecto a situaciones conflictivas o problemáticas que afectan la convivencia barrial, tales como conflictos con vecinos por basura, amenazas, ruidos molestos, tráfico de drogas, robos riñas, muestran una tendencia general a concentrarse en categorías de respuestas más positivas , especialmente en lo que refiere a basura y amenazas, donde la mayoría de los encuestados no declara haber tenido experiencias negativas con mucha frecuencia, esto nos indica que en estos aspectos no hay una conflictividad mayor.</p>
+<p>Sin embargo, si bien no hay porcentajes del todo altos existen ciertas variables que se apartan de la tendencia anterior, estas son las de ruidos molestos, tráfico de drogas, robos y riñas, presentan una distribución más dispersa en sus respuestas, podemos observar con mayor frecuencia categorías que indican experiencias negativas, ya sea ocasionales o incluso ya de forma más reiterada. Si bien en la mayoría de las opciones la mayoría de las respuestas son de la respuesta nunca, hay una presencia significativa de haber experimentado estas situaciones desde algunas veces hasta en casos más extremos que seria que ocurren siempre</p>
+<p>Esto podríamos interpretarlo que las personas en estos aspectos específicos como el tráfico de drogas y ruidos molestos, las personas tienden a ser más críticas, lo que podría estar vinculado a una mayor sensibilidad o preocupación frente a estas problemáticas, siguiendo esto estas variables podrían tener un peso más significativo en el deseo de cambia de hogar, ya que implican condiciones de vida que afectan directamente la calidad del entorno.</p>
+<p>Por otro lado, aquellas variables que presentan mayor concentración respuestas más positivas como el caso de la basura o amenazas podrían considerarse como factores que refuerzan la permanencia residencial, al no representar un motivo directo de insatisfacción o malestar significativo</p>
+</section>
+</section>
+<section id="elementos-a-considerar-a-futuro" class="level1">
+<h1>4. Elementos a considerar a futuro</h1>
+<p>Creemos relevante considerar a futuro profundizar en la relación y comportamiento de las variables entre si; para aquello somos concientes de que no podemos tener 20 variables producto a que aquello podria dificultar el analisis o alargar innecesariamente.</p>
+<p>Es producto a aquello que elaborariamos una serie de indices u escalas a partir de estas variables con el fin de facilitar nuestro analisis y poder medir y/o relacionar fenomenos o elementos mas complejos con nuestra variable o tema de interes.</p>
+<p>Por ejemplo las determinates que consideramos para la investigación de este tema de trabajo (que eran un total de 4) podrian ser presentada a traves o por medio de estos indices u escalas.</p>
+<p>Tambien dejamos pediente de considerar a futuro la posibilidad de recodificar nuestra variable dependiente cambio de hogar (la cual cuenta con 4 categorias de respuesta) por un total de 2, o sea volverla una variable dummy para representar de mejor manera aquel fenomeno que nos disponemos a investigar.</p>
+</section>
+<section id="bibliografia" class="level1">
+<h1>5. Bibliografia</h1>
+<p>Producto a una serie de errores que sufrimos con el gestor bibliografico de Zotero, no pudimos incluir la bibliografia segun como estaba indicada en la pauta del trabajo, para dejar registro de la bibliografia que si empleamos dejamos registro de esta en el siguiente apartado:</p>
+<p>Amérigo, M., &amp; Aragonés, J. I. (1988). Satisfacción residencial en un barrio remodelado: Predictores físicos y sociales. International Journal of Social Psychology, 3(1), 61–70. <a href="https://doi.org/10.1080/02134748.1988.10821574" class="uri">https://doi.org/10.1080/02134748.1988.10821574</a></p>
+<p>Martínez Ibarra, Alejandra, &amp; Ibarra Salazar, Jorge. (2017). Los determinantes de la satisfacción residencial en México. Estudios demográficos y urbanos, 32(2), 283-313. <a href="https://doi.org/10.24201/edu.v32i2.1635" class="uri">https://doi.org/10.24201/edu.v32i2.1635</a></p>
+<p>Sabatini, F. (2011). La segregación social del espacio en las ciudades de América Latina. <a href="https://doi.org/10.18235/0009848" class="uri">https://doi.org/10.18235/0009848</a></p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
