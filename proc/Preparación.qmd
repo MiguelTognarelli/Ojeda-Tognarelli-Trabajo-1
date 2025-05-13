@@ -1,9 +1,11 @@
 ---
-title: "Trabajo 1: Reporte descriptivo en Quarto"
+title: "Trabajo 1: Reporte descriptivo en Quarto; Trabajo 2: Asociación de variables y contrucción de indices/escalas"
 author: "Benajamin Ojeda y Miguel Tognarelli"
 format: html
 editor: visual
 ---
+
+# Trabajo 1:
 
 # Determinantes residenciales que motivan la decision del cambio de hogar en Chile
 
@@ -320,3 +322,61 @@ Amérigo, M., & Aragonés, J. I. (1988). Satisfacción residencial en un barrio 
 Martínez Ibarra, Alejandra, & Ibarra Salazar, Jorge. (2017). Los determinantes de la satisfacción residencial en México. Estudios demográficos y urbanos, 32(2), 283-313. <https://doi.org/10.24201/edu.v32i2.1635>
 
 Sabatini, F. (2011). La segregación social del espacio en las ciudades de América Latina. <https://doi.org/10.18235/0009848>
+
+# Trabajo 2:
+
+# Asociación de variables en base a la construcción de una tabla de correlaciones y contrucción de escala de "Satisfacción residencial".
+
+## 1. Introducción
+
+El presente trabajo 2 se enmarca como continuación del trabajo 1.
+
+Este trabajo 2 se centra tal como lo indica el titulo en medir la asociación de las variables que fueron seleccionadas en el trabajo anterior; para aquello se realizaria un tabla de correlaciones la cual mediria la convariancia entre ambas variables; siendo aquello seria la forma que tendriamos para saber si nuestras variables se encuentran asociadas entre si y de que forma.
+
+Posterior a la obtención de la tabla de correlaciones, nos dispondremos a realizar una escala con la cual confeccionariamos una medición del concepto de satisfacción residencial.
+
+para entender el porque de la confección de una escala para la medición del concepto de satisfacción residencial es necesaria adentrarnos en el siguiente punto:
+
+### 1.1 Recapitulación del trabajo anterior y el porqué de la elaboración de una escala de medición de la "Satisfacción residencial".
+
+En el trabajo anterior referido a las "Determinantes residenciales que motivan la decision del cambio de hogar en Chile" establecimos que nuestro concepto central a investigar seria el de "satisfacción residencial" concepto al cual lo entendemos desde de la definición de (Amérigo, *et al*, 2014) como: "como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico".
+
+Ademas establecimo como nuestra hipotesis de investigación el que: "se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar".
+
+Es asi que seria necesaria la elaboración de una escala con la cual podriamos elaborar una medición que contemple nuestra definición del concepto de "Satisfacción residencial" y que ha su vez, esta pueda poner a prueba nuestra hipotesis de investigación respondiendo al ultimo parrafo del punto anterior.
+
+## 2. Preparación del trabajo
+
+### 2.1. Instalación de paquetes:
+
+Los paquetes que empleariamos para la elaboración de este trabajo serian los mismo que los del trabajo 1; con la excepción de dos paquetemas mas que se sumarian los cuales serian: GGally y corrplot.
+
+Estos se utilizarian para la elaboración de las correlaciones y la graficación de las mismas respectivamente.
+
+```{r}
+pacman::p_load(sjlabelled,
+               dplyr,
+              stargazer, 
+              sjmisc, 
+              summarytools, 
+              kableExtra, 
+              sjPlot,
+              corrplot, 
+              sessioninfo, 
+              ggplot2,
+              knitr,
+              GGally,
+              corrplot) 
+```
+
+### 2.2. Descarga de la base de datos
+
+Nuestra base de datos con la que nos dispondriamos a trabajar seria la "Encuesta Longitudinal Social de Chile" realizada por el COES (Centro de Estudios de Conflicto y Cohesión social).
+
+Y esta base la descargamos desde internet con el siguiente link:
+
+```{r}
+load(url("https://dataverse.harvard.edu/api/access/datafile/7245118"))
+```
+
+## 2.3. Selección de variables
