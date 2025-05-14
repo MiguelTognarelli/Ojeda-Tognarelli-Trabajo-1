@@ -326,33 +326,35 @@ Sabatini, F. (2011). La segregación social del espacio en las ciudades de Amér
 
 # Trabajo 2:
 
-# Asociación de variables en base a la construcción de una tabla de correlaciones y contrucción de escala de "Satisfacción residencial".
+# Asociación de variables en base a la construcción de una tabla de correlaciones y contrucción de índice de "Satisfacción residencial".
 
 ## 1. Introducción
 
 El presente trabajo 2 se enmarca como continuación del trabajo 1.
 
-Este trabajo 2 se centra tal como lo indica el titulo en medir la asociación de las variables que fueron seleccionadas en el trabajo anterior; para aquello se realizaria un tabla de correlaciones la cual mediria la convariancia entre ambas variables; siendo aquello seria la forma que tendriamos para saber si nuestras variables se encuentran asociadas entre si y de que forma.
+Este trabajo 2 se centra tal como lo indica el título en medir la asociación de las variables que fueron seleccionadas en el trabajo anterior; para aquello se realizaría una tabla de correlaciones la cual mediría la covariancia entre ambas variables; siendo aquello seria la forma que tendríamos para saber si nuestras variables se encuentran asociadas entre sí y de qué forma.
 
-Posterior a la obtención de la tabla de correlaciones, nos dispondremos a realizar una escala con la cual confeccionariamos una medición del concepto de satisfacción residencial.
+Posterior a la obtención de la tabla de correlaciones, nos dispondremos a realizar un indice con la cual confeccionaríamos una medición del concepto de satisfacción residencial.
 
-para entender el porque de la confección de una escala para la medición del concepto de satisfacción residencial es necesaria adentrarnos en el siguiente punto:
+Para entender el porqué de la confección de un indice para la medición del concepto de "Satisfacción residencial" es necesaria adentrarnos en el siguiente punto:
 
-### 1.1 Recapitulación del trabajo anterior y el porqué de la elaboración de una escala de medición de la "Satisfacción residencial".
+### 1.1 Recapitulación del trabajo anterior y el porqué de la elaboración de un índice de medición de la "Satisfacción residencial".
 
-En el trabajo anterior referido a las "Determinantes residenciales que motivan la decision del cambio de hogar en Chile" establecimos que nuestro concepto central a investigar seria el de "satisfacción residencial" concepto al cual lo entendemos desde de la definición de (Amérigo, *et al*, 2014) como: "como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico".
+En el trabajo anterior referido a las "Determinantes residenciales que motivan la decisión del cambio de hogar en Chile" establecimos que nuestro concepto central a investigar sería el de "satisfacción residencial" concepto al cual lo entendemos desde de la definición de (Amérigo, *et al*, 2014) como: "como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico".
 
-Ademas establecimo como nuestra hipotesis de investigación el que: "se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar".
+Además, establecimos como nuestra hipótesis de investigación el que: "se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar".
 
-Es asi que seria necesaria la elaboración de una escala con la cual podriamos elaborar una medición que contemple nuestra definición del concepto de "Satisfacción residencial" y que ha su vez, esta pueda poner a prueba nuestra hipotesis de investigación respondiendo al ultimo parrafo del punto anterior.
+Es así que sería necesaria la elaboración de una escala con la cual podríamos elaborar una medición que contemple nuestra definición del concepto de "Satisfacción residencial" y que a su vez, esta pueda poner a prueba nuestra hipótesis de investigación respondiendo al último párrafo del punto anterior.
 
 ## 2. Preparación del trabajo
 
 ### 2.1. Instalación de paquetes:
 
-Los paquetes que empleariamos para la elaboración de este trabajo serian los mismo que los del trabajo 1; con la excepción de dos paquetemas mas que se sumarian los cuales serian: GGally y corrplot.
+Los paquetes que empleamos para la elaboración de este trabajo serían los mismo que los del trabajo 1; con la excepción de dos paquetes más que se sumarian los cuales serían: GGally y corrplot.
 
-Estos se utilizarian para la elaboración de las correlaciones y la graficación de las mismas respectivamente.
+Estos se utilizarían para la elaboración de las correlaciones y la elaboración de de los gráficos de estos mismos respectivamente.
+
+Es necesario un paquete extra para la elaboración del índice que los que tenemos previamente:
 
 ```{r}
 pacman::p_load(sjlabelled,
@@ -372,9 +374,9 @@ pacman::p_load(sjlabelled,
 
 ### 2.2. Descarga de la base de datos
 
-Nuestra base de datos con la que nos dispondriamos a trabajar seria la "Encuesta Longitudinal Social de Chile" realizada por el COES (Centro de Estudios de Conflicto y Cohesión social).
+Nuestra base de datos con la que nos dispondríamos a trabajar seria la "Encuesta Longitudinal Social de Chile" realizada por el COES (Centro de Estudios de Conflicto y Cohesión social).
 
-Y esta base la descargamos desde internet con el siguiente link:
+Y esta base la descargamos desde internet con el siguiente enlace:
 
 ```{r}
 load(url("https://dataverse.harvard.edu/api/access/datafile/7245118"))
@@ -398,7 +400,7 @@ t11_03: Frecuencia: Amenazas, insultos u ofensas de vecinos del barrioFrecuencia
 
 t11_04: Frecuencia: Problemas por vecinos botan basura o similar (nombrada como: Frecue_vecino_sucio)
 
-Es asi que nos quedariamos con las siguientes 15 variables:
+Es así como nos quedaríamos con las siguientes 15 variables:
 
 t02_01: Grado de acuerdo: Este es el barrio ideal para mi (nombrada como: Barrio_ideal)
 
@@ -410,29 +412,29 @@ t02_04: Grado de acuerdo: Este barrio es parte de mi (nombrada como: Parte_barri
 
 t05: Tiene planeado cambiarse de casa/departamento en el proximo annio (nombrada como: Cambio_hogar)
 
-t06_01: Grado de satisfaccion: Seguridad del barrio (nombrada como: Satis_seguridad)
+t06_01: Grado de satisfacción: Seguridad del barrio (nombrada como: Satis_seguridad)
 
-t06_02: Grado de satisfaccion: Conectividad (nombrada como: Satis_conectividad)
+t06_02: Grado de satisfacción: Conectividad (nombrada como: Satis_conectividad)
 
-t06_03: Grado de satisfaccion: Areas verdes y de recreacion disponibles (nombrada como: Satis_area_ocio)
+t06_03: Grado de satisfacción: Áreas verdes y de recreación disponibles (nombrada como: Satis_area_ocio)
 
-t06_04: Grado de satisfaccion: Limpieza y belleza del barrio (nombrada como: Satis_barrio_limp)
+t06_04: Grado de satisfacción: Limpieza y belleza del barrio (nombrada como: Satis_barrio_limp)
 
-t06_05: Grado de satisfaccion: Proximidad al lugar de actividad principal (nombrada como: Satis_cerca_trab)
+t06_05: Grado de satisfacción: Proximidad al lugar de actividad principal (nombrada como: Satis_cerca_trab)
 
-t06_06: Grado de satisfaccion: Proximidad a colegios de buena calidad (nombrada como: Satis_cerca_coleg)
+t06_06: Grado de satisfacción: Proximidad a colegios de buena calidad (nombrada como: Satis_cerca_coleg)
 
-t06_07: Grado de satisfaccion: Proximidad a areas de comercio (nombrada como: Satis_cerca_comerc)
+t06_07: Grado de satisfacción: Proximidad a áreas de comercio (nombrada como: Satis_cerca_comerc)
 
-t06_08: Grado de satisfaccion: Proximidad con familiares y/o amigos cercanos (nombrada como: Satis_cerca_amig_fami)
+t06_08: Grado de satisfacción: Proximidad con familiares y/o amigos cercanos (nombrada como: Satis_cerca_amig_fami)
 
-t07_01: Grado de satisfaccion: Tamannio de la vivienda (nombrada como: Satis_tamano_viv)
+t07_01: Grado de satisfacción: Tamannio de la vivienda (nombrada como: Satis_tamano_viv)
 
-t07_02: Grado de satisfaccion: Calidad de la vivienda (nombrada como: Satis_calidad_viv)
+t07_02: Grado de satisfacción: Calidad de la vivienda (nombrada como: Satis_calidad_viv)
 
-Para seleccionar dichas variables creariamos una sub-base la cual utilizariamos a lo largo de todo este trabajo la cual seria llamada como: "proc_data_2022_tr2.
+Para seleccionar dichas variables crearíamos una sub-base la cual utilizaremos a lo largo de todo este trabajo la cual sería llamada como: "proc_data_2022_tr2.
 
-Esta sub-base seria creada a partir de la sub-base realizada para el primer trabajo llamada proc_data_2022; de esta ultima variable seleccionariamos las variables que utilizariamos para este trabajo 2 y aquellas no seleccionadas serian descartas ( las cuales serian las variables anteriormente mencionadas).
+Esta sub-base seria creada a partir de la sub-base anteriormente realizada en el primer trabajo llamada proc_data_2022; de esta última seleccionamos las variables que utilizaremos para este trabajo 2 y aquellas no seleccionadas serian descartas (las cuales serían las variables anteriormente mencionadas).
 
 ```{r}
 proc_data_2022_tr2 <- proc_data_2022 %>% 
@@ -453,40 +455,40 @@ proc_data_2022_tr2 <- proc_data_2022 %>%
          Satis_calidad_viv)
 ```
 
-hacemos este proceso de este modo porque asi nos ahorramos el tener que reetiquetar cada una de las variables.
+Hacemos este proceso de este modo porque así nos ahorramos el tener que reetiquetar cada una de las variables.
 
 ### 2.4. Tratamiento de los casos perdidos
 
-Ademas de ahorranos el tener que reetiquetar cada una de las variables con el metodo anterior, nos ahorramos el tener que tratar los casos perdidos correspondientes a (NS/NR) correspondientea "no sabe"/"no responde" ya que estos fueron tratados en la sub-base anterior en el trabajo 1.
+Además de ahorrarnos el tener que reetiquetar cada una de las variables con el método anterior, nos ahorramos el tener que tratar los casos perdidos correspondientes a (NS/NR) correspondiente a "no sabe"/"no responde" ya que estos fueron tratados en la sub-base anterior en el trabajo 1.
 
-Aun asi para aclararlo dichos valores perdido de (NS/NR) correspondientes a los valores de -888 y -999 fueron marcados como NA.
+Aun así, para aclararlo dichos valores perdido de (NS/NR) correspondientes a los valores de -888 y -999 fueron marcados como NA.
 
 Dichos valores fueron retenidos en la base de datos, pero son excluidos como valores faltantes en la variable al momento de analizarlos en ese momento en cualquier operación.
 
-Tal seria en el caso del calculo de medias; la confeccion de tabla de correlaciones y la escalas que realizariamos en este trabajo. Este tratamiento de los casos perdidos (NA) que realizamos en este trabajo seria conocido como PAIRWISE DELETION.
+Tal seria en el caso del cálculo de medias; la confección de tabla de correlaciones y el índice que realizaríamos para este trabajo. Este tratamiento de los casos perdidos (NA) que realizamos en este trabajo seria conocido como PAIRWISE DELETION.
 
 ### 2.5. Tratamiento de las variables.
 
 #### 2.5.1. Tratamiento de la variable Cambio_hogar
 
-Respecto al tratamiento de las variables, para este trabajo realizaremos uno de los aspectos que consideramos en el punto 4 del trabajo anterior (trabajo 1) y que seria el tratamiento que tendria la variable Cambio_hogar.
+Respecto al tratamiento de las variables, para este trabajo realizaremos uno de los aspectos que consideramos en el punto 4 del trabajo anterior (trabajo 1) y que sería el tratamiento que tendría la variable Cambio_hogar.
 
-Esta se encuentra codificada en cuantro categorias de respuesta: 1 - "Si, a otro barrio de la comuna"; 2 - "Si, a otra comuna"; 3 - "No, porque estoy bien donde estoy" y 4 - "No, no puedo aunque quisiera".
+Esta se encuentra codificada en cuatro categorías de respuesta: 1 - "Si, a otro barrio de la comuna"; 2 - "Si, a otra comuna"; 3 - "No, porque estoy bien donde estoy" y 4 - "No, no puedo aunque quisiera".
 
 Para este trabajo recodificaremos dicha variable para que esta pase a ser dummy (categorizada con valores referentes a 0 y 1).
 
-Para eso englobariamos las categorias de respuesta 1 y 2 en la anternativa de respuesta: "Ha pensado en cambiarse de hogar" mientras que las respuestas 3 y 4 serian englocadas en la alternativa de respuesta: "No ha pensado en cambiarse de hogar".
+Para eso englobaríamos las categorías de respuesta 1 y 2 en la alternativa de respuesta: "Ha pensado en cambiarse de hogar" mientras que las respuestas 3 y 4 serían englobadas en la alternativa de respuesta: "No ha pensado en cambiarse de hogar".
 
-Para eso hariamos lo siguiente:
+Para eso haríamos lo siguiente:
 
 ```{r}
 proc_data_2022_tr2$Cambio_hogar <- car::recode(proc_data_2022_tr2$Cambio_hogar,
                                                "c(1,2)=1; c(3,4)=2")
 ```
 
-recodificamos las alternativas de respuestas 1 y 2 como 1; mientras que las alternativas de repuesta 3 y 4 como 2.
+Recodificamos las alternativas de respuestas 1 y 2 como 1; mientras que las alternativas de repuesta 3 y 4 como 2.
 
-Porterior a aquello le asignamos a la categoria de respuesta 1, el valor de 0 y a la categoria de respuesta 2, el valor de 1.
+Posterior a aquello le asignamos a la categoría de respuesta 1, el valor de 0 y a la categoría de respuesta 2, el valor de 1.
 
 ```{r}
 proc_data_2022_tr2$Cambio_hogar <- car::recode(proc_data_2022_tr2$Cambio_hogar, "1=0;2=1")
@@ -494,7 +496,7 @@ proc_data_2022_tr2$Cambio_hogar <- car::recode(proc_data_2022_tr2$Cambio_hogar, 
 
 Hicimos esos dos pasos en vez de haberlo realizado directamente para evitar errores en el tratamiento de esta variable en la sub-base.
 
-Asignamos dichas categorias de respuesta a los valores de las variables
+Asignamos dichas categorías de respuesta a los valores de las variables:
 
 ```{r}
 proc_data_2022_tr2$Cambio_hogar <- factor(proc_data_2022_tr2$Cambio_hogar,
@@ -503,19 +505,19 @@ proc_data_2022_tr2$Cambio_hogar <- factor(proc_data_2022_tr2$Cambio_hogar,
                                           levels = c (0,1))
 ```
 
-y vemos la categoria/etiqueta de esta
+Y vemos la categoría/etiqueta de esta
 
 ```{r}
 get_label(proc_data_2022_tr2$Cambio_hogar)
 ```
 
-Null indicaria que esta variable carecia de categorias de respuesta o una etiqueta en si misma asi que se la procederiamos a agregar.
+NULL indicaría que esta variable carece de categorías de respuesta o una etiqueta en si misma así que se la procederíamos a agregar.
 
 ```{r}
 proc_data_2022_tr2$Cambio_hogar <- set_label(x = proc_data_2022_tr2$Cambio_hogar, label = "Cambio hogar")
 ```
 
-Procedemos a realizar una tabla para ver si se aplico la categoria a la variable y si se aplicaron las categorias de respuesta:
+Procedemos a realizar una tabla para ver si se aplicó la categoría a la variable y si se aplicaron las categorías de respuesta:
 
 ```{r}
 frq(proc_data_2022_tr2$Cambio_hogar)
@@ -525,9 +527,9 @@ frq(proc_data_2022_tr2$Cambio_hogar)
 levels(proc_data_2022_tr2$Cambio_hogar)
 ```
 
-Como podemos ver ambas se pudieron aplicar correctamente y las dejamos en esta parte del trabajo por fines descriptivos y para su consulta; mas en si se procedera a devolverlas a su forma numerica porque para el proximo paso referido a la tabla de correlaciones es necesario que todas las variables sean numericas.
+Como podemos ver ambas se pudieron aplicar correctamente y las dejamos en esta parte del trabajo por fines descriptivos y para su consulta; más en si se procederá a devolverlas a su forma numérica porque para el próximo paso referido a la tabla de correlaciones es necesario que todas las variables sean numéricas.
 
-Asi que de volvemos ambas variables a sus valores numericos
+Así que de volvemos ambas variables a sus valores numéricos:
 
 ```{r}
 proc_data_2022_tr2$Cambio_hogar <- as.numeric(recode(proc_data_2022_tr2$Cambio_hogar, "Ha pensado en cambiarse de hogar" = 0, "No ha pensado en cambiarse de hogar" = 1 ))
@@ -541,9 +543,9 @@ frq(proc_data_2022_tr2$Cambio_hogar)
 
 #### 2.5.2. Tratamiento del resto de variables de la sub-base
 
-Para el resto de variables el unico tratamiento que estas recibirian seria el de una recodificación de los valores de su categoria de respuesta.
+Para el resto de las variables el único tratamiento que estas recibirían sería el de una recodificación de los valores de su categoría de respuesta.
 
-Todas nuestras variables tienen como categoria de respuestas valores que van de 1 a 5; en este apartado se recodificarian dichos valores para que pasen a ser de 0 a 4; esto se realizaria para facilitar la interpretación de la futura escala que realizariamos facilitandonos asi la interpretación de sus valores partiendo de un minimo que seria 0 y el maximo correspondiente al indice.
+Todas nuestras variables tienen como categoría de respuestas valores que van de 1 a 5; en este apartado se recodificaran dichos valores para que pasen a ser de 0 a 4; esto se realizaría para facilitar la interpretación del futuro índice que realizaremos facilitándonos así la interpretación de sus valores partiendo de un mínimo que seria 0 y el máximo correspondiente al índice.
 
 ```{r}
 proc_data_2022_tr2$Barrio_ideal <- car::recode(proc_data_2022_tr2$Barrio_ideal, "1=0; 2=1; 3=2; 4=3; 5=4; else=NA")
@@ -575,21 +577,21 @@ proc_data_2022_tr2$Satis_tamano_viv <- car::recode(proc_data_2022_tr2$Satis_tama
 proc_data_2022_tr2$Satis_calidad_viv <- car::recode(proc_data_2022_tr2$Satis_calidad_viv, "1=0; 2=1; 3=2; 4=3; 5=4; else=NA")
 ```
 
-La primera parte del codigo que estariamos realizando referidoa la car::recode se utiliza para indicarle a Rstudios que queremos realizar la acción de recode del paquete car en especifico y evitar confusiones debido a que el paquete dplyr tambien tiene la función de recode.
+La primera parte del código que estaríamos realizando referidos la car::recode se utiliza para indicarle a Rstudios que queremos realizar la acción de recode del paquete car en específico y evitar confusiones debido a que el paquete dplyr también tiene la función de recode.
 
-La ultima parte de este codigo referido al de "esle=NA" se utiliza para indicar que no se consideren los valores omitidos.
+La última parte de este código referido al de "esle=NA" se utiliza para indicar que no se consideren los valores omitidos.
 
 #### 2.5.3. Guardamos la base de datos
 
 Guardamos la base de datos que hemos realizado en la carpeta de imput para poder cargarla en trabajos futuros.
 
 ```{r}
-save(proc_data_2022_tr2, file = "C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022.RData")
+save(proc_data_2022_tr2, file = "C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022_tr2.RData")
 ```
 
 ## 3. Tabla de Correlaciones
 
-Como se menciono con anterioridad para realizar una tabla de correlaciones, se necesita de que todas las variables de la sub-base sean numericas; teniendo aquel prerequisito cumplido la tabla de correlaciones se elaboraria y se veria de la siguiente manera:
+Como se mencionó con anterioridad para realizar una tabla de correlaciones, se necesita que todas las variables de la sub-base sean numéricas; teniendo aquel prerrequisito cumplido la tabla de correlaciones se elaboraría y se vería de la siguiente manera:
 
 ```{r}
 Correlacion_2022 <- cor(proc_data_2022_tr2, use = "complete.obs")
@@ -597,28 +599,28 @@ Correlacion_2022 <- cor(proc_data_2022_tr2, use = "complete.obs")
 Correlacion_2022
 ```
 
-Debido a las limitaciones que tiene Rstudios y Quarto la tabla de correlaciones se veria de aquella manera, aun asi ahi otras alternativas que se pueden realizar para facilitar el aspecto referido a la confección he interpretación de la tabla de correlaciones:
+Debido a las limitaciones que tiene Rstudios y Quarto la tabla de correlaciones se vería de aquella manera, aun así, ahí otras alternativas que se pueden realizar para facilitar el aspecto referido a la confección he interpretación de la tabla de correlaciones.
 
-La tabla de correlaciones tambien se podria realizar de la siguiente manera:
+La tabla de correlaciones también se podría realizar de la siguiente manera:
 
 ```{r}
 sjPlot::tab_corr(proc_data_2022_tr2, triangle = "lower")
 ```
 
-Aun asi para fines de este trabajo optariamos por realizar la tabla de correlaciones de la siguiente manera con el siguiente codigo:
+Aun así, para fines de este trabajo optaríamos por realizar la tabla de correlaciones de la siguiente manera con el siguiente código:
 
 ```{r, fig.width=16, fig.height=12}
 corrplot.mixed(Correlacion_2022)
 
 ```
 
-Optamos por esta forma de realizar la tabla de correlaciones porque esta tabla es la que contendria mayor cantidad de información referente a la asociación de las variables por si misma.
+Optamos por esta forma de realizar la tabla de correlaciones porque esta tabla es la que contendría mayor cantidad de información referente a la asociación de las variables por sí misma.
 
-Cuenta con el valor exactado de la asociación en la parte inferior de la tabla y esta se remarca con color azul cuando es positiva y a mayor asociación mas intenso es dicho color; en caso de que no exita asociación entre las variables el valor de los numero se veria con una tonalidad translucida (y en caso de que la asociación sea negativa esta se remarcaria con color rojo y a mayor dicha asociación mas intenso seria dicho color).
+Cuenta con el valor exacto de la asociación en la parte inferior de la tabla y esta se remarca con color azul cuando es positiva y a mayor asociación más intenso es dicho color; en caso de que no exista asociación entre las variables el valor de los numero se vería con una tonalidad translucida (y en caso de que la asociación sea negativa esta se remarcaría con color rojo y a mayor dicha asociación más intenso seria dicho color).
 
-En la parte superior de la tabla se contaria con figuras de circulos que reprentaria de manera descritiva las correlaciones entre la variables; mientras mayor sea el tamaño de circulo y mas intenso su color aquello indicaria que es mayor la asociación de las variables.
+En la parte superior de la tabla se contaría con figuras de círculos que representaría de manera descriptiva las correlaciones entre las variables; mientras mayor sea el tamaño de circulo y más intenso su color aquello indicaría que es mayor la asociación de las variables.
 
-Y el color de los circulos seguiria respondiendo a la misma logica de asociación de las variables que los numero: Azul - Correlación positiva; Translucido - Poco carrelación; Rojo - Asociación negativa.
+Y el color de los círculos seguiría respondiendo a la misma lógica de asociación de las variables que los numero: Azul - Correlación positiva; Translucido - Poca correlación; Rojo - Asociación negativa.
 
 Con dicha tabla (o tablas en caso de que se quiera considerar las tablas anteriores) podemos interpretar lo siguiente:
 
@@ -634,55 +636,55 @@ Estas correlaciones fuertes se explican porque todas las variables mencionadas g
 
 Ahora dejando atrás aquellas variables de una dimensión de comunidad, pasamos con aquellas variables vinculadas con el entorno físico del barrio como lo son la variable de grado de satisfacción con la limpieza o belleza del barrio en correlación con la satisfacción de la cercanía a áreas verdes o lugares de ocio donde presentan una correlación significativa de (r=0.563) es decir que hay una relación bastante fuerte, esto lo podríamos interpretar como aquellos lugares que presentan lugares de ocio o áreas verdes son considerados más limpios o bellos por las personas, es decir que estos aspectos.
 
-Por ultimo aquellas variables que presentan una correlación bastante fuerte son las variables de grado de satisfacción con la calidad de la vivienda, con las variables grado de satisfacción con el tamaño de la vivienda(r=0.563), en este proponemos dos tipos de interpretaciones distintas, La primera sugiere que los encuestados tienden a asociar directamente la calidad con el tamaño, considerando que una vivienda más grande implica una mayor calidad. La segunda posibilidad es que los participantes hayan interpretado ambas preguntas como equivalentes, lo que habría llevado a responder de forma muy similar en ambos ítems. Esta percepción solapada podría explicar la fuerte correlación observada.
+Por ultimo aquellas variables que presentan una correlación bastante fuerte son las variables de grado de satisfacción con la calidad de la vivienda, con las variables grado de satisfacción con el tamaño de la vivienda(r=1), en este proponemos dos tipos de interpretaciones distintas, La primera sugiere que los encuestados tienden a asociar directamente la calidad con el tamaño, considerando que una vivienda más grande implica una mayor calidad. La segunda posibilidad es que los participantes hayan interpretado ambas preguntas como equivalentes, lo que habría llevado a responder de forma muy similar en ambos ítems. Esta percepción solapada podría explicar la fuerte correlación observada.
 
-El objetivo central de nuestro análisis es identificar qué variables podrían influir de manera importante en la decisión de cambiar de hogar. Sin embargo, al revisar las correlaciones entre las variables analizadas y la variable cambio de hogar, observamos que ninguna de las asociaciones alcanza un nivel fuerte o significante que pueda ser considerado como importante, la variable que tiene la correlación más alta es entre cambio de hogar y la variable Grado de acuerdo con la pertinencia del barrio (0.255), es decir una correlación pequeña. Esto sugiere que, dentro del conjunto de variables consideradas, ninguna parece tener un impacto significativo por sí sola en la decisión de mudanza. En términos analíticos, esto implica que estas variables independientes, de forma individual, no logran explicar con fuerza la variación observada en la variable dependiente.
+El objetivo central de nuestro análisis es identificar qué variables (y dimensiones de la satisfacción residencial) podrían influir de manera importante en la decisión de cambiar de hogar. Sin embargo, al revisar las correlaciones entre las variables analizadas y la variable cambio de hogar, observamos que ninguna de las asociaciones alcanza un nivel fuerte o significante que pueda ser considerado como importante, la variable que tiene la correlación más alta es entre cambio de hogar y la variable Grado de acuerdo con la pertinencia del barrio (0.255), es decir una correlación pequeña. Esto sugiere que, dentro del conjunto de variables consideradas, ninguna parece tener un impacto significativo por sí sola en la decisión de mudanza. En términos analíticos, esto implica que estas variables independientes, de forma individual, no logran explicar con fuerza la variación observada en la variable dependiente.
 
-## 4. Elaboración de la escala de "Satisfacción residencial"
+## 4. Elaboración del índice de "Satisfacción residencial"
 
-Habiendo realizado ya la tabla de correlaciones y posteriormente habiendo concluido por medio de su interpretación que ninguna de las variables independientes es capaz de explicar o provocar por si misma un cambio en la variable dependendiente; es que procederiamos a realizar una escala que considere el concepto de "Satisfacción residencial".
+Habiendo realizado ya la tabla de correlaciones y posteriormente habiendo concluido por medio de su interpretación que ninguna de las variables independientes es capaz de explicar o provocar por sí misma un cambio en la variable dependiente; es que procederíamos a realizar un índice que considere el concepto de "Satisfacción residencial".
 
-Dicha escala estaria elaborada a partir de la consideración de todas las variables independientes en su conjunto. con la cual creemos que se lograria representar de manera mas precisa la complejidad del concepto que se esta investugando investigando.
+Dicho índice estaría elaborado a partir de la consideración de todas las variables independientes en su conjunto. con la cual creemos que se lograría representar de manera más precisa la complejidad del concepto que se está investigando; además contaría con el respaldo teórico de los textos empleados como definición teórica del concepto de "Satisfacción residencial" en el trabajo 1.
 
-### 4.1. Medición de la consistencia interna de la tabla
+### 4.1. Medición de la consistencia interna del índice
 
-Para poder realizar una escala en primera instancia requeririamos del saber si todas las variables tienen consistencia entre si; para aquello seria necesario medir la consistencia interna de las variables.
+Para poder realizar un índice en primera instancia requeriríamos del saber si todas las variables tienen consistencia entre sí; para aquello sería necesario medir la consistencia interna de las variables.
 
-Para poder realizar aquello utilizaremos el siguiente codigo:
+Para poder realizar aquello utilizaremos el siguiente código:
 
 ```{r}
 psych::alpha(Correlacion_2022)
 ```
 
-El valor minimo necesario para considerar que ahi una consistencia interna dentro de un indice/escala es de un alfa de croncach superior a 0.60; el valor de consistencia interna de nuestra escala es de un alfa de cronbach de 0.8471 (0.85 aproximado) segun el resultado arrojado por la variable raw_alpha (que seria el alfa de cronbach).
+El valor mínimo necesario para considerar que ahí una consistencia interna dentro de un índice/escala es de un alfa de Cronbach superior a 0.60; el valor de consistencia interna de nuestro índice es de un alfa de Cronbach de 0.8471 (0.85 aproximado) según el resultado arrojado por la variable raw_alpha (que sería el alfa de Cronbach).
 
-Aquello indicaria que nuestra escala tiene una alta consistencia interna superando el valor aceptable.
+Aquello indicaría que nuestra escala tiene una alta consistencia interna superando el valor aceptable.
 
-### 4.2 Confección de las dimensiones de la escala
+### 4.2 Confección de las dimensiones del índice
 
-Ya sabiendo que nuestras variables en su conjunto apportaria con la suficiente consistencia interna para la elavoración de la escala es que procederiamos a realizarla.
+Ya sabiendo que nuestras variables en su conjunto aportarían con la suficiente consistencia interna para la elaboración del índice es que procederíamos a realizarlo.
 
-En primer lugar lo que habria que hacer corresponde al elaborar las dimensiones con las que se elabolaria la escala.
+En primer lugar, lo que habría que hacer corresponde al elaborar las dimensiones con las que se elaboraría dicho índice.
 
-Considerando que el concepto que buscariamos representar con la escala seria el de "Satisfacción residencial" el cual fue definido tanto en el trabajo anterior (trabajo 1) como en la recapitulación del dicho trabajo en el punto 1.1 es que estableceriamos que el concepto de "Satisfación residencial" se puede articular a traves de 4 dimensiones con la que se conformaria nuestra escala.
+Considerando que el concepto que buscaríamos representar con el índice sería el de "Satisfacción residencial" el cual fue definido tanto en el trabajo anterior (trabajo 1) como en la recapitulación del dicho trabajo en el punto 1.1 es que estableceríamos que el concepto de "Satisfacción residencial" se puede articular a través de 4 dimensiones con la que se conformaría nuestro índice.
 
-Recordandolo brevemente nuestra definición de "Satisfación residencial" seria la siguiente: "como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico" (Amérigo, *et al*, 2014).
+Recordando brevemente nuestra definición de "Satisfacción residencial" seria la siguiente: "como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico" (Amérigo, *et al*, 2014).
 
-A partir de dichas definición las dimensiones serian las siguientes:
+A partir de dichas definiciones las dimensiones serían las siguientes:
 
 1 - Identitaria; 2 - Material; 3 - Ambiental y 4 - Ocupacional.
 
-Y cada una representaria lo siguiente:
+Y cada una representaría lo siguiente:
 
 1 - Identitaria: la evaluación subjetiva que realiza el individuo de su entorno a partir de sus interacciones/relaciones sociales.
 
 2 - Material: la evaluación subjetiva que realiza el individuo sobres las condiciones de su vivienda.
 
-3 - Ambiental: la evaluación subjetiva que realiza el individuo de su entorno inmediato centrandose en aspectos fisicos.
+3 - Ambiental: la evaluación subjetiva que realiza el individuo de su entorno inmediato centrándose en aspectos físicos.
 
-4 - Ocupacional: la evaluación subjetiva que realiza el individuo de su enterno inmediato centrandose en aspectos sociales.
+4 - Ocupacional: la evaluación subjetiva que realiza el individuo de su entorno inmediato centrándose en aspectos sociales.
 
-La elaboración de esas cuatro dimensiones se realizaria a partir de la siguiente forma:
+La elaboración de esas cuatro dimensiones se realizaría a partir de la siguiente forma:
 
 ```{r}
 proc_data_2022_tr2 = proc_data_2022_tr2 %>% 
@@ -694,40 +696,40 @@ proc_data_2022_tr2 = proc_data_2022_tr2 %>%
   ungroup()
 ```
 
-Antes de continuar hacemos mención de que la selección de las variables para cada una de las dimensiónes se hizo a partir de un criterio de selección donde se relaciono cada una de las variables de la sub-base de datos con la definiición que se entrego de cada una de las dimensiones.
+Antes de continuar hacemos mención de que la selección de las variables para cada una de las dimensiones se hizo a partir de un criterio de selección donde se relacionó cada una de las variables de la sub-base de datos con la definición que se entregó de cada una de las dimensiones.
 
-Asi por ejemplo las variables referidas al barrio se asociaron a la dimensión identitaria; las variables referidas a la satisfación con la infrastuctura/calidad de la vivienda se relaciono con la dimensión material y asi respectivamente con las dimensiones restantes.
+Así por ejemplo las variables referidas al barrio se asociaron a la dimensión identitaria; las variables referidas a la satisfacción con la infraestructura/calidad de la vivienda se relacionó con la dimensión material y así respectivamente con las dimensiones restantes.
 
-Respecto a las distribución de las variables para la elaboración de la escala de "Satisfacción residencail" se emplearon 14 de las 15 variables (no se concidero la variable dependiente de cambio de hogar) y estas se repartiron de la siguiente manera:
+Respecto a las distribuciones de las variables para la elaboración del índice de "Satisfacción residencial" se emplearon 14 de las 15 variables (no se consideró la variable dependiente de cambio de hogar) y estas se repartieron de la siguiente manera:
 
 1 - Dimensión Identitaria: 4 variables (Barrio_ideal - t02_01; Integra_barrio - t02_02; Identi_gente - t02_03 y Parte_barrio - t02_04).
 
-2 - Dimensión Material : 2 variables (Satis_tamano_viv - t07_01 y Satis_calidad_viv - t07_02).
+2 - Dimensión Material: 2 variables (Satis_tamano_viv - t07_01 y Satis_calidad_viv - t07_02).
 
 3 - Dimensión Ambiental: 4 variables (Satis_seguridad - t06_01; Satis_conectividad - t06_02; Satis_cerca_comerc - t06_07 y Satis_barrio_limp - t06_04).
 
 4 - Dimensión Ocupacional: 4 variables (Satis_cerca_amig_fami - t06_08; Satis_cerca_trab - t06_05; Satis_cerca_coleg - t06_06 y Satis_area_ocio - t06_03)
 
-De esta forma intentamos asegurar que la repartición de las variables para cada una de las dimensiones fuese lo mas equitativa posible.
+De esta forma intentamos asegurar que la repartición de las variables para cada una de las dimensiones fuese lo más equitativa posible.
 
-### 4.3. Asignación de peso a las dimensiones y elaboración de la escala de "Satisfacción residencial".
+### 4.3. Asignación de peso a las dimensiones y elaboración del índice de "Satisfacción residencial".
 
-Ya con las dimensiones realizadas procedemos a asignarles peso a cada una de estas; para este caso como son 4 dimensiones y con una distribución de variables relativamente similar le asignamos el mismo peso a cada dimensión el cual seria de 0.25 (25%).
+Ya con las dimensiones realizadas procedemos a asignarles peso a cada una de estas; para este caso como son 4 dimensiones y con una distribución de variables relativamente similar le asignamos el mismo peso a cada dimensión el cual sería de 0.25 (25%).
 
-Y habiendoles asignado un peso a cada una es que confesionamos la escala con el siguiente codigo:
+Y habiéndoles asignado un peso a cada una es que realizamos el índice con el siguiente código:
 
 ```{r}
 proc_data_2022_tr2 = proc_data_2022_tr2 %>% 
   rowwise() %>% 
-  mutate(Satisfación_residen_pond = (Identitaria*25) + (Material*25) + (Ambiental          *25) + (Ocupacional*25)) %>% 
+  mutate(Satisfación_residen_pond = (Identitaria*25) + (Material*25) + (Ambiental*25) + (Ocupacional*25)) %>% 
   ungroup()
 ```
 
-Aclaramos que pese a que la dimensión material contaba con solo dos variables le asignamos el mismo peso por fines practicos y no complejizar el peso correspondiente para cada una de las dimensiones (ademas si consideramos nuestros antecedentes cada una de las dimensiones que conforma la "Satisfacción residencial" son igual de importantes por lo que no habria ninguna por sobre la otra por lo que se sustentaria nuestra decisión de asignarle el mismo peso).
+Aclaramos que pese a que la dimensión material contaba con solo dos variables le asignamos el mismo peso por fines prácticos y no complejizar el peso correspondiente para cada una de las dimensiones (además si consideramos nuestros antecedentes cada una de las dimensiones que conforma la "Satisfacción residencial" son igual de importantes por lo que no habría ninguna por sobre la otra por lo que se sustentaría nuestra decisión de asignarle el mismo peso).
 
-Ademas mencionamos como punto extra que al momento en que cada vez que fuimos creando una dimensión de la escala y la posterior escala se fue creando una variable extra en nuestra sub- base de datos proc_data_2022_tr2 por lo que se paso de 15 variables a 20 hasta el momento.
+Además, mencionamos como punto extra que al momento en que cada vez que fuimos creando una dimensión del índice y el posterior índice ya creado se fueron creando variables extras en nuestra sub- base de datos proc_data_2022_tr2 por lo que se pasó de 15 variables a 20 hasta el momento.
 
-### 4.4. Descriptivos de las dimesiones y escala de "Satisfacción residencial"
+### 4.4. Descriptivos de las dimesiones y del índice de "Satisfacción residencial"
 
 Descriptivo de la dimensión identitaria:
 
@@ -753,44 +755,100 @@ Descriptivos de la dimensión ocupacional:
 summary(proc_data_2022_tr2$Ocupacional)
 ```
 
-Descriptivos de la escala de "Satisfacción residencial".
+Descriptivos del indice de "Satisfacción residencial".
 
 ```{r}
 summary(proc_data_2022_tr2$Satisfación_residen_pond)
 ```
 
-### 4.5. Interpretaciones de las dimensiones de la escala y de la escala de "Satisfacción residencial"
+### 4.5. Interpretaciones de las dimensiones de la escala y del indice de "Satisfacción residencial"
 
 #### 4.5.1. Interpretación de las dimensiones:
 
-En primera lugar podemos observar que cada una de las dimensiones comparten igual valor minimo y maximo; esto es esperable considerando que cada una de las variables que componen las dimensiones con antelación fueron recodificadas para que sus valores fuesen de 0 a 4.
+En primer lugar, podemos observar que cada una de las dimensiones comparten igual valor mínimo y máximo; esto es esperable considerando que cada una de las variables que componen las dimensiones con antelación fueron recodificadas para que sus valores fuesen de 0 a 4.
 
 Lo que resulta interesante de los descriptivos de cada una de las dimensiones seria su media.
 
-La dimensión con la media mas baja seria la de la dimensión ambiental con una media de 2.498; mientras que la dimensión con la media mas alta seria la de la dimensión material con una media de 2.769.
+La dimensión con la media más baja sería la de la dimensión ambiental con una media de 2.498; mientras que la dimensión con la media más alta sería la de la dimensión material con una media de 2.769.
 
-Las otras dos dimensiones tendria como valor de sus medias valores intermedios (2.544 para la dimensión ocupacional y 2.693 para la dimensión identitaria).
+Las otras dos dimensiones tendrían como valor de sus medias valores intermedios (2.544 para la dimensión ocupacional y 2.693 para la dimensión identitaria).
 
-Lo interesante de aquellos valores es que podemos interpretar que la mayoria de las dimensiones concentran como categorias de respuestas principales las alternativas de "Ni satisfecho ni insatisfecho" y "Satisfecho".
+Lo interesante de aquellos valores es que podemos interpretar que la mayoría de las dimensiones concentran como categorías de respuestas principales las alternativas de "Ni satisfecho ni insatisfecho" y "Satisfecho".
 
-#### 4.5.2. Interpretación de la escala de "Satisfacción residencial"
+#### 4.5.2. Interpretación del indice de "Satisfacción residencial"
 
-Considerando los valores de la escala de "Satisfacción residencial" (la cual se encuentra denominada como Satisfacción_residen_pond) es que sus valores minimos y maximos son distintos a los de las dimensiones; esto se deberia a que para conforma dicha escala a cada uno de los resultados de las dimensiones se los multiplico por el valor de su peso asignado (el peso asignado fue de 0.25 o del 25% especificamente).
+Considerando los valores del índice de "Satisfacción residencial" (la cual se encuentra denominada como Satisfacción_residen_pond) es que sus valores mínimos y máximos son distintos a los de las dimensiones; esto se debería a que para conformar dicho índice; a cada uno de los resultados de las dimensiones se los fue multiplicando por el valor de su peso asignado (el peso asignado fue de 0.25 o del 25% específicamente).
 
-Aun asi su media correspodiente al valor de 262.8 no se diferencia en gran medida de las medias de las otras variables (guardando las proporciones producto al peso asignado a cada dimensión).
+Aun así, su media correspondiente al valor de 262.8 no se diferencia en gran medida de las medias de las otras variables (guardando las proporciones producto al peso asignado a cada dimensión).
 
-Si consideramos el valor minimo y maximo de la escala su media se ubicaria en una posición intermedia de los valores mas cercano al valor maximo que la minimo (pero aun asi distanciandose de los valores minimos y maximos).
+Si consideramos el valor mínimo y máximo del índice su media se ubicaría en una posición intermedia de los valores más cercano al valor máximo que a el mínimo (pero aun así distanciándose de los valores mínimos y máximos).
 
-Si consideramos las categorias de respuesta que componen las variables de cada una de las dimensiones que componen la escala y guardamos las proporciones en cuanto a la diferencias de valores que tiene cada una de estas podriamos decir que los valores de la escala se concentrarian en las alternativas de "Ni satisfecho ni insatisfecho" y "Satisfecho".
+Si consideramos las categorías de respuesta que componen las variables de cada una de las dimensiones que componen el índice y guardo las proporciones en cuanto a las diferencias de valores que tiene cada una de estas podríamos decir que los valores del índice se concentraron en las alternativas de "Ni satisfecho ni insatisfecho" y "Satisfecho".
 
-Por ultimo hacemos mención a un detalle referente al valor minimo de la escala; a diferencia de los valores minimos de cada una de las dimensiones que compondrian la escala que seria de 0, el valor minimo de la escala es de 12.5.
+Por último, mencionamos un detalle referente al valor mínimo del índice; a diferencia de los valores mínimos de cada una de las dimensiones que compondrían el índice que serían de un valor de 0, el valor mínimo del índice es de 12.5.
 
-Esto creemos que seria debido a que al concetrar todas las categorias de respuestas de la sub-base y de las dimensiones, algunas de esta tuvo que presentar un valor minimo distinto a 0 por lo que de ahi se tiene el valor de 12.5; seria dificil que exista alguna observación/caso que tenga valor 0 en cada una de las dimensiones y alternativas de respuesta por lo que seria de esperar que no estuviera el valor minimo de 0 en la escala.
+Esto creemos que sería debido a que al concentrar todas las categorías de respuestas de la sub-base y de las dimensiones, algunas de esta tuvieron que presentar un valor mínimo distinto a 0 por lo que de ahí se tiene el valor de 12.5; sería difícil que exista alguna observación/caso que tenga valor 0 en cada una de las dimensiones y alternativas de respuesta por lo que sería de esperar que no estuviera el valor mínimo de 0 en el índice.
 
-Ademas podriamos considerar que el valor de 0 en esta escala de "Satisfacción residencial" es teoricamente plausible pero empiricamente dificil.
+También influirían el peso de las dimensiones en las puntuaciones como para que el valor mínimo fuese 12.5 y no 0.
 
-### 4.6. ¿Satisfacción general?
+Además, podríamos considerar que el valor de 0 en este índice de "Satisfacción residencial" es teóricamente plausible, pero empíricamente difícil.
 
-## 5. Conclusiones
+### 4.6. Satisfacción residencial general en base a las dimensiones
+
+Por último, se podría realizar un paso extra para el análisis; y es que se le puede crear una variable que resuma el nivel de satisfacción residencial que tengan los encuestados a partir de cuan satisfechos estén en diversas dimensiones de lo que compondría el índice de "Satisfacción residencial".
+
+Para aquello debemos realizar el siguiente código:
+
+```{r}
+proc_data_2022_tr2 <- proc_data_2022_tr2 %>% mutate(Satisfaccion_reside = case_when(Satisfación_residen_pond>=50~"Conforme", Satisfación_residen_pond<50~"No conforme"))
+```
+
+El código esta nueva variable denominada como "Satisfaccion_reside" indicaría, si el encuestado estaría satisfecho en por lo menos dos dimensiones del índice de "Satisfacción residencial".
+
+Realizando una tabla de proporciones y pasándola a porcentajes la distribución de esta variable de "Satisfaccion_reside" estaría distribuida de la siguiente forma:
+
+```{r}
+prop.table(table(proc_data_2022_tr2$Satisfaccion_reside))*100
+```
+
+Según la tabla de proporciones se puede concluir que el 99,9% de la muestra que compone la sub-base de datos proc_data_tr2 se encontraría "Conforme" con al menos 2 de las cuatro dimensiones del índice de "Satisfacción residencial".
+
+El otro 0,1% restante se encontraría "No conforme" con al menos 2 de las cuatro dimensiones del índice de "Satisfacción residencial".
+
+## 5. Conclusiones Generales
+
+Para finalizar considerando lo visto e interpretado a partir de la tabla de correlaciones y del índice de satisfacción residencial" es que podemos concluir que tal parece ser que la "satisfacción residencial" no pareciese ser un elemento que influya mucha en la decisión del cambiarse de hogar de forma preliminar.
+
+La tabla de correlaciones nos indicó que de todas las variables que componen nuestra muestra (sub-base - proc_data_tr2) estas se pueden asociar de diferentes maneras; así analizando la tabla pudimos ver como había variables que tenían correlaciones a simple vista tenían correlaciones muy pequeñas; otras tenían correlaciones pequeñas y otras presentaban correlaciones moderadas y grandes.
+
+Pero aquellas variables como variables independientes eran incapaces de explicar un cambio en nuestra variable dependiente del cambio de hogar.
+
+Con el índice de "Satisfacción residencial" y sus dimensiones elaboradas pudimos ver de la misma forma resultados similares a los de la tabla de correlación; considerando el promedio del índice de sus mediciones; estos presentaban un valor intermedio entre el valor mínimo y el valor máximo por lo que aquello nos indican que gran parte de los encuestados que conforman la muestra se encuentran "Conformes" en al menos dos dimensiones de la "Satisfacción residencial" por lo que aquello presentaría que no hay una relación o asociación clara (o directa) entre la satisfacción residencial y el hecho de querer cambiar de hogar.
+
+Pese a los resultados los cuales de momento no entregarían evidencias suficientes para afirmar o rechazar nuestra hipótesis de investigación (que sería la de que: "a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumententaria la probabilidad de que el encuestado decida cambiarse de hogar"; este resultado no sería negativo del todo para la investigación.
+
+Como se dijo anteriormente todavía no se cuenta con evidencia suficiente como para aceptar y/o rechazar la hipótesis de investigación; además el índice si aportaría a uno de los objetivos de la investigación, el cual sería el determinar dimensión (o determinante según los criterios del trabajo 1) sería la más determinante al momento de entender el concepto de "Satisfacción residencial".
+
+Esta sería la dimensión (o determinante) de Material con una media de 2.769 la más alta de las 4 dimensiones (que serían: la Identitaria; Material; Ambiental y la ocupacional.
+
+### 5.1. Conclusiones respecto a las limitaciones de este trabajo
+
+Consideramos que igualmente parte de las conclusiones realizadas en el punto anterior esta sujetas en parte a las limitaciones de este trabajo; al ser este un trabajo de carácter transversal está sujeto a un momento determinado del tiempo (que en este caso sería el año 2022) por lo que de ahí es posible que se pueda entender lo limitada que pareciese los resultados obtenidos.
+
+También creemos que podría ser considerado como un limitante las variables que empleamos para este trabajo; las cuales pese a ser las idóneas bajo nuestros criterios para representar por ejemplo la definición y dimensiones que nosotros mismos establecimos de la "Satisfacción residencial" carecemos de variables con las cuales se puede caracterizar al encuestado (como lo seria por ejemplo de que región es; sexo; edad o educación) y aquellas variables podría ayudar a describir o articular de mejor manera el fenómeno que buscamos investigar además de complementarla.
+
+### 5.2. Consideraciones a futuro
+
+Por lo que consideraríamos a futuro el quizás agregar más variables con información sociodemográfica para caracterizar mejor a los encuestados y relacionar de manera más precisa al fenómeno que buscamos investigar y también así poder contar con más información como para poder afirmar o rechazar nuestra hipótesis de investigación.
+
+También no descartamos la posibilidad de utilizar otros modelos analíticos para poder hallar una respuesta a nuestra hipótesis de investigación y poder sortear las limitaciones de este trabajo; por ejemplo, no descartaríamos la posibilidad de utilizar modelos de regresión simples y múltiples.
+
+También no descartamos la posibilidad de aprovechar el hecho de que al ser la encuesta del ELSOC una encuesta longitudinal el comparar la información de este año (2022) con la de otros años para así poder sortear una de las principales limitantes de este trabajo el cual sería el de ser un estudio transversal sujeto a un determinado momento del tiempo y además así también; poder sumar información que permita poder dar cuenta de cambios que nos permitan afirmar o rechazar nuestra hipótesis de investigación y el poder así también responder los objetivos de esta investigación.
 
 ## 6. Bibliografia
+
+La bibliografía mencionada en este trabajo corresponde al siguiente texto:
+
+Amérigo, M., & Aragonés, J. I. (1988). Satisfacción residencial en un barrio remodelado: Predictores físicos y sociales. International Journal of Social Psychology, 3(1), 61–70. <https://doi.org/10.1080/02134748.1988.10821574>
+
+Debido a que seguimos presentando problemas con el software de Zotero no pudimos poner la bibliografía como corresponde.
