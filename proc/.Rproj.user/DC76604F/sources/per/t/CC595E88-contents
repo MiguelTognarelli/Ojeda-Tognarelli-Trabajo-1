@@ -1,9 +1,11 @@
 ---
-title: "Trabajo 1: Reporte descriptivo en Quarto"
+title: "Trabajo 1: Reporte descriptivo en Quarto; Trabajo 2: Asociación de variables y contrucción de indices/escalas"
 author: "Benajamin Ojeda y Miguel Tognarelli"
 format: html
 editor: visual
 ---
+
+# Trabajo 1:
 
 # Determinantes residenciales que motivan la decision del cambio de hogar en Chile
 
@@ -320,3 +322,146 @@ Amérigo, M., & Aragonés, J. I. (1988). Satisfacción residencial en un barrio 
 Martínez Ibarra, Alejandra, & Ibarra Salazar, Jorge. (2017). Los determinantes de la satisfacción residencial en México. Estudios demográficos y urbanos, 32(2), 283-313. <https://doi.org/10.24201/edu.v32i2.1635>
 
 Sabatini, F. (2011). La segregación social del espacio en las ciudades de América Latina. <https://doi.org/10.18235/0009848>
+
+# Trabajo 2:
+
+# Asociación de variables en base a la construcción de una tabla de correlaciones y contrucción de escala de "Satisfacción residencial".
+
+## 1. Introducción
+
+El presente trabajo 2 se enmarca como continuación del trabajo 1.
+
+Este trabajo 2 se centra tal como lo indica el titulo en medir la asociación de las variables que fueron seleccionadas en el trabajo anterior; para aquello se realizaria un tabla de correlaciones la cual mediria la convariancia entre ambas variables; siendo aquello seria la forma que tendriamos para saber si nuestras variables se encuentran asociadas entre si y de que forma.
+
+Posterior a la obtención de la tabla de correlaciones, nos dispondremos a realizar una escala con la cual confeccionariamos una medición del concepto de satisfacción residencial.
+
+para entender el porque de la confección de una escala para la medición del concepto de satisfacción residencial es necesaria adentrarnos en el siguiente punto:
+
+### 1.1 Recapitulación del trabajo anterior y el porqué de la elaboración de una escala de medición de la "Satisfacción residencial".
+
+En el trabajo anterior referido a las "Determinantes residenciales que motivan la decision del cambio de hogar en Chile" establecimos que nuestro concepto central a investigar seria el de "satisfacción residencial" concepto al cual lo entendemos desde de la definición de (Amérigo, *et al*, 2014) como: "como una evaluación subjetiva que realiza el individuo sobre sus condiciones de su vivienda y el entorno inmediato en el cual se encuentra, tanto en lo social como en lo físico".
+
+Ademas establecimo como nuestra hipotesis de investigación el que: "se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar".
+
+Es asi que seria necesaria la elaboración de una escala con la cual podriamos elaborar una medición que contemple nuestra definición del concepto de "Satisfacción residencial" y que ha su vez, esta pueda poner a prueba nuestra hipotesis de investigación respondiendo al ultimo parrafo del punto anterior.
+
+## 2. Preparación del trabajo
+
+### 2.1. Instalación de paquetes:
+
+Los paquetes que empleariamos para la elaboración de este trabajo serian los mismo que los del trabajo 1; con la excepción de dos paquetemas mas que se sumarian los cuales serian: GGally y corrplot.
+
+Estos se utilizarian para la elaboración de las correlaciones y la graficación de las mismas respectivamente.
+
+```{r}
+pacman::p_load(sjlabelled,
+               dplyr,
+              stargazer, 
+              sjmisc, 
+              summarytools, 
+              kableExtra, 
+              sjPlot,
+              corrplot, 
+              sessioninfo, 
+              ggplot2,
+              knitr,
+              GGally,
+              corrplot) 
+```
+
+### 2.2. Descarga de la base de datos
+
+Nuestra base de datos con la que nos dispondriamos a trabajar seria la "Encuesta Longitudinal Social de Chile" realizada por el COES (Centro de Estudios de Conflicto y Cohesión social).
+
+Y esta base la descargamos desde internet con el siguiente link:
+
+```{r}
+load(url("https://dataverse.harvard.edu/api/access/datafile/7245118"))
+```
+
+### 2.3. Selección de variables
+
+Para la realización de este trabajo continuaremos trabajando con gran parte de las variables seleccionadas en el trabajo anterior (el trabajo 1) solo que se descartaran un total de 6 variables de las 21 que eran originalmente.
+
+Estas variables que descartamos serian: t09_01; 09_02; t09_03; t11_01; t11_03 y t11_04 referidas a las siguientes mediciones:
+
+t09_01: Frecuencia: Rinnias o peleas callejeras (nombrada como: Frecue_peleas_calle)
+
+t09_02: Frecuencia: Robos o asaltos a personas, casas y/o vehiculos (nombrada como: Frecue_robo)
+
+t09_03: Frecuencia: Trafico de drogas (nombrada como: Frecue_trafico)
+
+t11_01: Frecuencia: Ruidos molestos (como musica fuerte o gritos) (nombrada como: Frecue_ruido_moles)
+
+t11_03: Frecuencia: Amenazas, insultos u ofensas de vecinos del barrioFrecuencia: Amenazas, insultos u ofensas de vecinos del barrio (nombrada como: Frecue_amenzas)
+
+t11_04: Frecuencia: Problemas por vecinos botan basura o similar (nombrada como: Frecue_vecino_sucio)
+
+Es asi que nos quedariamos con las siguientes 15 variables:
+
+t02_01: Grado de acuerdo: Este es el barrio ideal para mi (nombrada como: Barrio_ideal)
+
+t02_02: Grado de acuerdo: Me siento integrado/a en este barrio (nombrada como: Integra_barrio)
+
+t02_03: Grado de acuerdo: Me identifico con la gente de este barrio (nombrada como: Identi_gente)
+
+t02_04: Grado de acuerdo: Este barrio es parte de mi (nombrada como: Parte_barrio)
+
+t05: Tiene planeado cambiarse de casa/departamento en el proximo annio (nombrada como: Cambio_hogar)
+
+t06_01: Grado de satisfaccion: Seguridad del barrio (nombrada como: Satis_seguridad)
+
+t06_02: Grado de satisfaccion: Conectividad (nombrada como: Satis_conectividad)
+
+t06_03: Grado de satisfaccion: Areas verdes y de recreacion disponibles (nombrada como: Satis_area_ocio)
+
+t06_04: Grado de satisfaccion: Limpieza y belleza del barrio (nombrada como: Satis_barrio_limp)
+
+t06_05: Grado de satisfaccion: Proximidad al lugar de actividad principal (nombrada como: Satis_cerca_trab)
+
+t06_06: Grado de satisfaccion: Proximidad a colegios de buena calidad (nombrada como: Satis_cerca_coleg)
+
+t06_07: Grado de satisfaccion: Proximidad a areas de comercio (nombrada como: Satis_cerca_comerc)
+
+t06_08: Grado de satisfaccion: Proximidad con familiares y/o amigos cercanos (nombrada como: Satis_cerca_amig_fami)
+
+t07_01: Grado de satisfaccion: Tamannio de la vivienda (nombrada como: Satis_tamano_viv)
+
+t07_02: Grado de satisfaccion: Calidad de la vivienda (nombrada como: Satis_calidad_viv)
+
+Para seleccionar dichas variables creariamos una sub-base la cual utilizariamos a lo largo de todo este trabajo la cual seria llamada como: "proc_data_2022_tr2.
+
+Esta sub-base seria creada a partir de la sub-base realizada para el primer trabajo llamada proc_data_2022; de esta ultima variable seleccionariamos las variables que utilizariamos para este trabajo 2 y aquellas no seleccionadas serian descartas ( las cuales serian las variables anteriormente mencionadas).
+
+```{r}
+proc_data_2022_tr2 <- proc_data_2022 %>% 
+  select(Barrio_ideal,
+         Integra_barrio,
+         Identi_gente, 
+         Parte_barrio,
+         Cambio_hogar,
+         Satis_seguridad,
+         Satis_conectividad,
+         Satis_area_ocio,
+         Satis_barrio_limp,
+         Satis_cerca_trab,
+         Satis_cerca_coleg,
+         Satis_cerca_comerc,
+         Satis_cerca_amig_fami,
+         Satis_tamano_viv,
+         Satis_calidad_viv)
+```
+
+hacemos este proceso de este modo porque asi nos ahorramos el tener que reetiquetar cada una de las variables.
+
+### 2.4. Tratamiento de los casos perdidos
+
+Ademas de ahorranos el tener que reetiquetar cada una de las variables con el metodo anterior, nos ahorramos el tener que tratar los casos perdidos correspondientes a (NS/NR) correspondientea "no sabe"/"no responde" ya que estos fueron tratados en la sub-base anterior en el trabajo 1.
+
+Aun asi para aclararlo dichos valores perdido de (NS/NR) correspondientes a los valores de -888 y -999 fueron marcados como NA.
+
+Dichos valores fueron retenidos en la base de datos, pero son excluidos como valores faltantes en la variable al momento de analizarlos en ese momento en cualquier operación.
+
+Tal seria en el caso del calculo de medias; la confeccion de tabla de correlaciones y la escalas que realizariamos en este trabajo. Este tratamiento de los casos perdidos (NA) que realizamos en este trabajo seria conocido como PAIRWISE DELETION.
+
+### 2.5. Tratamiento de las variables.
