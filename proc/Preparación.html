@@ -1697,6 +1697,314 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
 <p>La bibliografía mencionada en este trabajo corresponde al siguiente texto:</p>
 <p>Amérigo, M., &amp; Aragonés, J. I. (1988). Satisfacción residencial en un barrio remodelado: Predictores físicos y sociales. International Journal of Social Psychology, 3(1), 61–70. <a href="https://doi.org/10.1080/02134748.1988.10821574" class="uri">https://doi.org/10.1080/02134748.1988.10821574</a></p>
 <p>Debido a que seguimos presentando problemas con el software de Zotero no pudimos poner la bibliografía como corresponde.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(sjlabelled,</span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>               dplyr,</span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>              stargazer, </span>
+<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>              sjmisc, </span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>              summarytools, </span>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>              kableExtra, </span>
+<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>              sjPlot,</span>
+<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a>              corrplot, </span>
+<span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a>              sessioninfo, </span>
+<span id="cb98-10"><a href="#cb98-10" aria-hidden="true" tabindex="-1"></a>              ggplot2,</span>
+<span id="cb98-11"><a href="#cb98-11" aria-hidden="true" tabindex="-1"></a>              knitr,</span>
+<span id="cb98-12"><a href="#cb98-12" aria-hidden="true" tabindex="-1"></a>              GGally,</span>
+<span id="cb98-13"><a href="#cb98-13" aria-hidden="true" tabindex="-1"></a>              corrplot,</span>
+<span id="cb98-14"><a href="#cb98-14" aria-hidden="true" tabindex="-1"></a>              ggpubr,</span>
+<span id="cb98-15"><a href="#cb98-15" aria-hidden="true" tabindex="-1"></a>              car,</span>
+<span id="cb98-16"><a href="#cb98-16" aria-hidden="true" tabindex="-1"></a>              fastDummies,</span>
+<span id="cb98-17"><a href="#cb98-17" aria-hidden="true" tabindex="-1"></a>              ggeffects,</span>
+<span id="cb98-18"><a href="#cb98-18" aria-hidden="true" tabindex="-1"></a>              texreg,</span>
+<span id="cb98-19"><a href="#cb98-19" aria-hidden="true" tabindex="-1"></a>              modelsummary) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>modelo_1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Identitaria, <span class="at">data=</span>proc_data_2022_tr2)</span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>modelo_2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Material, <span class="at">data=</span>proc_data_2022_tr2)</span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>modelo_3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Ambiental, <span class="at">data=</span>proc_data_2022_tr2)</span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>modelo_4 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Ocupacional, <span class="at">data=</span>proc_data_2022_tr2)</span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>modelo_5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Satisfación_residen_pond, <span class="at">data=</span>proc_data_2022_tr2 )</span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>modelo_6 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Identitaria <span class="sc">+</span> Material <span class="sc">+</span> Ambiental <span class="sc">+</span> Ocupacional <span class="sc">+</span> Satisfación_residen_pond, <span class="at">data =</span>proc_data_2022_tr2)</span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(<span class="fu">list</span>(modelo_1, modelo_2, modelo_3, modelo_4, modelo_5, modelo_6),</span>
+<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">coef_map =</span> <span class="fu">c</span>(<span class="st">"(Intercept)"</span> <span class="ot">=</span> <span class="st">"Intercepto"</span>,</span>
+<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Identitaria"</span> <span class="ot">=</span> <span class="st">"Identitaria"</span>,</span>
+<span id="cb99-12"><a href="#cb99-12" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Material"</span> <span class="ot">=</span> <span class="st">"Material"</span>,</span>
+<span id="cb99-13"><a href="#cb99-13" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Ambiental"</span> <span class="ot">=</span> <span class="st">"Ambiental"</span>,</span>
+<span id="cb99-14"><a href="#cb99-14" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Ocupacional"</span> <span class="ot">=</span> <span class="st">"Ocupacional"</span>,</span>
+<span id="cb99-15"><a href="#cb99-15" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Satisfación_residen_pond"</span> <span class="ot">=</span> <span class="st">"Satisfacción residencial"</span>),</span>
+<span id="cb99-16"><a href="#cb99-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">statistic =</span> <span class="st">"std.error"</span>,</span>
+<span id="cb99-17"><a href="#cb99-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">output =</span> <span class="st">"html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_kwhi17cggbibm687e2g5(i, j, css_id) {
+          var table = document.getElementById("tinytable_kwhi17cggbibm687e2g5");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_kwhi17cggbibm687e2g5');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_kwhi17cggbibm687e2g5(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_kwhi17cggbibm687e2g5");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 18, j: 2 }, { i: 18, j: 4 }, { i: 18, j: 5 }, { i: 18, j: 3 }, { i: 18, j: 1 }, { i: 18, j: 6 },  ], css_id: 'tinytable_css_njzwogtavlprfg10x90t',}, 
+          { positions: [ { i: 12, j: 1 }, { i: 12, j: 3 }, { i: 12, j: 6 }, { i: 12, j: 5 }, { i: 12, j: 2 }, { i: 12, j: 4 },  ], css_id: 'tinytable_css_4kuzfb8825zcvew1nzmm',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 3, j: 1 }, { i: 5, j: 1 }, { i: 7, j: 1 }, { i: 9, j: 1 }, { i: 11, j: 1 }, { i: 8, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 2, j: 1 }, { i: 16, j: 1 }, { i: 4, j: 1 }, { i: 1, j: 4 }, { i: 6, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 10, j: 1 }, { i: 5, j: 2 }, { i: 14, j: 3 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 14, j: 4 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 4, j: 2 }, { i: 1, j: 5 }, { i: 6, j: 2 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 14, j: 5 }, { i: 13, j: 3 }, { i: 16, j: 5 }, { i: 15, j: 3 }, { i: 16, j: 3 }, { i: 15, j: 1 }, { i: 1, j: 6 }, { i: 17, j: 1 }, { i: 3, j: 6 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 8, j: 4 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 14, j: 6 }, { i: 13, j: 4 }, { i: 16, j: 6 }, { i: 15, j: 4 }, { i: 16, j: 4 }, { i: 17, j: 4 }, { i: 6, j: 6 }, { i: 17, j: 2 }, { i: 8, j: 6 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 7, j: 5 }, { i: 8, j: 5 }, { i: 9, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 10, j: 6 }, { i: 13, j: 5 }, { i: 7, j: 6 }, { i: 15, j: 5 }, { i: 5, j: 6 }, { i: 17, j: 5 }, { i: 11, j: 6 }, { i: 17, j: 3 }, { i: 9, j: 6 }, { i: 2, j: 6 }, { i: 15, j: 6 }, { i: 4, j: 6 }, { i: 13, j: 6 }, { i: 17, j: 6 },  ], css_id: 'tinytable_css_je1l64jfac5fowdgj38n',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 6 }, { i: 0, j: 4 }, { i: 0, j: 2 }, { i: 0, j: 3 }, { i: 0, j: 5 },  ], css_id: 'tinytable_css_uv365nygk6a04nu0qzq6',}, 
+          { positions: [ { i: 18, j: 0 },  ], css_id: 'tinytable_css_eh2vyb1wp99fij49cxp1',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_mlo6nki97efk4lqx7c3h',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 16, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 17, j: 0 },  ], css_id: 'tinytable_css_vcavc9c1csysd02d5skg',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_4xo7k2ql1fay04uymtua',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_kwhi17cggbibm687e2g5(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_njzwogtavlprfg10x90t, .table th.tinytable_css_njzwogtavlprfg10x90t { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_4kuzfb8825zcvew1nzmm, .table th.tinytable_css_4kuzfb8825zcvew1nzmm { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_je1l64jfac5fowdgj38n, .table th.tinytable_css_je1l64jfac5fowdgj38n { text-align: center; }
+      .table td.tinytable_css_uv365nygk6a04nu0qzq6, .table th.tinytable_css_uv365nygk6a04nu0qzq6 { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_eh2vyb1wp99fij49cxp1, .table th.tinytable_css_eh2vyb1wp99fij49cxp1 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_mlo6nki97efk4lqx7c3h, .table th.tinytable_css_mlo6nki97efk4lqx7c3h { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_vcavc9c1csysd02d5skg, .table th.tinytable_css_vcavc9c1csysd02d5skg { text-align: left; }
+      .table td.tinytable_css_4xo7k2ql1fay04uymtua, .table th.tinytable_css_4xo7k2ql1fay04uymtua { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_kwhi17cggbibm687e2g5" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">(1)</th>
+                <th scope="col">(2)</th>
+                <th scope="col">(3)</th>
+                <th scope="col">(4)</th>
+                <th scope="col">(5)</th>
+                <th scope="col">(6)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan="7">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>Intercepto</td>
+                  <td>0.449***</td>
+                  <td>0.657***</td>
+                  <td>0.580***</td>
+                  <td>0.570***</td>
+                  <td>0.351***</td>
+                  <td>0.358***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(0.026)</td>
+                  <td>(0.025)</td>
+                  <td>(0.029)</td>
+                  <td>(0.031)</td>
+                  <td>(0.037)</td>
+                  <td>(0.037)</td>
+                </tr>
+                <tr>
+                  <td>Identitaria</td>
+                  <td>0.132***</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>0.124***</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>(0.009)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.011)</td>
+                </tr>
+                <tr>
+                  <td>Material</td>
+                  <td></td>
+                  <td>0.053***</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>0.022*</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>(0.008)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.009)</td>
+                </tr>
+                <tr>
+                  <td>Ambiental</td>
+                  <td></td>
+                  <td></td>
+                  <td>0.090***</td>
+                  <td></td>
+                  <td></td>
+                  <td>-0.007</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.011)</td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.015)</td>
+                </tr>
+                <tr>
+                  <td>Ocupacional</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>0.091***</td>
+                  <td></td>
+                  <td>0.025+</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.012)</td>
+                  <td></td>
+                  <td>(0.015)</td>
+                </tr>
+                <tr>
+                  <td>Satisfacción residencial</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>0.002***</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.000)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.</td>
+                  <td>2532</td>
+                  <td>2536</td>
+                  <td>2529</td>
+                  <td>2492</td>
+                  <td>2483</td>
+                  <td>2483</td>
+                </tr>
+                <tr>
+                  <td>R2</td>
+                  <td>0.072</td>
+                  <td>0.015</td>
+                  <td>0.024</td>
+                  <td>0.023</td>
+                  <td>0.059</td>
+                  <td>0.080</td>
+                </tr>
+                <tr>
+                  <td>AIC</td>
+                  <td>2322.0</td>
+                  <td>2477.7</td>
+                  <td>2449.7</td>
+                  <td>2433.2</td>
+                  <td>2331.1</td>
+                  <td>2280.1</td>
+                </tr>
+                <tr>
+                  <td>BIC</td>
+                  <td>2339.5</td>
+                  <td>2495.3</td>
+                  <td>2467.2</td>
+                  <td>2450.7</td>
+                  <td>2348.5</td>
+                  <td>2315.0</td>
+                </tr>
+                <tr>
+                  <td>Log.Lik.</td>
+                  <td>-1157.996</td>
+                  <td>-1235.868</td>
+                  <td>-1221.843</td>
+                  <td>-1213.611</td>
+                  <td>-1162.538</td>
+                  <td>-1134.056</td>
+                </tr>
+                <tr>
+                  <td>RMSE</td>
+                  <td>0.38</td>
+                  <td>0.39</td>
+                  <td>0.39</td>
+                  <td>0.39</td>
+                  <td>0.39</td>
+                  <td>0.38</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
 </section>
 </section>
 

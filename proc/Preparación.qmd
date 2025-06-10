@@ -6,9 +6,7 @@ format: html
 editor: visual
 ---
 
-# Trabajo 1:
-
-# Determinantes residenciales que motivan la decision del cambio de hogar en Chile
+# Trabajo 1: Determinantes residenciales que motivan la decision del cambio de hogar en Chile
 
 ## 1. Introducción
 
@@ -324,9 +322,7 @@ Martínez Ibarra, Alejandra, & Ibarra Salazar, Jorge. (2017). Los determinantes 
 
 Sabatini, F. (2011). La segregación social del espacio en las ciudades de América Latina. <https://doi.org/10.18235/0009848>
 
-# Trabajo 2:
-
-# Asociación de variables en base a la construcción de una tabla de correlaciones y contrucción de índice de "Satisfacción residencial".
+# Trabajo 2: Asociación de variables en base a la construcción de una tabla de correlaciones y contrucción de índice de "Satisfacción residencial".
 
 ## 1. Introducción
 
@@ -852,3 +848,133 @@ La bibliografía mencionada en este trabajo corresponde al siguiente texto:
 Amérigo, M., & Aragonés, J. I. (1988). Satisfacción residencial en un barrio remodelado: Predictores físicos y sociales. International Journal of Social Psychology, 3(1), 61–70. <https://doi.org/10.1080/02134748.1988.10821574>
 
 Debido a que seguimos presentando problemas con el software de Zotero no pudimos poner la bibliografía como corresponde.
+
+# Trabajo 3: Regresión lineal logistica y Regresión logistica multiple
+
+## 1. Introducción
+
+## 2. Preparación del trabajo
+
+```{r}
+pacman::p_load(sjlabelled,
+               dplyr,
+              stargazer, 
+              sjmisc, 
+              summarytools, 
+              kableExtra, 
+              sjPlot,
+              corrplot, 
+              sessioninfo, 
+              ggplot2,
+              knitr,
+              GGally,
+              corrplot,
+              ggpubr,
+              car,
+              fastDummies,
+              ggeffects,
+              texreg,
+              modelsummary) 
+```
+
+## 3. Regresiones Logisticas Lineales y Multiples
+
+### 3.1 Regresiones Logisticas Lineales
+
+```{r}
+modelo_1 <- glm(Cambio_hogar ~ Identitaria, data=proc_data_2022_tr2)
+modelo_2 <- glm(Cambio_hogar ~ Material, data=proc_data_2022_tr2)
+modelo_3 <- glm(Cambio_hogar ~ Ambiental, data=proc_data_2022_tr2)
+modelo_4 <- glm(Cambio_hogar ~ Ocupacional, data=proc_data_2022_tr2)
+modelo_5 <- glm(Cambio_hogar ~ Satisfación_residen_pond, data=proc_data_2022_tr2)
+```
+
+### 3.2 Regresiones Logisticas Multiples
+
+```{r}
+modelo_6 <- glm(Cambio_hogar ~ Identitaria + Material + Ambiental + Ocupacional, data                                                                        =proc_data_2022_tr2)
+modelo_7 <- glm(Cambio_hogar ~ Identitaria + Material + Ambiental + Ocupacional +                                 Satisfación_residen_pond, data=proc_data_2022_tr2 )
+
+```
+
+## 4. Graficación de los Modelos
+
+```{r}
+modelsummary(list("Modelo 1" = modelo_1,"Modelo 2" = modelo_2, "Modelo 3" = modelo_3, "Modelo  4" = modelo_4, "Modelo 5" = modelo_5, "Modelo 6" = modelo_6, "Modelo 7" = modelo_7),
+             stars = TRUE,
+             coef_map = c("(Intercept)" = "Intercepto",
+                          "Identitaria" = "Identitaria",
+                          "Material" = "Material",
+                          "Ambiental" = "Ambiental",
+                          "Ocupacional" = "Ocupacional",
+                          "Satisfación_residen_pond" = "Satisfacción residencial"),
+             statistic = "std.error",
+             gof_omit = "AIC|BIC|Log.Lik|RMSE",
+             output = "html")
+```
+
+## 5. Interpretación de los modelos
+
+## 6. Graficación de valores predichos
+
+## 6.1 Graficación de valor predicho: Dimensión identitaria
+
+```{r}
+ggeffects::ggpredict(modelo_6, terms = c("Identitaria")) %>%
+  ggplot(aes(x = x, y = predicted)) +
+  geom_line(size = 1.2, color = "grey") +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
+  labs(
+    title = "Efecto de la dimensión identitaria en la satisfacción residencial",
+    x = "Identitaria",
+    y = "Probabilidad predicha"
+  ) +
+  theme_minimal()
+```
+
+## 6.2 Graficación de valor predicho: Dimensión Material 
+
+```{r}
+ggeffects::ggpredict(modelo_6, terms = c("Material")) %>%
+  ggplot(aes(x = x, y = predicted)) +
+  geom_line(size = 1.2, color = "grey") +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
+  labs(
+    title = "Efecto de la dimensión material en la satisfacción residencial",
+    x = "Material",
+    y = "Probabilidad predicha"
+  ) +
+  theme_minimal()
+```
+
+## 6.3 Graficación de valor predicho: Dimensión Ambiental 
+
+```{r}
+ggeffects::ggpredict(modelo_6, terms = c("Ambiental")) %>%
+  ggplot(aes(x = x, y = predicted)) +
+  geom_line(size = 1.2, color = "grey") +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
+  labs(
+    title = "Efecto de la dimensión ambiental en la satisfacción residencial",
+    x = "Ambiental",
+    y = "Probabilidad predicha"
+  ) +
+  theme_minimal()
+```
+
+## 6.4 Graficación de valor predicho: Dimensión Ocupacional 
+
+```{r}
+ggeffects::ggpredict(modelo_6, terms = c("Ocupacional")) %>%
+  ggplot(aes(x = x, y = predicted)) +
+  geom_line(size = 1.2, color = "grey") +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
+  labs(
+    title = "Efecto de la dimensión ocupacional en la satisfacción residencial",
+    x = "Ocupacional",
+    y = "Probabilidad predicha"
+  ) +
+  theme_minimal()
+```
+
+## 7. Conclusiones
