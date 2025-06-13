@@ -932,7 +932,7 @@ ggeffects::ggpredict(modelo_6, terms = c("Identitaria")) %>%
   theme_minimal()
 ```
 
-## 6.2 Graficación de valor predicho: Dimensión Material 
+## 6.2 Graficación de valor predicho: Dimensión Material
 
 ```{r}
 ggeffects::ggpredict(modelo_6, terms = c("Material")) %>%
@@ -947,7 +947,7 @@ ggeffects::ggpredict(modelo_6, terms = c("Material")) %>%
   theme_minimal()
 ```
 
-## 6.3 Graficación de valor predicho: Dimensión Ambiental 
+## 6.3 Graficación de valor predicho: Dimensión Ambiental
 
 ```{r}
 ggeffects::ggpredict(modelo_6, terms = c("Ambiental")) %>%
@@ -962,7 +962,7 @@ ggeffects::ggpredict(modelo_6, terms = c("Ambiental")) %>%
   theme_minimal()
 ```
 
-## 6.4 Graficación de valor predicho: Dimensión Ocupacional 
+## 6.4 Graficación de valor predicho: Dimensión Ocupacional
 
 ```{r}
 ggeffects::ggpredict(modelo_6, terms = c("Ocupacional")) %>%
