@@ -853,7 +853,17 @@ Debido a que seguimos presentando problemas con el software de Zotero no pudimos
 
 ## 1. Introducción
 
+El presente trabajo 3 se enmarca como continuación del trabajo 2.
+
+El objetivo de este trabajo es el de poder responder la hipótesis que se bajara en esta investigación correspondiente a que: "se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar"
+
+Para realizar aquello en este trabajo se realizar lo que se indica en título: que sería realizar regresiones lineales logísticas y regresiones logísticas múltiples (a partir de las variables que fueron seleccionadas en el trabajo anterior) y posteriormente generar una tabla comparativa entre todos los modelos que hayamos realizado, para que por ultimo procedamos a realizar un gráfico que muestre los valores predichos de los coeficiente de regresiones de alguno de los modelos (específicamente los correspondientes a las dimensiones de la satisfacción residencial).
+
+Con dichos elementos se buscaría poder obtener los datos suficientes como para poder validar o rechazar la hipótesis de investigación y a su vez poder complementar los resultados de trabajo anterior en lo referente al responder otras de las preguntas centrales de esta investigación correspondiente a: ¿Que determinantes de la satisfacción residencia conllevarían a la decisión del querer cambiar de hogar?
+
 ## 2. Preparación del trabajo
+
+Para la realización de este trabajo de los siguientes paquetes que se suman, estos serían los más importantes: "modelsummary" para poder obtener información de los modelos, "texreg" para poder visualizar los mismos en la consola de comando de R y “ggeffects” además de “ggpubr” para la graficación de los mismos además de graficar valores predichos.
 
 ```{r}
 pacman::p_load(sjlabelled,
@@ -879,7 +889,15 @@ pacman::p_load(sjlabelled,
 
 ## 3. Regresiones Logisticas Lineales y Multiples
 
+Este trabajo cuenta con la particularidad de que las regresiones que emplea además de ser lineales y/o múltiples son logísticas; ¿que implicaría aquello? que nuestra variable dependiente no es constante (con infinitos valores intermedios), sino que dummy (con valores de 0 y 1 que representan 2 estados como, por ejemplo; el "si" o el "no" de cualquier suceso) por lo que la forma de interpretar sus valores sería un poco distinta a lo de una regresión lineal o múltiple.
+
+Con la información que estas nos aporten podríamos recopilar datos para poder validar o refutar nuestra hipótesis de investigación; y además también poder complementar los resultados de este trabajo y de los trabajos anteriores en lo referente a cuál dimensión de la satisfacción residencia resultaría más relevante.
+
+Tal como se dijo en la introducción.
+
 ### 3.1 Regresiones Logisticas Lineales
+
+Considerando la variable de Cambio_hogar como variable dependiente, elaboraremos 5 modelos de regresión logística lineal que tendrían como variables independientes: cada una de las dimensiones de la satisfacción residencial por separado (Identitaria; Material; Ambiental y Ocupacional) además de un modelo extra que contendría la satisfacción residencial general (Satisfación_residen_pond) que es la variable que suma las 4 dimensiones en una sola variable por si sola.
 
 ```{r}
 modelo_1 <- glm(Cambio_hogar ~ Identitaria, data=proc_data_2022_tr2)
@@ -891,6 +909,8 @@ modelo_5 <- glm(Cambio_hogar ~ Satisfación_residen_pond, data=proc_data_2022_tr
 
 ### 3.2 Regresiones Logisticas Multiples
 
+Considerando la variable de Cambio_hogar como variable dependiente, elaboramos 2 modelos de regresión logística múltiple: 1 que tendría la suma de las 4 dimensiones contenidas en un solo modelo (Identitaria; Material; Ambiental y Ocupacional) y otro modelo que contendría las 4 dimensiones anteriormente nombradas más la variable de satisfacción residencial general en un solo modelo
+
 ```{r}
 modelo_6 <- glm(Cambio_hogar ~ Identitaria + Material + Ambiental + Ocupacional, data                                                                        =proc_data_2022_tr2)
 modelo_7 <- glm(Cambio_hogar ~ Identitaria + Material + Ambiental + Ocupacional +                                 Satisfación_residen_pond, data=proc_data_2022_tr2 )
@@ -898,6 +918,8 @@ modelo_7 <- glm(Cambio_hogar ~ Identitaria + Material + Ambiental + Ocupacional 
 ```
 
 ## 4. Graficación de los Modelos
+
+Con los modelos, ya realizados procedemos a realizar la tabla comparativa entre estos:
 
 ```{r}
 modelsummary(list("Modelo 1" = modelo_1,"Modelo 2" = modelo_2, "Modelo 3" = modelo_3, "Modelo  4" = modelo_4, "Modelo 5" = modelo_5, "Modelo 6" = modelo_6, "Modelo 7" = modelo_7),
@@ -913,11 +935,27 @@ modelsummary(list("Modelo 1" = modelo_1,"Modelo 2" = modelo_2, "Modelo 3" = mode
              output = "html")
 ```
 
+\*Nota: el uso de paquete "texreg" se realiza con el fin de observar los modelos de forma preliminar y preventiva en la consola de comandos de R; por lo que en este trabajo final pese a usarse necesario "texreg" su uso no figura en el script y visualización final; ya que el visualizado y/o graficacion de los modelos se realiza por medio del uso de otros paquetes de elaboración de tablas como en este caso: "modelsummary" o "ggeffects".
+
 ## 5. Interpretación de los modelos
+
+La tabla muestra los resultados de una serie de regresiones logísticas múltiples aplicadas para predecir la probabilidad de un evento binario (como podría ser estar satisfecho con la vida en el barrio, participar en actividades comunitarias, etc.). A lo largo de los siete modelos presentados, se observa cómo distintas dimensiones explicativas como identitaria, material, ambiental, ocupacional y satisfacción residencial influyen sobre esa probabilidad.
+
+En todos los modelos, el intercepto es significativo, lo que indica que incluso sin considerar las variables independientes, existe una probabilidad base del evento. Sin embargo, lo más relevante es el comportamiento de las variables explicativas. La dimensión identitaria se mantiene como un predictor fuerte y consistente en todos los modelos donde se incluye. Su coeficiente positivo y altamente significativo sugiere que a medida que las personas se sienten más identificadas con su comunidad o entorno, aumentan sus probabilidades (odds) de presentar la característica en estudio, cualquiera que esta sea. Esta dimensión muestra un patrón robusto que se mantiene incluso al controlar por otras variables.
+
+La dimensión material, por su parte, también tiene un efecto positivo, aunque más modesto y menos consistente. Donde aparece como significativa, indica que mejores condiciones materiales están asociadas con una mayor probabilidad del evento, pero su efecto es más débil y parece depender de los controles incluidos. Algo similar ocurre con la dimensión ocupacional, que aparece como significativa en uno de los modelos y marginal en los más completos, lo que podría reflejar que las condiciones laborales o el tipo de ocupación tienen cierto peso, pero menos determinante que otras variables.
+
+Por el contrario, la dimensión ambiental solo alcanza significancia en el modelo 3, pero su efecto desaparece al controlar por otras dimensiones, lo que puede sugerir que su influencia está mediada o contenida dentro de otras variables más relevantes, como la identitaria o la material. Finalmente, la satisfacción residencial, incluida únicamente en el modelo 5, muestra un efecto positivo y muy significativo. Aunque el coeficiente parece pequeño, es importante recordar que en una regresión logística este valor representa el cambio en los log odds, por lo que incluso efectos aparentemente modestos pueden traducirse en diferencias sustanciales en términos de probabilidad.
+
+El valor del R² (probablemente R² de Nagelkerke u otro equivalente en modelos logísticos) se mantiene bajo en todos los modelos, oscilando entre 0.072 y 0.080. Esto es esperable en fenómenos sociales complejos, donde la varianza nunca se explica completamente por unos pocos factores. A pesar de eso, se observa un pequeño incremento conforme se agregan más variables, lo que sugiere que cada dimensión aporta algo a la capacidad explicativa del modelo.
 
 ## 6. Graficación de valores predichos
 
+El cálculo de valores predichos se relaciona en la medida en que este graficado representa los valores de probabilidad predicha que podría tomar la variable dependiente a partir de la variable independiente.
+
 ## 6.1 Graficación de valor predicho: Dimensión identitaria
+
+El valor predicho de la Dimensión "Identitaria" se caracteriza por ser positivo; este tambien posee un intervalo de confianza reducido lo cual lo dota de consistencia y predecibilidad.
 
 ```{r}
 ggeffects::ggpredict(modelo_6, terms = c("Identitaria")) %>%
@@ -925,7 +963,7 @@ ggeffects::ggpredict(modelo_6, terms = c("Identitaria")) %>%
   geom_line(size = 1.2, color = "grey") +
   geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
   labs(
-    title = "Efecto de la dimensión identitaria en la satisfacción residencial",
+    title = "Efecto de la dimensión identitaria en la decisión de cambio de hogar",
     x = "Identitaria",
     y = "Probabilidad predicha"
   ) +
@@ -934,13 +972,15 @@ ggeffects::ggpredict(modelo_6, terms = c("Identitaria")) %>%
 
 ## 6.2 Graficación de valor predicho: Dimensión Material
 
+El valor predicho de la Dimensión "Material" se caracteriza por ser positivo (aunque no tanto en impacto como la dimensión Identitaria); este también posee un intervalo de confianza más amplio lo cual lo vuelve ligeramente menos consistente y más impredecible que la dimensión anterior.
+
 ```{r}
 ggeffects::ggpredict(modelo_6, terms = c("Material")) %>%
   ggplot(aes(x = x, y = predicted)) +
   geom_line(size = 1.2, color = "grey") +
   geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
   labs(
-    title = "Efecto de la dimensión material en la satisfacción residencial",
+    title = "Efecto de la dimensión material en la decisión de cambio de hogar",
     x = "Material",
     y = "Probabilidad predicha"
   ) +
@@ -949,13 +989,15 @@ ggeffects::ggpredict(modelo_6, terms = c("Material")) %>%
 
 ## 6.3 Graficación de valor predicho: Dimensión Ambiental
 
+El valor predicho de la Dimensión "Ambiental" se caracteriza por ser negativo; este posee un intervalo de confianza extremadamente amplio lo cual lo dota de una inconsistencia e impredecibilidad amplia sobre todo en los casos extremos.
+
 ```{r}
 ggeffects::ggpredict(modelo_6, terms = c("Ambiental")) %>%
   ggplot(aes(x = x, y = predicted)) +
   geom_line(size = 1.2, color = "grey") +
   geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
   labs(
-    title = "Efecto de la dimensión ambiental en la satisfacción residencial",
+    title = "Efecto de la dimensión ambiental en la decisión de cambio de hogar",
     x = "Ambiental",
     y = "Probabilidad predicha"
   ) +
@@ -964,13 +1006,15 @@ ggeffects::ggpredict(modelo_6, terms = c("Ambiental")) %>%
 
 ## 6.4 Graficación de valor predicho: Dimensión Ocupacional
 
+El valor predicho de la Dimensión "Ocupacional" se caracteriza por ser positivo; este posee un intervalo de confianza ligeramente amplio (similar al caso de la Dimensión "Material") lo cual lo vuelve ligeramente consistente y algo impredecible, aunque no a los niveles de la Dimensión "Ambiental".
+
 ```{r}
 ggeffects::ggpredict(modelo_6, terms = c("Ocupacional")) %>%
   ggplot(aes(x = x, y = predicted)) +
   geom_line(size = 1.2, color = "grey") +
   geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
   labs(
-    title = "Efecto de la dimensión ocupacional en la satisfacción residencial",
+    title = "Efecto de la dimensión ocupacional en la decisión de cambio de hogar",
     x = "Ocupacional",
     y = "Probabilidad predicha"
   ) +
@@ -978,3 +1022,21 @@ ggeffects::ggpredict(modelo_6, terms = c("Ocupacional")) %>%
 ```
 
 ## 7. Conclusiones
+
+A partir de los resultados obtenidos a partir de las regresiones logísticas simples y múltiples; se puede decir que tenemos evidencia suficiente como para dar por valida la hipótesis: "de que a medida que disminuye la satisfacción residencial tanto en sus aspectos físicos y sociales, aumenta la probabilidad que una persona decida cambiarse de hogar".
+
+Las regresiones logísticas simples y múltiples promediaron valores positivos en cada una de las dimensiones reflejando una relación entre la satisfacción de estas y la decisión del cambio de hogar. Todo parece indicar que mientras estas promedien un alto valor la decisión del cambio de hogar no sería considerada confirmándose indirectamente la hipótesis planteada.
+
+Aun así considerando los valores de R2 de cada uno de los modelos los cuales oscilan entre los valores de 0.072 y 0.080 pareciera ser que pese a confirmarse la hipótesis de investigación las variables seleccionadas o el modo en que estas fueron abordadas poseen poca capacidad explicativa por lo que a lo mejor las causas del deseo de cambiarse de hogar respondan a otras cuestiones que en si no fueron consideradas y que posiblemente respondan a explicaciones alternas como el Nivel socioeconómico o las trayectorias de vida.
+
+Ahora respecto al objetivo del intentar determinar que determinantes/dimensión residencial determina o motiva la decisión del cambio de hogar en Chile; los resultados parecen indicar que esta responde a la Dimensión "Identitaria".
+
+Los resultados de los modelos de regresión dotan o representan a dicha variable con un coeficiente positivo y altamente significativo sugiere que a medida que las personas se sienten más identificadas con su comunidad o entorno, aumentan sus probabilidades (odds) de presentar la característica en estudio, cualquiera que esta sea. Que para este caso sería tanto la decisión de querer cambiarse de hogar por no sentirse identificado como en el caso de no querer hacerlo.
+
+Dicho resultado se alinea con los resultados del análisis de correlaciones y la elaboración del índice de satisfacción residencial; donde esta variable fue la segunda dimensión de la satisfacción residencial que mostro el promedio más alto.
+
+La dimensión original que había presentado el promedio más alto había sido la Dimensión "Material", pero se la termino por descartar al sufrir los efectos de la "parcialización" de sus valores al agregar otras variables de control estadístico como se puede observar en los modelos de regresión logística múltiple; viéndose aquellos los efectos que tuvo en sus niveles de significancia viéndose reducidos.
+
+Situación que no se dio con la Dimensión "identitaria" como se mencionó previamente en las interpretaciones de los modelos o como de podría apreciar en la misma tabla viendo que en ningún modelo pese a cambiar ligeramente sus valores, no se vio comprometido su nivel de significancia.
+
+También la graficación de los valores predichos termino por descartar la Dimensión "Material" ante la Dimensión "Identitaria" como la dimensión o determinante más significativa de la satisfacción residencial y la que influiría en la decisión del cambio de hogar. Al presentar esta Dimensión "Material" un intervalo de confianza más amplio dotado de menor inconsistencia y mayor impredecibilidad que la Dimensión "Identitaria".

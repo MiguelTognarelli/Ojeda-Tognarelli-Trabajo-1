@@ -107,11 +107,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="trabajo-1" class="level1">
-<h1>Trabajo 1:</h1>
-</section>
-<section id="determinantes-residenciales-que-motivan-la-decision-del-cambio-de-hogar-en-chile" class="level1">
-<h1>Determinantes residenciales que motivan la decision del cambio de hogar en Chile</h1>
+<section id="trabajo-1-determinantes-residenciales-que-motivan-la-decision-del-cambio-de-hogar-en-chile" class="level1">
+<h1>Trabajo 1: Determinantes residenciales que motivan la decision del cambio de hogar en Chile</h1>
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">1. Introducción</h2>
 <p>La satisfacción residencial se entiende como un componente clave y muy influyentes en como las personas experimentan y valoran su entorno inmediato, esta satisfacción no se construye de forma aislada si no que es en un tramado de elementos físicos-materiales y sociales, “Es un concepto multi dimensional, ya que incluye factores físicos, sociales y vecinales” (Martínez Ibarra &amp; Ibarra Salazar, 2017).&nbsp;</p>
@@ -775,11 +772,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Martínez Ibarra, Alejandra, &amp; Ibarra Salazar, Jorge. (2017). Los determinantes de la satisfacción residencial en México. Estudios demográficos y urbanos, 32(2), 283-313. <a href="https://doi.org/10.24201/edu.v32i2.1635" class="uri">https://doi.org/10.24201/edu.v32i2.1635</a></p>
 <p>Sabatini, F. (2011). La segregación social del espacio en las ciudades de América Latina. <a href="https://doi.org/10.18235/0009848" class="uri">https://doi.org/10.18235/0009848</a></p>
 </section>
-<section id="trabajo-2" class="level1">
-<h1>Trabajo 2:</h1>
-</section>
-<section id="asociación-de-variables-en-base-a-la-construcción-de-una-tabla-de-correlaciones-y-contrucción-de-índice-de-satisfacción-residencial." class="level1">
-<h1>Asociación de variables en base a la construcción de una tabla de correlaciones y contrucción de índice de “Satisfacción residencial”.</h1>
+<section id="trabajo-2-asociación-de-variables-en-base-a-la-construcción-de-una-tabla-de-correlaciones-y-contrucción-de-índice-de-satisfacción-residencial." class="level1">
+<h1>Trabajo 2: Asociación de variables en base a la construcción de una tabla de correlaciones y contrucción de índice de “Satisfacción residencial”.</h1>
 <section id="introducción-1" class="level2">
 <h2 class="anchored" data-anchor-id="introducción-1">1. Introducción</h2>
 <p>El presente trabajo 2 se enmarca como continuación del trabajo 1.</p>
@@ -1697,6 +1691,20 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
 <p>La bibliografía mencionada en este trabajo corresponde al siguiente texto:</p>
 <p>Amérigo, M., &amp; Aragonés, J. I. (1988). Satisfacción residencial en un barrio remodelado: Predictores físicos y sociales. International Journal of Social Psychology, 3(1), 61–70. <a href="https://doi.org/10.1080/02134748.1988.10821574" class="uri">https://doi.org/10.1080/02134748.1988.10821574</a></p>
 <p>Debido a que seguimos presentando problemas con el software de Zotero no pudimos poner la bibliografía como corresponde.</p>
+</section>
+</section>
+<section id="trabajo-3-regresión-lineal-logistica-y-regresión-logistica-multiple" class="level1">
+<h1>Trabajo 3: Regresión lineal logistica y Regresión logistica multiple</h1>
+<section id="introducción-2" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-2">1. Introducción</h2>
+<p>El presente trabajo 3 se enmarca como continuación del trabajo 2.</p>
+<p>El objetivo de este trabajo es el de poder responder la hipótesis que se bajara en esta investigación correspondiente a que: “se espera que a medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar”</p>
+<p>Para realizar aquello en este trabajo se realizar lo que se indica en título: que sería realizar regresiones lineales logísticas y regresiones logísticas múltiples (a partir de las variables que fueron seleccionadas en el trabajo anterior) y posteriormente generar una tabla comparativa entre todos los modelos que hayamos realizado, para que por ultimo procedamos a realizar un gráfico que muestre los valores predichos de los coeficiente de regresiones de alguno de los modelos (específicamente los correspondientes a las dimensiones de la satisfacción residencial).</p>
+<p>Con dichos elementos se buscaría poder obtener los datos suficientes como para poder validar o rechazar la hipótesis de investigación y a su vez poder complementar los resultados de trabajo anterior en lo referente al responder otras de las preguntas centrales de esta investigación correspondiente a: ¿Que determinantes de la satisfacción residencia conllevarían a la decisión del querer cambiar de hogar?</p>
+</section>
+<section id="preparación-del-trabajo-1" class="level2">
+<h2 class="anchored" data-anchor-id="preparación-del-trabajo-1">2. Preparación del trabajo</h2>
+<p>Para la realización de este trabajo de los siguientes paquetes que se suman, estos serían los más importantes: “modelsummary” para poder obtener información de los modelos, “texreg” para poder visualizar los mismos en la consola de comando de R y “ggeffects” además de “ggpubr” para la graficación de los mismos además de graficar valores predichos.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(sjlabelled,</span>
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>               dplyr,</span>
@@ -1718,31 +1726,54 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
 <span id="cb98-18"><a href="#cb98-18" aria-hidden="true" tabindex="-1"></a>              texreg,</span>
 <span id="cb98-19"><a href="#cb98-19" aria-hidden="true" tabindex="-1"></a>              modelsummary) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="regresiones-logisticas-lineales-y-multiples" class="level2">
+<h2 class="anchored" data-anchor-id="regresiones-logisticas-lineales-y-multiples">3. Regresiones Logisticas Lineales y Multiples</h2>
+<p>Este trabajo cuenta con la particularidad de que las regresiones que emplea además de ser lineales y/o múltiples son logísticas; ¿que implicaría aquello? que nuestra variable dependiente no es constante (con infinitos valores intermedios), sino que dummy (con valores de 0 y 1 que representan 2 estados como, por ejemplo; el “si” o el “no” de cualquier suceso) por lo que la forma de interpretar sus valores sería un poco distinta a lo de una regresión lineal o múltiple.</p>
+<p>Con la información que estas nos aporten podríamos recopilar datos para poder validar o refutar nuestra hipótesis de investigación; y además también poder complementar los resultados de este trabajo y de los trabajos anteriores en lo referente a cuál dimensión de la satisfacción residencia resultaría más relevante.</p>
+<p>Tal como se dijo en la introducción.</p>
+<section id="regresiones-logisticas-lineales" class="level3">
+<h3 class="anchored" data-anchor-id="regresiones-logisticas-lineales">3.1 Regresiones Logisticas Lineales</h3>
+<p>Considerando la variable de Cambio_hogar como variable dependiente, elaboraremos 5 modelos de regresión logística lineal que tendrían como variables independientes: cada una de las dimensiones de la satisfacción residencial por separado (Identitaria; Material; Ambiental y Ocupacional) además de un modelo extra que contendría la satisfacción residencial general (Satisfación_residen_pond) que es la variable que suma las 4 dimensiones en una sola variable por si sola.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>modelo_1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Identitaria, <span class="at">data=</span>proc_data_2022_tr2)</span>
 <span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>modelo_2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Material, <span class="at">data=</span>proc_data_2022_tr2)</span>
 <span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>modelo_3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Ambiental, <span class="at">data=</span>proc_data_2022_tr2)</span>
 <span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>modelo_4 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Ocupacional, <span class="at">data=</span>proc_data_2022_tr2)</span>
-<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>modelo_5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Satisfación_residen_pond, <span class="at">data=</span>proc_data_2022_tr2 )</span>
-<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>modelo_6 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Identitaria <span class="sc">+</span> Material <span class="sc">+</span> Ambiental <span class="sc">+</span> Ocupacional <span class="sc">+</span> Satisfación_residen_pond, <span class="at">data =</span>proc_data_2022_tr2)</span>
-<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(<span class="fu">list</span>(modelo_1, modelo_2, modelo_3, modelo_4, modelo_5, modelo_6),</span>
-<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">coef_map =</span> <span class="fu">c</span>(<span class="st">"(Intercept)"</span> <span class="ot">=</span> <span class="st">"Intercepto"</span>,</span>
-<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Identitaria"</span> <span class="ot">=</span> <span class="st">"Identitaria"</span>,</span>
-<span id="cb99-12"><a href="#cb99-12" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Material"</span> <span class="ot">=</span> <span class="st">"Material"</span>,</span>
-<span id="cb99-13"><a href="#cb99-13" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Ambiental"</span> <span class="ot">=</span> <span class="st">"Ambiental"</span>,</span>
-<span id="cb99-14"><a href="#cb99-14" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Ocupacional"</span> <span class="ot">=</span> <span class="st">"Ocupacional"</span>,</span>
-<span id="cb99-15"><a href="#cb99-15" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Satisfación_residen_pond"</span> <span class="ot">=</span> <span class="st">"Satisfacción residencial"</span>),</span>
-<span id="cb99-16"><a href="#cb99-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">statistic =</span> <span class="st">"std.error"</span>,</span>
-<span id="cb99-17"><a href="#cb99-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">output =</span> <span class="st">"html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>modelo_5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Satisfación_residen_pond, <span class="at">data=</span>proc_data_2022_tr2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="regresiones-logisticas-multiples" class="level3">
+<h3 class="anchored" data-anchor-id="regresiones-logisticas-multiples">3.2 Regresiones Logisticas Multiples</h3>
+<p>Considerando la variable de Cambio_hogar como variable dependiente, elaboramos 2 modelos de regresión logística múltiple: 1 que tendría la suma de las 4 dimensiones contenidas en un solo modelo (Identitaria; Material; Ambiental y Ocupacional) y otro modelo que contendría las 4 dimensiones anteriormente nombradas más la variable de satisfacción residencial general en un solo modelo</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>modelo_6 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Identitaria <span class="sc">+</span> Material <span class="sc">+</span> Ambiental <span class="sc">+</span> Ocupacional, <span class="at">data                                                                        =</span>proc_data_2022_tr2)</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>modelo_7 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Cambio_hogar <span class="sc">~</span> Identitaria <span class="sc">+</span> Material <span class="sc">+</span> Ambiental <span class="sc">+</span> Ocupacional <span class="sc">+</span>                                 Satisfación_residen_pond, <span class="at">data=</span>proc_data_2022_tr2 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="graficación-de-los-modelos" class="level2">
+<h2 class="anchored" data-anchor-id="graficación-de-los-modelos">4. Graficación de los Modelos</h2>
+<p>Con los modelos, ya realizados procedemos a realizar la tabla comparativa entre estos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(<span class="fu">list</span>(<span class="st">"Modelo 1"</span> <span class="ot">=</span> modelo_1,<span class="st">"Modelo 2"</span> <span class="ot">=</span> modelo_2, <span class="st">"Modelo 3"</span> <span class="ot">=</span> modelo_3, <span class="st">"Modelo  4"</span> <span class="ot">=</span> modelo_4, <span class="st">"Modelo 5"</span> <span class="ot">=</span> modelo_5, <span class="st">"Modelo 6"</span> <span class="ot">=</span> modelo_6, <span class="st">"Modelo 7"</span> <span class="ot">=</span> modelo_7),</span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">coef_map =</span> <span class="fu">c</span>(<span class="st">"(Intercept)"</span> <span class="ot">=</span> <span class="st">"Intercepto"</span>,</span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Identitaria"</span> <span class="ot">=</span> <span class="st">"Identitaria"</span>,</span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Material"</span> <span class="ot">=</span> <span class="st">"Material"</span>,</span>
+<span id="cb101-6"><a href="#cb101-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Ambiental"</span> <span class="ot">=</span> <span class="st">"Ambiental"</span>,</span>
+<span id="cb101-7"><a href="#cb101-7" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Ocupacional"</span> <span class="ot">=</span> <span class="st">"Ocupacional"</span>,</span>
+<span id="cb101-8"><a href="#cb101-8" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Satisfación_residen_pond"</span> <span class="ot">=</span> <span class="st">"Satisfacción residencial"</span>),</span>
+<span id="cb101-9"><a href="#cb101-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">statistic =</span> <span class="st">"std.error"</span>,</span>
+<span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">gof_omit =</span> <span class="st">"AIC|BIC|Log.Lik|RMSE"</span>,</span>
+<span id="cb101-11"><a href="#cb101-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">output =</span> <span class="st">"html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <!-- preamble start -->
 
     <script>
 
-      function styleCell_kwhi17cggbibm687e2g5(i, j, css_id) {
-          var table = document.getElementById("tinytable_kwhi17cggbibm687e2g5");
+      function styleCell_7nlry9mkhxh1ebm71x30(i, j, css_id) {
+          var table = document.getElementById("tinytable_7nlry9mkhxh1ebm71x30");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1752,7 +1783,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_kwhi17cggbibm687e2g5');
+        var table = document.getElementById('tinytable_7nlry9mkhxh1ebm71x30');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -1760,8 +1791,8 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_kwhi17cggbibm687e2g5(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_kwhi17cggbibm687e2g5");
+      function spanCell_7nlry9mkhxh1ebm71x30(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_7nlry9mkhxh1ebm71x30");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1791,20 +1822,20 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 18, j: 2 }, { i: 18, j: 4 }, { i: 18, j: 5 }, { i: 18, j: 3 }, { i: 18, j: 1 }, { i: 18, j: 6 },  ], css_id: 'tinytable_css_njzwogtavlprfg10x90t',}, 
-          { positions: [ { i: 12, j: 1 }, { i: 12, j: 3 }, { i: 12, j: 6 }, { i: 12, j: 5 }, { i: 12, j: 2 }, { i: 12, j: 4 },  ], css_id: 'tinytable_css_4kuzfb8825zcvew1nzmm',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 3, j: 1 }, { i: 5, j: 1 }, { i: 7, j: 1 }, { i: 9, j: 1 }, { i: 11, j: 1 }, { i: 8, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 2, j: 1 }, { i: 16, j: 1 }, { i: 4, j: 1 }, { i: 1, j: 4 }, { i: 6, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 10, j: 1 }, { i: 5, j: 2 }, { i: 14, j: 3 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 14, j: 4 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 4, j: 2 }, { i: 1, j: 5 }, { i: 6, j: 2 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 14, j: 5 }, { i: 13, j: 3 }, { i: 16, j: 5 }, { i: 15, j: 3 }, { i: 16, j: 3 }, { i: 15, j: 1 }, { i: 1, j: 6 }, { i: 17, j: 1 }, { i: 3, j: 6 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 8, j: 4 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 14, j: 6 }, { i: 13, j: 4 }, { i: 16, j: 6 }, { i: 15, j: 4 }, { i: 16, j: 4 }, { i: 17, j: 4 }, { i: 6, j: 6 }, { i: 17, j: 2 }, { i: 8, j: 6 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 7, j: 5 }, { i: 8, j: 5 }, { i: 9, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 10, j: 6 }, { i: 13, j: 5 }, { i: 7, j: 6 }, { i: 15, j: 5 }, { i: 5, j: 6 }, { i: 17, j: 5 }, { i: 11, j: 6 }, { i: 17, j: 3 }, { i: 9, j: 6 }, { i: 2, j: 6 }, { i: 15, j: 6 }, { i: 4, j: 6 }, { i: 13, j: 6 }, { i: 17, j: 6 },  ], css_id: 'tinytable_css_je1l64jfac5fowdgj38n',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 6 }, { i: 0, j: 4 }, { i: 0, j: 2 }, { i: 0, j: 3 }, { i: 0, j: 5 },  ], css_id: 'tinytable_css_uv365nygk6a04nu0qzq6',}, 
-          { positions: [ { i: 18, j: 0 },  ], css_id: 'tinytable_css_eh2vyb1wp99fij49cxp1',}, 
-          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_mlo6nki97efk4lqx7c3h',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 16, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 17, j: 0 },  ], css_id: 'tinytable_css_vcavc9c1csysd02d5skg',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_4xo7k2ql1fay04uymtua',}, 
+          { positions: [ { i: 14, j: 1 }, { i: 14, j: 2 }, { i: 14, j: 5 }, { i: 14, j: 3 }, { i: 14, j: 6 }, { i: 14, j: 4 }, { i: 14, j: 7 },  ], css_id: 'tinytable_css_3cyix0c4v7ny8pifpv8v',}, 
+          { positions: [ { i: 12, j: 3 }, { i: 12, j: 4 }, { i: 12, j: 7 }, { i: 12, j: 5 }, { i: 12, j: 6 }, { i: 12, j: 1 }, { i: 12, j: 2 },  ], css_id: 'tinytable_css_ovzmf6u9mkzr016ks5fr',}, 
+          { positions: [ { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 1, j: 1 }, { i: 6, j: 1 }, { i: 11, j: 1 }, { i: 7, j: 4 }, { i: 13, j: 1 }, { i: 9, j: 4 }, { i: 2, j: 1 }, { i: 1, j: 2 }, { i: 4, j: 1 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 7, j: 1 }, { i: 6, j: 2 }, { i: 9, j: 1 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 7, j: 5 }, { i: 13, j: 2 }, { i: 9, j: 5 }, { i: 2, j: 2 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 7, j: 2 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 7, j: 6 }, { i: 13, j: 3 }, { i: 9, j: 6 }, { i: 5, j: 1 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 10, j: 1 }, { i: 6, j: 4 }, { i: 2, j: 7 }, { i: 8, j: 4 }, { i: 4, j: 7 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 7, j: 7 }, { i: 13, j: 4 }, { i: 9, j: 7 }, { i: 5, j: 2 }, { i: 1, j: 5 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 5, j: 6 }, { i: 8, j: 5 }, { i: 5, j: 7 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 10, j: 6 }, { i: 13, j: 5 }, { i: 10, j: 7 }, { i: 5, j: 3 }, { i: 1, j: 6 }, { i: 2, j: 6 }, { i: 3, j: 6 }, { i: 4, j: 6 }, { i: 3, j: 7 }, { i: 6, j: 6 }, { i: 11, j: 6 }, { i: 8, j: 6 }, { i: 13, j: 6 }, { i: 8, j: 7 }, { i: 5, j: 4 }, { i: 1, j: 7 }, { i: 6, j: 7 }, { i: 11, j: 7 }, { i: 13, j: 7 },  ], css_id: 'tinytable_css_s3v9rldyv8btku7nxren',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 4 }, { i: 0, j: 2 }, { i: 0, j: 5 }, { i: 0, j: 3 }, { i: 0, j: 6 }, { i: 0, j: 7 },  ], css_id: 'tinytable_css_6gi52pnjvdq1bgg20hwf',}, 
+          { positions: [ { i: 14, j: 0 },  ], css_id: 'tinytable_css_znoj36w7ipilo6imu39m',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_ezd9p1cbmch6bbszus8g',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 13, j: 0 },  ], css_id: 'tinytable_css_wjzm4s0kmkjfvhxib5f9',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_my7uwqx507lmj1jl89x2',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_kwhi17cggbibm687e2g5(cell.i, cell.j, group.css_id);
+                  styleCell_7nlry9mkhxh1ebm71x30(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1812,30 +1843,31 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_njzwogtavlprfg10x90t, .table th.tinytable_css_njzwogtavlprfg10x90t { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_4kuzfb8825zcvew1nzmm, .table th.tinytable_css_4kuzfb8825zcvew1nzmm { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_je1l64jfac5fowdgj38n, .table th.tinytable_css_je1l64jfac5fowdgj38n { text-align: center; }
-      .table td.tinytable_css_uv365nygk6a04nu0qzq6, .table th.tinytable_css_uv365nygk6a04nu0qzq6 { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_eh2vyb1wp99fij49cxp1, .table th.tinytable_css_eh2vyb1wp99fij49cxp1 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_mlo6nki97efk4lqx7c3h, .table th.tinytable_css_mlo6nki97efk4lqx7c3h { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_vcavc9c1csysd02d5skg, .table th.tinytable_css_vcavc9c1csysd02d5skg { text-align: left; }
-      .table td.tinytable_css_4xo7k2ql1fay04uymtua, .table th.tinytable_css_4xo7k2ql1fay04uymtua { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_3cyix0c4v7ny8pifpv8v, .table th.tinytable_css_3cyix0c4v7ny8pifpv8v { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_ovzmf6u9mkzr016ks5fr, .table th.tinytable_css_ovzmf6u9mkzr016ks5fr { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_s3v9rldyv8btku7nxren, .table th.tinytable_css_s3v9rldyv8btku7nxren { text-align: center; }
+      .table td.tinytable_css_6gi52pnjvdq1bgg20hwf, .table th.tinytable_css_6gi52pnjvdq1bgg20hwf { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_znoj36w7ipilo6imu39m, .table th.tinytable_css_znoj36w7ipilo6imu39m { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_ezd9p1cbmch6bbszus8g, .table th.tinytable_css_ezd9p1cbmch6bbszus8g { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_wjzm4s0kmkjfvhxib5f9, .table th.tinytable_css_wjzm4s0kmkjfvhxib5f9 { text-align: left; }
+      .table td.tinytable_css_my7uwqx507lmj1jl89x2, .table th.tinytable_css_my7uwqx507lmj1jl89x2 { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_kwhi17cggbibm687e2g5" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_7nlry9mkhxh1ebm71x30" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
                 <th scope="col"> </th>
-                <th scope="col">(1)</th>
-                <th scope="col">(2)</th>
-                <th scope="col">(3)</th>
-                <th scope="col">(4)</th>
-                <th scope="col">(5)</th>
-                <th scope="col">(6)</th>
+                <th scope="col">Modelo 1</th>
+                <th scope="col">Modelo 2</th>
+                <th scope="col">Modelo 3</th>
+                <th scope="col">Modelo  4</th>
+                <th scope="col">Modelo 5</th>
+                <th scope="col">Modelo 6</th>
+                <th scope="col">Modelo 7</th>
               </tr>
         </thead>
-        <tfoot><tr><td colspan="7">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td></tr></tfoot>
+        <tfoot><tr><td colspan="8">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td></tr></tfoot>
         <tbody>
                 <tr>
                   <td>Intercepto</td>
@@ -1845,6 +1877,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td>0.570***</td>
                   <td>0.351***</td>
                   <td>0.358***</td>
+                  <td>0.358***</td>
                 </tr>
                 <tr>
                   <td></td>
@@ -1852,6 +1885,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td>(0.025)</td>
                   <td>(0.029)</td>
                   <td>(0.031)</td>
+                  <td>(0.037)</td>
                   <td>(0.037)</td>
                   <td>(0.037)</td>
                 </tr>
@@ -1863,6 +1897,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td></td>
                   <td></td>
                   <td>0.124***</td>
+                  <td>0.124***</td>
                 </tr>
                 <tr>
                   <td></td>
@@ -1871,6 +1906,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td>(0.011)</td>
                   <td>(0.011)</td>
                 </tr>
                 <tr>
@@ -1881,6 +1917,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td></td>
                   <td></td>
                   <td>0.022*</td>
+                  <td>0.022*</td>
                 </tr>
                 <tr>
                   <td></td>
@@ -1889,6 +1926,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td>(0.009)</td>
                   <td>(0.009)</td>
                 </tr>
                 <tr>
@@ -1899,6 +1937,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td></td>
                   <td></td>
                   <td>-0.007</td>
+                  <td>-0.007</td>
                 </tr>
                 <tr>
                   <td></td>
@@ -1907,6 +1946,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td>(0.011)</td>
                   <td></td>
                   <td></td>
+                  <td>(0.015)</td>
                   <td>(0.015)</td>
                 </tr>
                 <tr>
@@ -1917,6 +1957,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td>0.091***</td>
                   <td></td>
                   <td>0.025+</td>
+                  <td>0.025+</td>
                 </tr>
                 <tr>
                   <td></td>
@@ -1925,6 +1966,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td></td>
                   <td>(0.012)</td>
                   <td></td>
+                  <td>(0.015)</td>
                   <td>(0.015)</td>
                 </tr>
                 <tr>
@@ -1935,6 +1977,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td></td>
                   <td>0.002***</td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td></td>
@@ -1944,6 +1987,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td></td>
                   <td>(0.000)</td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>Num.Obs.</td>
@@ -1951,6 +1995,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td>2536</td>
                   <td>2529</td>
                   <td>2492</td>
+                  <td>2483</td>
                   <td>2483</td>
                   <td>2483</td>
                 </tr>
@@ -1962,42 +2007,7 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
                   <td>0.023</td>
                   <td>0.059</td>
                   <td>0.080</td>
-                </tr>
-                <tr>
-                  <td>AIC</td>
-                  <td>2322.0</td>
-                  <td>2477.7</td>
-                  <td>2449.7</td>
-                  <td>2433.2</td>
-                  <td>2331.1</td>
-                  <td>2280.1</td>
-                </tr>
-                <tr>
-                  <td>BIC</td>
-                  <td>2339.5</td>
-                  <td>2495.3</td>
-                  <td>2467.2</td>
-                  <td>2450.7</td>
-                  <td>2348.5</td>
-                  <td>2315.0</td>
-                </tr>
-                <tr>
-                  <td>Log.Lik.</td>
-                  <td>-1157.996</td>
-                  <td>-1235.868</td>
-                  <td>-1221.843</td>
-                  <td>-1213.611</td>
-                  <td>-1162.538</td>
-                  <td>-1134.056</td>
-                </tr>
-                <tr>
-                  <td>RMSE</td>
-                  <td>0.38</td>
-                  <td>0.39</td>
-                  <td>0.39</td>
-                  <td>0.39</td>
-                  <td>0.39</td>
-                  <td>0.38</td>
+                  <td>0.080</td>
                 </tr>
         </tbody>
       </table>
@@ -2005,6 +2015,127 @@ Satis_calidad_viv     0.54  0.45   0.44</code></pre>
 <!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
+<p>*Nota: el uso de paquete “texreg” se realiza con el fin de observar los modelos de forma preliminar y preventiva en la consola de comandos de R; por lo que en este trabajo final pese a usarse necesario “texreg” su uso no figura en el script y visualización final; ya que el visualizado y/o graficacion de los modelos se realiza por medio del uso de otros paquetes de elaboración de tablas como en este caso: “modelsummary” o “ggeffects”.</p>
+</section>
+<section id="interpretación-de-los-modelos" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-de-los-modelos">5. Interpretación de los modelos</h2>
+<p>La tabla muestra los resultados de una serie de regresiones logísticas múltiples aplicadas para predecir la probabilidad de un evento binario (como podría ser estar satisfecho con la vida en el barrio, participar en actividades comunitarias, etc.). A lo largo de los siete modelos presentados, se observa cómo distintas dimensiones explicativas como identitaria, material, ambiental, ocupacional y satisfacción residencial influyen sobre esa probabilidad.</p>
+<p>En todos los modelos, el intercepto es significativo, lo que indica que incluso sin considerar las variables independientes, existe una probabilidad base del evento. Sin embargo, lo más relevante es el comportamiento de las variables explicativas. La dimensión identitaria se mantiene como un predictor fuerte y consistente en todos los modelos donde se incluye. Su coeficiente positivo y altamente significativo sugiere que a medida que las personas se sienten más identificadas con su comunidad o entorno, aumentan sus probabilidades (odds) de presentar la característica en estudio, cualquiera que esta sea. Esta dimensión muestra un patrón robusto que se mantiene incluso al controlar por otras variables.</p>
+<p>La dimensión material, por su parte, también tiene un efecto positivo, aunque más modesto y menos consistente. Donde aparece como significativa, indica que mejores condiciones materiales están asociadas con una mayor probabilidad del evento, pero su efecto es más débil y parece depender de los controles incluidos. Algo similar ocurre con la dimensión ocupacional, que aparece como significativa en uno de los modelos y marginal en los más completos, lo que podría reflejar que las condiciones laborales o el tipo de ocupación tienen cierto peso, pero menos determinante que otras variables.</p>
+<p>Por el contrario, la dimensión ambiental solo alcanza significancia en el modelo 3, pero su efecto desaparece al controlar por otras dimensiones, lo que puede sugerir que su influencia está mediada o contenida dentro de otras variables más relevantes, como la identitaria o la material. Finalmente, la satisfacción residencial, incluida únicamente en el modelo 5, muestra un efecto positivo y muy significativo. Aunque el coeficiente parece pequeño, es importante recordar que en una regresión logística este valor representa el cambio en los log odds, por lo que incluso efectos aparentemente modestos pueden traducirse en diferencias sustanciales en términos de probabilidad.</p>
+<p>El valor del R² (probablemente R² de Nagelkerke u otro equivalente en modelos logísticos) se mantiene bajo en todos los modelos, oscilando entre 0.072 y 0.080. Esto es esperable en fenómenos sociales complejos, donde la varianza nunca se explica completamente por unos pocos factores. A pesar de eso, se observa un pequeño incremento conforme se agregan más variables, lo que sugiere que cada dimensión aporta algo a la capacidad explicativa del modelo.</p>
+</section>
+<section id="graficación-de-valores-predichos" class="level2">
+<h2 class="anchored" data-anchor-id="graficación-de-valores-predichos">6. Graficación de valores predichos</h2>
+<p>El cálculo de valores predichos se relaciona en la medida en que este graficado representa los valores de probabilidad predicha que podría tomar la variable dependiente a partir de la variable independiente.</p>
+</section>
+<section id="graficación-de-valor-predicho-dimensión-identitaria" class="level2">
+<h2 class="anchored" data-anchor-id="graficación-de-valor-predicho-dimensión-identitaria">6.1 Graficación de valor predicho: Dimensión identitaria</h2>
+<p>El valor predicho de la Dimensión “Identitaria” se caracteriza por ser positivo; este tambien posee un intervalo de confianza reducido lo cual lo dota de consistencia y predecibilidad.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>ggeffects<span class="sc">::</span><span class="fu">ggpredict</span>(modelo_6, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"Identitaria"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> predicted)) <span class="sc">+</span></span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> conf.low, <span class="at">ymax =</span> conf.high), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Efecto de la dimensión identitaria en la decisión de cambio de hogar"</span>,</span>
+<span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Identitaria"</span>,</span>
+<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Probabilidad predicha"</span></span>
+<span id="cb102-9"><a href="#cb102-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb102-10"><a href="#cb102-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Preparación_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="graficación-de-valor-predicho-dimensión-material" class="level2">
+<h2 class="anchored" data-anchor-id="graficación-de-valor-predicho-dimensión-material">6.2 Graficación de valor predicho: Dimensión Material</h2>
+<p>El valor predicho de la Dimensión “Material” se caracteriza por ser positivo (aunque no tanto en impacto como la dimensión Identitaria); este también posee un intervalo de confianza más amplio lo cual lo vuelve ligeramente menos consistente y más impredecible que la dimensión anterior.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>ggeffects<span class="sc">::</span><span class="fu">ggpredict</span>(modelo_6, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"Material"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> predicted)) <span class="sc">+</span></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> conf.low, <span class="at">ymax =</span> conf.high), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Efecto de la dimensión material en la decisión de cambio de hogar"</span>,</span>
+<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Material"</span>,</span>
+<span id="cb104-8"><a href="#cb104-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Probabilidad predicha"</span></span>
+<span id="cb104-9"><a href="#cb104-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb104-10"><a href="#cb104-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Preparación_files/figure-html/unnamed-chunk-45-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="graficación-de-valor-predicho-dimensión-ambiental" class="level2">
+<h2 class="anchored" data-anchor-id="graficación-de-valor-predicho-dimensión-ambiental">6.3 Graficación de valor predicho: Dimensión Ambiental</h2>
+<p>El valor predicho de la Dimensión “Ambiental” se caracteriza por ser negativo; este posee un intervalo de confianza extremadamente amplio lo cual lo dota de una inconsistencia e impredecibilidad amplia sobre todo en los casos extremos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>ggeffects<span class="sc">::</span><span class="fu">ggpredict</span>(modelo_6, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"Ambiental"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> predicted)) <span class="sc">+</span></span>
+<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> conf.low, <span class="at">ymax =</span> conf.high), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb105-6"><a href="#cb105-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Efecto de la dimensión ambiental en la decisión de cambio de hogar"</span>,</span>
+<span id="cb105-7"><a href="#cb105-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Ambiental"</span>,</span>
+<span id="cb105-8"><a href="#cb105-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Probabilidad predicha"</span></span>
+<span id="cb105-9"><a href="#cb105-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb105-10"><a href="#cb105-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Preparación_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="graficación-de-valor-predicho-dimensión-ocupacional" class="level2">
+<h2 class="anchored" data-anchor-id="graficación-de-valor-predicho-dimensión-ocupacional">6.4 Graficación de valor predicho: Dimensión Ocupacional</h2>
+<p>El valor predicho de la Dimensión “Ocupacional” se caracteriza por ser positivo; este posee un intervalo de confianza ligeramente amplio (similar al caso de la Dimensión “Material”) lo cual lo vuelve ligeramente consistente y algo impredecible, aunque no a los niveles de la Dimensión “Ambiental”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>ggeffects<span class="sc">::</span><span class="fu">ggpredict</span>(modelo_6, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"Ocupacional"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> predicted)) <span class="sc">+</span></span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb106-4"><a href="#cb106-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> conf.low, <span class="at">ymax =</span> conf.high), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb106-5"><a href="#cb106-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb106-6"><a href="#cb106-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Efecto de la dimensión ocupacional en la decisión de cambio de hogar"</span>,</span>
+<span id="cb106-7"><a href="#cb106-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Ocupacional"</span>,</span>
+<span id="cb106-8"><a href="#cb106-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Probabilidad predicha"</span></span>
+<span id="cb106-9"><a href="#cb106-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb106-10"><a href="#cb106-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Preparación_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusiones" class="level2">
+<h2 class="anchored" data-anchor-id="conclusiones">7. Conclusiones</h2>
+<p>A partir de los resultados obtenidos a partir de las regresiones logísticas simples y múltiples; se puede decir que tenemos evidencia suficiente como para dar por valida la hipótesis: “de que a medida que disminuye la satisfacción residencial tanto en sus aspectos físicos y sociales, aumenta la probabilidad que una persona decida cambiarse de hogar”.</p>
+<p>Las regresiones logísticas simples y múltiples promediaron valores positivos en cada una de las dimensiones reflejando una relación entre la satisfacción de estas y la decisión del cambio de hogar. Todo parece indicar que mientras estas promedien un alto valor la decisión del cambio de hogar no sería considerada confirmándose indirectamente la hipótesis planteada.</p>
+<p>Aun así considerando los valores de R2 de cada uno de los modelos los cuales oscilan entre los valores de 0.072 y 0.080 pareciera ser que pese a confirmarse la hipótesis de investigación las variables seleccionadas o el modo en que estas fueron abordadas poseen poca capacidad explicativa por lo que a lo mejor las causas del deseo de cambiarse de hogar respondan a otras cuestiones que en si no fueron consideradas y que posiblemente respondan a explicaciones alternas como el Nivel socioeconómico o las trayectorias de vida.</p>
+<p>Ahora respecto al objetivo del intentar determinar que determinantes/dimensión residencial determina o motiva la decisión del cambio de hogar en Chile; los resultados parecen indicar que esta responde a la Dimensión “Identitaria”.</p>
+<p>Los resultados de los modelos de regresión dotan o representan a dicha variable con un coeficiente positivo y altamente significativo sugiere que a medida que las personas se sienten más identificadas con su comunidad o entorno, aumentan sus probabilidades (odds) de presentar la característica en estudio, cualquiera que esta sea. Que para este caso sería tanto la decisión de querer cambiarse de hogar por no sentirse identificado como en el caso de no querer hacerlo.</p>
+<p>Dicho resultado se alinea con los resultados del análisis de correlaciones y la elaboración del índice de satisfacción residencial; donde esta variable fue la segunda dimensión de la satisfacción residencial que mostro el promedio más alto.</p>
+<p>La dimensión original que había presentado el promedio más alto había sido la Dimensión “Material”, pero se la termino por descartar al sufrir los efectos de la “parcialización” de sus valores al agregar otras variables de control estadístico como se puede observar en los modelos de regresión logística múltiple; viéndose aquellos los efectos que tuvo en sus niveles de significancia viéndose reducidos.</p>
+<p>Situación que no se dio con la Dimensión “identitaria” como se mencionó previamente en las interpretaciones de los modelos o como de podría apreciar en la misma tabla viendo que en ningún modelo pese a cambiar ligeramente sus valores, no se vio comprometido su nivel de significancia.</p>
+<p>También la graficación de los valores predichos termino por descartar la Dimensión “Material” ante la Dimensión “Identitaria” como la dimensión o determinante más significativa de la satisfacción residencial y la que influiría en la decisión del cambio de hogar. Al presentar esta Dimensión “Material” un intervalo de confianza más amplio dotado de menor inconsistencia y mayor impredecibilidad que la Dimensión “Identitaria”.</p>
 </section>
 </section>
 
