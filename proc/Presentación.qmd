@@ -15,28 +15,6 @@ A medida que disminuya la satisfacción residencial tanto en sus aspectos físic
 ## Para realizar este trabajo utilizamos los datos de la encuesta del ELSOC
 
 ```{r}
-pacman::p_load(sjlabelled,
-               dplyr,
-              stargazer, 
-              sjmisc, 
-              summarytools, 
-              kableExtra, 
-              sjPlot,
-              corrplot, 
-              sessioninfo, 
-              ggplot2,
-              knitr,
-              GGally,
-              corrplot,
-              ggpubr,
-              car,
-              fastDummies,
-              ggeffects,
-              texreg,
-              modelsummary) 
-```
-
-```{r}
-summary(proc_data_2022_tr2$Identitaria)
+load(imput())
 ```
 
