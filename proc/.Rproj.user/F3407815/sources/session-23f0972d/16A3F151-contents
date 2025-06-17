@@ -1,0 +1,20 @@
+---
+title: "Influencia de los determinantes de la Satisfacción residencial en la desición del cambio de hogar"
+author: "Benjamin Ojeda y Miguel Tognarelli"
+format: revealjs
+editor: visual
+---
+
+# El objetivo de nuestra investigación consiste en:
+
+Determinar que dimensión de la satisfacción residencial es la que influye en la decisión del cambiarse de hogar
+
+# A su vez nuestra hipotesis de investigación seria la siguiente: 
+A medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar.
+
+## Para realizar este trabajo utilizamos los datos de la encuesta del ELSOC
+
+```{r}
+load(imput())
+```
+
