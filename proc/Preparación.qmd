@@ -1042,3 +1042,11 @@ La dimensión original que había presentado el promedio más alto había sido l
 Situación que no se dio con la Dimensión "identitaria" como se mencionó previamente en las interpretaciones de los modelos o como de podría apreciar en la misma tabla viendo que en ningún modelo pese a cambiar ligeramente sus valores, no se vio comprometido su nivel de significancia.
 
 También la graficación de los valores predichos termino por descartar la Dimensión "Material" ante la Dimensión "Identitaria" como la dimensión o determinante más significativa de la satisfacción residencial y la que influiría en la decisión del cambio de hogar. Al presentar esta Dimensión "Material" un intervalo de confianza más amplio dotado de menor inconsistencia y mayor impredecibilidad que la Dimensión "Identitaria".
+
+# Trabajo 4: Agregados de la presentación
+
+## 1. Guardado del load
+
+```{r}
+"C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022_tr2.RData")
+```

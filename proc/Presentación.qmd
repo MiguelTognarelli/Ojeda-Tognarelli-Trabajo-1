@@ -1,20 +1,297 @@
 ---
-title: "Influencia de los determinantes de la Satisfacción residencial en la desición del cambio de hogar"
+title: "Influencia de los determinantes de la Satisfacción residencial en la decisión del cambio de hogar"
 author: "Benjamin Ojeda y Miguel Tognarelli"
-format: revealjs
+format:
+  revealjs:
+    theme: dark
+    slideNumber: true
+    css: styles.css       
 editor: visual
+title-slide-attributes:
+  data-background-image: images/Portada2.jpg
+  data-background-size: contain
+  data-background-opacity: "0.2"
 ---
 
 # El objetivo de nuestra investigación consiste en:
 
 Determinar que dimensión de la satisfacción residencial es la que influye en la decisión del cambiarse de hogar
 
-# A su vez nuestra hipotesis de investigación seria la siguiente: 
-A medida que disminuya la satisfacción residencial tanto en sus aspectos físicos y sociales, aumente la probabilidad que una persona decida cambiarse de hogar.
+# A su vez nuestra hipotesis de investigación seria la siguiente:
 
-## Para realizar este trabajo utilizamos los datos de la encuesta del ELSOC
+A medida que disminuya la satisfacción residencial en sus diversas dimensiones, *NO* aumentaria la probabilidad de que el encuestado decida cambiarse de hogar.
+
+## Base de datos Utilizada
+
+:::::: columns
+:::: {.column width="40%"}
+::: {style="font-size: 35px;"}
+Para realizar este trabajo optamos por utilizar la base de datos ELSOC (Estudio Longitudinal Social de Chile) de el COES (Centro de Estudios de conflicto y Cohesión Social). Encuesta de tipo longitudinal realizada durante los años 2016 - 2022 Para este trabajo utilizamos específicamente los datos pertenecientes al año 2022.
+:::
+::::
+
+::: {.column width="50%" style="text-align: center;"}
+![](images/COES.png){width="250px"} ![](images/ELSOC.png){width="275px"}
+:::
+::::::
+
+## Que entendemos por satisfacción residencial:
+
+<div style="font-size: 0.7em;">
+
+Entendemos por satisfacción residencial como aquel componente clave y muy influyentes en como las personas experimentan y valoran su entorno inmediato, esta satisfacción no se construye de forma aislada si no que es en un tramado de elementos físicos-materiales y sociales, “Es un concepto multi dimensional, ya que incluye factores físicos, sociales y vecinales” (Martínez Ibarra & Ibarra Salazar, 2017).
+
+Cuando hablamos de elementos físicos-materiales que poseen los entornos residenciales, nos referimos a aspectos como la presencia de áreas verde, la conectividad, la limpieza del espacio público, entre otros factores materiales, centrarse únicamente en estas dimensiones no nos permitiría comprender de forma completa la experiencia residencial es por eso que consideramos muy importante tener en cuenta aquellos aspectos sociales como la identificación al barrio, las relaciones con los individuos, la percepción de seguridad, entre otros. La sociología urbana ha señalado como la insatisfacción con el entorno residencial puede reflejar tensiones vinculadas a la exclusión social, la percepción de seguridad o la baja calidad de servicios urbanos (Sabatini,2009). 
+
+</div>
+
+## Tratamiento de las variables:
+
+:::::: columns
+:::: {.column width="50%"}
+::: {style="font-size: 27.5px;"}
+Nuestra variable dependiente seria:
+
+t05: ¿Tiene planeado cambiarse de casa/departamento en el proximo año?
+
+Con categorias de respuesta valores de entre 1 a 4 donde cada una significaria lo siguiente:
+
+1- Si, a otro barrio de la comuna 2- Si, a otra comuna 3- No, porque estoy bien donde estoy 4- No, no puedo aunque quiera
+
+Posteriormente recodificamos la variable para que pasara a ser de tipo dummy.
+
+Donde 0 seria: "Ha pensado en cambiarse de hogar". Y 1 seria: "No ha pensado en cambiarse de hogar".
+:::
+::::
+
+:::: {.column width="50%"}
+::: {style="font-size: 30px;"}
+
+Respecto a nuestras variables independientes constaria de un total de 15:
+
+Todas estas tendrian como categoria de respuestas valores de entre 1 a 5 donde cada una siginifcaria lo siguiente:
+
+1- Totalmente insatisfecho 2- Insatisfecho 3- Ni satisfecho ni insatisfecho 4- Satisfecho 5- Totalmente satisfecho
+
+Posteriormente recodificamos la variable cambiando sus valores para que estos pasaran de ser de 0 a 4 en vez de 1 a 5 (su significado se mantiene)
+
+:::
+::::
+::::::
+
+
+## Distribución de las variables independientes
+
 
 ```{r}
-load(imput())
+pacman::p_load(sjlabelled,
+               dplyr,
+              stargazer, 
+              sjmisc, 
+              summarytools, 
+              kableExtra, 
+              sjPlot,
+              corrplot, 
+              sessioninfo, 
+              ggplot2,
+              knitr,
+              GGally,
+              corrplot,
+              ggpubr,
+              car,
+              fastDummies,
+              ggeffects,
+              texreg,
+              modelsummary) 
 ```
 
+```{r}
+load("C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022_tr4.RData")
+```
+
+```{r}
+load(("C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022.RData"))
+```
+
+```{r}
+load(("C:/Users/jmuno/OneDrive/Desktop/OFC_R/Ojeda-Tognarelli-Trabajo-1/imput/proc_data_2022_tr2.RData"))
+```
+
+
+```{r fig.width=16, fig.height=12, fig.align='center'}
+graph1 <- sjPlot::plot_stackfrq(dplyr::select(proc_data_2022, Barrio_ideal,
+                                Integra_barrio,
+                                Identi_gente, 
+                                Parte_barrio,
+                                Satis_seguridad,
+                                Satis_conectividad,
+                                Satis_area_ocio,
+                                Satis_barrio_limp,
+                                Satis_cerca_trab,
+                                Satis_cerca_coleg,
+                                Satis_cerca_comerc,
+                                Satis_cerca_amig_fami,
+                                Satis_tamano_viv,
+                                Satis_calidad_viv),
+                                 title = "Grafico descriptivo variables de satisfacción y grado de acuerdo") +
+  theme(legend.position="bottom")
+
+graph1
+
+```
+
+## Correlaciones de las variables independientes
+
+```{r}
+Correlacion_2022 <- cor(proc_data_2022_tr2, use = "complete.obs")
+```
+
+
+```{r fig.width=16, fig.height=12, fig.align='center'}
+corrplot.mixed(Correlacion_2022)
+```
+
+
+## Valores de las dimensiones de la satisfacción residencial
+
+Descriptivos de la dimensión Identitaria:
+
+```{r  class.output='text-center'}
+summary(proc_data_2022_tr4$Identitaria)
+```
+
+Descriptivos de la dimensión Material:
+
+```{r  class.output='text-center'}
+summary(proc_data_2022_tr4$Material)
+```
+
+Descriptivos de la dimensión Ambiental:
+
+```{r  class.output='text-center'}
+summary(proc_data_2022_tr4$Ambiental)
+```
+
+Descriptivos de la dimensión Ocupacional:
+
+```{r  class.output='text-center'}
+summary(proc_data_2022_tr4$Ocupacional)
+```
+
+## Modelos de regresión logistica
+
+```{r}
+# Modelos de regresión logística simple
+modelo_1 <- glm(Cambio_hogar ~ Identitaria, data = proc_data_2022_tr4)
+modelo_2 <- glm(Cambio_hogar ~ Material, data = proc_data_2022_tr4)
+modelo_3 <- glm(Cambio_hogar ~ Ambiental, data = proc_data_2022_tr4)
+modelo_4 <- glm(Cambio_hogar ~ Ocupacional, data = proc_data_2022_tr4)
+modelo_5 <- glm(Cambio_hogar ~ Satisfación_residen_pond, data = proc_data_2022_tr4)
+```
+
+```{r}
+# Modelos multivariados
+modelo_6 <- glm(Cambio_hogar ~ Identitaria + Material + Ambiental + Ocupacional,
+                data = proc_data_2022_tr4)
+
+modelo_7 <- glm(Cambio_hogar ~ Identitaria + Material + Ambiental + Ocupacional +
+                               Satisfación_residen_pond,
+                data = proc_data_2022_tr4)
+```
+
+<div style="text-align: center; font-size: 55%;">
+
+```{r results='asis'}
+modelsummary(
+  list(
+    "Modelo 1" = modelo_1,
+    "Modelo 2" = modelo_2,
+    "Modelo 3" = modelo_3,
+    "Modelo 4" = modelo_4,
+    "Modelo 5" = modelo_5,
+    "Modelo 6" = modelo_6,
+    "Modelo 7" = modelo_7
+  ),
+  stars = TRUE,
+  coef_map = c(
+    "(Intercept)" = "Intercepto",
+    "Identitaria" = "Identitaria",
+    "Material" = "Material",
+    "Ambiental" = "Ambiental",
+    "Ocupacional" = "Ocupacional",
+    "Satisfación_residen_pond" = "Satisfacción residencial"
+  ),
+  statistic = "std.error",
+  gof_omit = "AIC|BIC|Log.Lik|RMSE",
+  output = "html"
+)
+```
+
+</div>
+
+## Graficación de valores predichos
+:::::: columns
+:::: {.column width="50%"}
+::: {style="font-size: 27.5px;"}
+
+Valor predicho de la dimensión Identitaria
+
+```{r fig.align="center", fig.width=10, fig.height=6}
+ggeffects::ggpredict(modelo_6, terms = c("Identitaria")) %>%
+  ggplot(aes(x = x, y = predicted)) +
+  geom_line(size = 1.2, color = "grey") +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
+  labs(
+    title = "Efecto de la dimensión identitaria en la decisión de cambio de hogar",
+    x = "Identitaria",
+    y = "Probabilidad predicha"
+  ) +
+  theme_minimal()
+```
+:::
+::::
+
+:::: {.column width="50%"}
+::: {style="font-size: 30px;"}
+
+Valor predicho de la dimensión Material
+
+```{r fig.align="center", fig.width=10, fig.height=6}
+ggeffects::ggpredict(modelo_6, terms = c("Material")) %>%
+  ggplot(aes(x = x, y = predicted)) +
+  geom_line(size = 1.2, color = "grey") +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
+  labs(
+    title = "Efecto de la dimensión material en la decisión de cambio de hogar",
+    x = "Material",
+    y = "Probabilidad predicha"
+  ) +
+  theme_minimal()
+```
+
+:::
+::::
+::::::
+
+## Conclusiones
+
+<div style="font-size: 0.7em;">
+
+
+A raiz de lo visto anteriormente podemos decir que tenemos evidencia mas que suficiente para rechazar nuestra hipotesis de investigación.
+Ahi una relación entre lo que seria la satisfacción residencial y el deseo de mantenerse o cambiar de hogar.
+En este caso hallamos que mientras mas alta sea la satisfacción residencial mayor sea el deseo del encuestado de mantenerse en su hogar; y al contrario de lo que creiamos mientras menor sea la satisfacción residencial del encuestado, si aumentaria la posibilidad de que este decida cambiar de hogar.
+Respecto a la dimensión de la satisfacción residencial mas influyente ya sea en la decisión del mantenerse en el hogar o querer cambiarse de este; seria la dimensión identitaria.
+
+Aun asi destacamos que pese a los resulados que hemos obtenidos; pareciese ser que las variables seleccionadas no logran explicar del todo el porque de la decisión del cambio de hogar en un sentido general.
+Concluimos igualmente que para comprender este fenomeno influirian elementos o cuestiones distintas como lo seria la trayectoria de vida o el historial biografico por lo que posiblemente seria recomendable explorar este tema bajo enfoques metodologicos cualitativos.
+
+</div>
+
+## Bibliografia
+
+Martínez Ibarra, Alejandra, & Ibarra Salazar, Jorge. (2017). Los determinantes de la satisfacción residencial en México. Estudios demográficos y urbanos, 32(2), 283-313. https://doi.org/10.24201/edu.v32i2.1635
+
+Sabatini, F. (2011). La segregación social del espacio en las ciudades de América Latina. https://doi.org/10.18235/0009848
+
+# MUCHAS GRACIAS :D
